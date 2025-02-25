@@ -32,6 +32,7 @@ NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploa
 NOTE: RestSharp for .Net Core creates a new socket for each api call, which can lead to a socket exhaustion problem. See [RestSharp#1406](https://github.com/restsharp/RestSharp/issues/1406).
 
 <a id="installation"></a>
+## Installation
 Install via the dotnet CLI:
 ```bash
 dotnet add package CollegeFootballData
