@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.3
+  version: 5.6.7
 servers:
 - url: https://apinext.collegefootballdata.com/
 tags:
@@ -7343,15 +7343,19 @@ components:
           type: number
         quarter1:
           format: double
+          nullable: true
           type: number
         quarter2:
           format: double
+          nullable: true
           type: number
         quarter3:
           format: double
+          nullable: true
           type: number
         quarter4:
           format: double
+          nullable: true
           type: number
       required:
       - quarter1
@@ -7597,15 +7601,19 @@ components:
           type: number
         quarter1:
           format: double
+          nullable: true
           type: number
         quarter2:
           format: double
+          nullable: true
           type: number
         quarter3:
           format: double
+          nullable: true
           type: number
         quarter4:
           format: double
+          nullable: true
           type: number
         rushing:
           format: double
@@ -7647,15 +7655,19 @@ components:
           type: number
         quarter1:
           format: double
+          nullable: true
           type: number
         quarter2:
           format: double
+          nullable: true
           type: number
         quarter3:
           format: double
+          nullable: true
           type: number
         quarter4:
           format: double
+          nullable: true
           type: number
         rushing:
           format: double
