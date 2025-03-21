@@ -12,7 +12,7 @@
     <Description>Official client library for the CollegeFootballData.com API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>CollegeFootballData</RootNamespace>
-    <Version>5.6.7</Version>
+    <Version>5.6.8</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\CollegeFootballData.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/cfbd/cfb-net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>

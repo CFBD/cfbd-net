@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.7
+  version: 5.6.8
 servers:
 - url: https://apinext.collegefootballdata.com/
 tags:
