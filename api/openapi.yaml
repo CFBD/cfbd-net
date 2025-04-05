@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.9
+  version: 5.6.10
 servers:
 - url: https://apinext.collegefootballdata.com/
 tags:
@@ -3999,6 +3999,7 @@ components:
           type: number
         ranking:
           format: int32
+          nullable: true
           type: integer
         secondOrderWins:
           format: double
@@ -4117,6 +4118,7 @@ components:
           type: number
         ranking:
           format: int32
+          nullable: true
           type: integer
       required:
       - conference
@@ -8642,6 +8644,7 @@ components:
           type: number
         ranking:
           format: int32
+          nullable: true
           type: integer
       required:
       - explosiveness
@@ -8701,6 +8704,7 @@ components:
           type: number
         ranking:
           format: int32
+          nullable: true
           type: integer
       required:
       - explosiveness

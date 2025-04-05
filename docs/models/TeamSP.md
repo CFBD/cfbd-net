@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Team** | **string** |  | 
 **Conference** | **string** |  | 
 **Rating** | **double** |  | 
-**Ranking** | **int** |  | 
 **Offense** | [**TeamSPOffense**](TeamSPOffense.md) |  | 
 **Defense** | [**TeamSPDefense**](TeamSPDefense.md) |  | 
 **SpecialTeams** | [**TeamSPSpecialTeams**](TeamSPSpecialTeams.md) |  | 
+**Ranking** | **int** |  | 
 **SecondOrderWins** | **double** |  | 
 **Sos** | **double** |  | 
 
