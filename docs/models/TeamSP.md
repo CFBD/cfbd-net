@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Year** | **int** |  | 
 **Team** | **string** |  | 
-**Conference** | **string** |  | 
 **Rating** | **double** |  | 
 **Offense** | [**TeamSPOffense**](TeamSPOffense.md) |  | 
 **Defense** | [**TeamSPDefense**](TeamSPDefense.md) |  | 
 **SpecialTeams** | [**TeamSPSpecialTeams**](TeamSPSpecialTeams.md) |  | 
+**Conference** | **string** |  | 
 **Ranking** | **int** |  | 
 **SecondOrderWins** | **double** |  | 
 **Sos** | **double** |  | 
