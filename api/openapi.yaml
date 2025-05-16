@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.13
+  version: 5.6.14
 servers:
 - url: https://api.collegefootballdata.com/
 tags:
@@ -3725,38 +3725,38 @@ components:
           explosiveness: 4.965218492984954
           secondLevelYardsTotal: 1
         defense:
-          ppa: 9.369310271410669
-          plays: 8
+          ppa: 3.0937452626664474
+          plays: 0
           lineYardsTotal: 1
-          stuffRate: 7.457744773683766
-          successRate: 5.025004791520295
-          openFieldYards: 7.386281948385884
+          stuffRate: 6.778324963048013
+          successRate: 6.704019297950036
+          openFieldYards: 6.438423552598547
           rushingPlays:
             ppa: 7.061401241503109
             successRate: 5.637376656633329
             totalPPA: 2.3021358869347655
             explosiveness: 5.962133916683182
-          powerSuccess: 1.1730742509559433
+          powerSuccess: 6.878052220127876
           standardDowns:
             ppa: 2.027123023002322
             successRate: 3.616076749251911
             explosiveness: 9.301444243932576
-          openFieldYardsTotal: 4
-          totalPPA: 9.965781217890562
-          secondLevelYards: 1.0246457001441578
+          openFieldYardsTotal: 9
+          totalPPA: 3.353193347011243
+          secondLevelYards: 6.965117697638846
           passingPlays:
             ppa: 7.061401241503109
             successRate: 5.637376656633329
             totalPPA: 2.3021358869347655
             explosiveness: 5.962133916683182
-          lineYards: 6.84685269835264
-          drives: 6
+          lineYards: 2.8841621266687802
+          drives: 7
           passingDowns:
             ppa: 2.027123023002322
             successRate: 3.616076749251911
             explosiveness: 9.301444243932576
-          explosiveness: 4.965218492984954
-          secondLevelYardsTotal: 1
+          explosiveness: 5.944895607614016
+          secondLevelYardsTotal: 3
         opponent: opponent
         season: 6
         team: team
@@ -3777,7 +3777,7 @@ components:
         offense:
           $ref: "#/components/schemas/AdvancedGameStat_offense"
         defense:
-          $ref: "#/components/schemas/AdvancedGameStat_offense"
+          $ref: "#/components/schemas/AdvancedGameStat_defense"
       required:
       - defense
       - gameId
@@ -8520,6 +8520,7 @@ components:
           type: integer
         openFieldYards:
           format: double
+          nullable: true
           type: number
         secondLevelYardsTotal:
           format: int32
@@ -8538,6 +8539,114 @@ components:
           type: number
         powerSuccess:
           format: double
+          nullable: true
+          type: number
+        explosiveness:
+          format: double
+          type: number
+        successRate:
+          format: double
+          type: number
+        totalPPA:
+          format: double
+          type: number
+        ppa:
+          format: double
+          type: number
+        drives:
+          format: int32
+          type: integer
+        plays:
+          format: int32
+          type: integer
+      required:
+      - drives
+      - explosiveness
+      - lineYards
+      - lineYardsTotal
+      - openFieldYards
+      - openFieldYardsTotal
+      - passingDowns
+      - passingPlays
+      - plays
+      - powerSuccess
+      - ppa
+      - rushingPlays
+      - secondLevelYards
+      - secondLevelYardsTotal
+      - standardDowns
+      - stuffRate
+      - successRate
+      - totalPPA
+      type: object
+    AdvancedGameStat_defense:
+      example:
+        ppa: 3.0937452626664474
+        plays: 0
+        lineYardsTotal: 1
+        stuffRate: 6.778324963048013
+        successRate: 6.704019297950036
+        openFieldYards: 6.438423552598547
+        rushingPlays:
+          ppa: 7.061401241503109
+          successRate: 5.637376656633329
+          totalPPA: 2.3021358869347655
+          explosiveness: 5.962133916683182
+        powerSuccess: 6.878052220127876
+        standardDowns:
+          ppa: 2.027123023002322
+          successRate: 3.616076749251911
+          explosiveness: 9.301444243932576
+        openFieldYardsTotal: 9
+        totalPPA: 3.353193347011243
+        secondLevelYards: 6.965117697638846
+        passingPlays:
+          ppa: 7.061401241503109
+          successRate: 5.637376656633329
+          totalPPA: 2.3021358869347655
+          explosiveness: 5.962133916683182
+        lineYards: 2.8841621266687802
+        drives: 7
+        passingDowns:
+          ppa: 2.027123023002322
+          successRate: 3.616076749251911
+          explosiveness: 9.301444243932576
+        explosiveness: 5.944895607614016
+        secondLevelYardsTotal: 3
+      properties:
+        passingPlays:
+          $ref: "#/components/schemas/AdvancedGameStat_offense_passingPlays"
+        rushingPlays:
+          $ref: "#/components/schemas/AdvancedGameStat_offense_passingPlays"
+        passingDowns:
+          $ref: "#/components/schemas/AdvancedGameStat_offense_passingDowns"
+        standardDowns:
+          $ref: "#/components/schemas/AdvancedGameStat_offense_passingDowns"
+        openFieldYardsTotal:
+          format: int32
+          nullable: true
+          type: integer
+        openFieldYards:
+          format: double
+          type: number
+        secondLevelYardsTotal:
+          format: int32
+          type: integer
+        secondLevelYards:
+          format: double
+          type: number
+        lineYardsTotal:
+          format: int32
+          type: integer
+        lineYards:
+          format: double
+          type: number
+        stuffRate:
+          format: double
+          type: number
+        powerSuccess:
+          format: double
+          nullable: true
           type: number
         explosiveness:
           format: double

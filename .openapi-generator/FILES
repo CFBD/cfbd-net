@@ -29,6 +29,7 @@ docs/models/AdvancedBoxScoreGameInfo.md
 docs/models/AdvancedBoxScorePlayers.md
 docs/models/AdvancedBoxScoreTeams.md
 docs/models/AdvancedGameStat.md
+docs/models/AdvancedGameStatDefense.md
 docs/models/AdvancedGameStatOffense.md
 docs/models/AdvancedGameStatOffensePassingDowns.md
 docs/models/AdvancedGameStatOffensePassingPlays.md
@@ -172,6 +173,7 @@ src/CollegeFootballData.Test/Model/AdvancedBoxScoreGameInfoTests.cs
 src/CollegeFootballData.Test/Model/AdvancedBoxScorePlayersTests.cs
 src/CollegeFootballData.Test/Model/AdvancedBoxScoreTeamsTests.cs
 src/CollegeFootballData.Test/Model/AdvancedBoxScoreTests.cs
+src/CollegeFootballData.Test/Model/AdvancedGameStatDefenseTests.cs
 src/CollegeFootballData.Test/Model/AdvancedGameStatOffensePassingDownsTests.cs
 src/CollegeFootballData.Test/Model/AdvancedGameStatOffensePassingPlaysTests.cs
 src/CollegeFootballData.Test/Model/AdvancedGameStatOffenseTests.cs
@@ -337,6 +339,7 @@ src/CollegeFootballData/Model/AdvancedBoxScoreGameInfo.cs
 src/CollegeFootballData/Model/AdvancedBoxScorePlayers.cs
 src/CollegeFootballData/Model/AdvancedBoxScoreTeams.cs
 src/CollegeFootballData/Model/AdvancedGameStat.cs
+src/CollegeFootballData/Model/AdvancedGameStatDefense.cs
 src/CollegeFootballData/Model/AdvancedGameStatOffense.cs
 src/CollegeFootballData/Model/AdvancedGameStatOffensePassingDowns.cs
 src/CollegeFootballData/Model/AdvancedGameStatOffensePassingPlays.cs

@@ -27,18 +27,18 @@ using CollegeFootballData.Client;
 namespace CollegeFootballData.Model
 {
     /// <summary>
-    /// AdvancedGameStatOffense
+    /// AdvancedGameStatDefense
     /// </summary>
-    public partial class AdvancedGameStatOffense : IValidatableObject
+    public partial class AdvancedGameStatDefense : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AdvancedGameStatOffense" /> class.
+        /// Initializes a new instance of the <see cref="AdvancedGameStatDefense" /> class.
         /// </summary>
         /// <param name="passingPlays">passingPlays</param>
         /// <param name="rushingPlays">rushingPlays</param>
         /// <param name="passingDowns">passingDowns</param>
         /// <param name="standardDowns">standardDowns</param>
-        /// <param name="openFieldYardsTotal">openFieldYardsTotal</param>
+        /// <param name="openFieldYards">openFieldYards</param>
         /// <param name="secondLevelYardsTotal">secondLevelYardsTotal</param>
         /// <param name="secondLevelYards">secondLevelYards</param>
         /// <param name="lineYardsTotal">lineYardsTotal</param>
@@ -50,16 +50,16 @@ namespace CollegeFootballData.Model
         /// <param name="ppa">ppa</param>
         /// <param name="drives">drives</param>
         /// <param name="plays">plays</param>
-        /// <param name="openFieldYards">openFieldYards</param>
+        /// <param name="openFieldYardsTotal">openFieldYardsTotal</param>
         /// <param name="powerSuccess">powerSuccess</param>
         [JsonConstructor]
-        public AdvancedGameStatOffense(AdvancedGameStatOffensePassingPlays passingPlays, AdvancedGameStatOffensePassingPlays rushingPlays, AdvancedGameStatOffensePassingDowns passingDowns, AdvancedGameStatOffensePassingDowns standardDowns, int openFieldYardsTotal, int secondLevelYardsTotal, double secondLevelYards, int lineYardsTotal, double lineYards, double stuffRate, double explosiveness, double successRate, double totalPPA, double ppa, int drives, int plays, double? openFieldYards = default, double? powerSuccess = default)
+        public AdvancedGameStatDefense(AdvancedGameStatOffensePassingPlays passingPlays, AdvancedGameStatOffensePassingPlays rushingPlays, AdvancedGameStatOffensePassingDowns passingDowns, AdvancedGameStatOffensePassingDowns standardDowns, double openFieldYards, int secondLevelYardsTotal, double secondLevelYards, int lineYardsTotal, double lineYards, double stuffRate, double explosiveness, double successRate, double totalPPA, double ppa, int drives, int plays, int? openFieldYardsTotal = default, double? powerSuccess = default)
         {
             PassingPlays = passingPlays;
             RushingPlays = rushingPlays;
             PassingDowns = passingDowns;
             StandardDowns = standardDowns;
-            OpenFieldYardsTotal = openFieldYardsTotal;
+            OpenFieldYards = openFieldYards;
             SecondLevelYardsTotal = secondLevelYardsTotal;
             SecondLevelYards = secondLevelYards;
             LineYardsTotal = lineYardsTotal;
@@ -71,7 +71,7 @@ namespace CollegeFootballData.Model
             Ppa = ppa;
             Drives = drives;
             Plays = plays;
-            OpenFieldYards = openFieldYards;
+            OpenFieldYardsTotal = openFieldYardsTotal;
             PowerSuccess = powerSuccess;
             OnCreated();
         }
@@ -103,10 +103,10 @@ namespace CollegeFootballData.Model
         public AdvancedGameStatOffensePassingDowns StandardDowns { get; set; }
 
         /// <summary>
-        /// Gets or Sets OpenFieldYardsTotal
+        /// Gets or Sets OpenFieldYards
         /// </summary>
-        [JsonPropertyName("openFieldYardsTotal")]
-        public int OpenFieldYardsTotal { get; set; }
+        [JsonPropertyName("openFieldYards")]
+        public double OpenFieldYards { get; set; }
 
         /// <summary>
         /// Gets or Sets SecondLevelYardsTotal
@@ -175,10 +175,10 @@ namespace CollegeFootballData.Model
         public int Plays { get; set; }
 
         /// <summary>
-        /// Gets or Sets OpenFieldYards
+        /// Gets or Sets OpenFieldYardsTotal
         /// </summary>
-        [JsonPropertyName("openFieldYards")]
-        public double? OpenFieldYards { get; set; }
+        [JsonPropertyName("openFieldYardsTotal")]
+        public int? OpenFieldYardsTotal { get; set; }
 
         /// <summary>
         /// Gets or Sets PowerSuccess
@@ -193,12 +193,12 @@ namespace CollegeFootballData.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AdvancedGameStatOffense {\n");
+            sb.Append("class AdvancedGameStatDefense {\n");
             sb.Append("  PassingPlays: ").Append(PassingPlays).Append("\n");
             sb.Append("  RushingPlays: ").Append(RushingPlays).Append("\n");
             sb.Append("  PassingDowns: ").Append(PassingDowns).Append("\n");
             sb.Append("  StandardDowns: ").Append(StandardDowns).Append("\n");
-            sb.Append("  OpenFieldYardsTotal: ").Append(OpenFieldYardsTotal).Append("\n");
+            sb.Append("  OpenFieldYards: ").Append(OpenFieldYards).Append("\n");
             sb.Append("  SecondLevelYardsTotal: ").Append(SecondLevelYardsTotal).Append("\n");
             sb.Append("  SecondLevelYards: ").Append(SecondLevelYards).Append("\n");
             sb.Append("  LineYardsTotal: ").Append(LineYardsTotal).Append("\n");
@@ -210,7 +210,7 @@ namespace CollegeFootballData.Model
             sb.Append("  Ppa: ").Append(Ppa).Append("\n");
             sb.Append("  Drives: ").Append(Drives).Append("\n");
             sb.Append("  Plays: ").Append(Plays).Append("\n");
-            sb.Append("  OpenFieldYards: ").Append(OpenFieldYards).Append("\n");
+            sb.Append("  OpenFieldYardsTotal: ").Append(OpenFieldYardsTotal).Append("\n");
             sb.Append("  PowerSuccess: ").Append(PowerSuccess).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -228,19 +228,19 @@ namespace CollegeFootballData.Model
     }
 
     /// <summary>
-    /// A Json converter for type <see cref="AdvancedGameStatOffense" />
+    /// A Json converter for type <see cref="AdvancedGameStatDefense" />
     /// </summary>
-    public class AdvancedGameStatOffenseJsonConverter : JsonConverter<AdvancedGameStatOffense>
+    public class AdvancedGameStatDefenseJsonConverter : JsonConverter<AdvancedGameStatDefense>
     {
         /// <summary>
-        /// Deserializes json to <see cref="AdvancedGameStatOffense" />
+        /// Deserializes json to <see cref="AdvancedGameStatDefense" />
         /// </summary>
         /// <param name="utf8JsonReader"></param>
         /// <param name="typeToConvert"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <returns></returns>
         /// <exception cref="JsonException"></exception>
-        public override AdvancedGameStatOffense Read(ref Utf8JsonReader utf8JsonReader, Type typeToConvert, JsonSerializerOptions jsonSerializerOptions)
+        public override AdvancedGameStatDefense Read(ref Utf8JsonReader utf8JsonReader, Type typeToConvert, JsonSerializerOptions jsonSerializerOptions)
         {
             int currentDepth = utf8JsonReader.CurrentDepth;
 
@@ -253,7 +253,7 @@ namespace CollegeFootballData.Model
             Option<AdvancedGameStatOffensePassingPlays?> rushingPlays = default;
             Option<AdvancedGameStatOffensePassingDowns?> passingDowns = default;
             Option<AdvancedGameStatOffensePassingDowns?> standardDowns = default;
-            Option<int?> openFieldYardsTotal = default;
+            Option<double?> openFieldYards = default;
             Option<int?> secondLevelYardsTotal = default;
             Option<double?> secondLevelYards = default;
             Option<int?> lineYardsTotal = default;
@@ -265,7 +265,7 @@ namespace CollegeFootballData.Model
             Option<double?> ppa = default;
             Option<int?> drives = default;
             Option<int?> plays = default;
-            Option<double?> openFieldYards = default;
+            Option<int?> openFieldYardsTotal = default;
             Option<double?> powerSuccess = default;
 
             while (utf8JsonReader.Read())
@@ -299,9 +299,9 @@ namespace CollegeFootballData.Model
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
                                 standardDowns = new Option<AdvancedGameStatOffensePassingDowns?>(JsonSerializer.Deserialize<AdvancedGameStatOffensePassingDowns>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
-                        case "openFieldYardsTotal":
+                        case "openFieldYards":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                openFieldYardsTotal = new Option<int?>(utf8JsonReader.GetInt32());
+                                openFieldYards = new Option<double?>(utf8JsonReader.GetDouble());
                             break;
                         case "secondLevelYardsTotal":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -347,9 +347,9 @@ namespace CollegeFootballData.Model
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
                                 plays = new Option<int?>(utf8JsonReader.GetInt32());
                             break;
-                        case "openFieldYards":
+                        case "openFieldYardsTotal":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                openFieldYards = new Option<double?>(utf8JsonReader.GetDouble());
+                                openFieldYardsTotal = new Option<int?>(utf8JsonReader.GetInt32());
                             break;
                         case "powerSuccess":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -362,185 +362,185 @@ namespace CollegeFootballData.Model
             }
 
             if (!passingPlays.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(passingPlays));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(passingPlays));
 
             if (!rushingPlays.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(rushingPlays));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(rushingPlays));
 
             if (!passingDowns.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(passingDowns));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(passingDowns));
 
             if (!standardDowns.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(standardDowns));
-
-            if (!openFieldYardsTotal.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(openFieldYardsTotal));
-
-            if (!secondLevelYardsTotal.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(secondLevelYardsTotal));
-
-            if (!secondLevelYards.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(secondLevelYards));
-
-            if (!lineYardsTotal.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(lineYardsTotal));
-
-            if (!lineYards.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(lineYards));
-
-            if (!stuffRate.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(stuffRate));
-
-            if (!explosiveness.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(explosiveness));
-
-            if (!successRate.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(successRate));
-
-            if (!totalPPA.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(totalPPA));
-
-            if (!ppa.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(ppa));
-
-            if (!drives.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(drives));
-
-            if (!plays.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(plays));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(standardDowns));
 
             if (!openFieldYards.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(openFieldYards));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(openFieldYards));
+
+            if (!secondLevelYardsTotal.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(secondLevelYardsTotal));
+
+            if (!secondLevelYards.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(secondLevelYards));
+
+            if (!lineYardsTotal.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(lineYardsTotal));
+
+            if (!lineYards.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(lineYards));
+
+            if (!stuffRate.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(stuffRate));
+
+            if (!explosiveness.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(explosiveness));
+
+            if (!successRate.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(successRate));
+
+            if (!totalPPA.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(totalPPA));
+
+            if (!ppa.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(ppa));
+
+            if (!drives.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(drives));
+
+            if (!plays.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(plays));
+
+            if (!openFieldYardsTotal.IsSet)
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(openFieldYardsTotal));
 
             if (!powerSuccess.IsSet)
-                throw new ArgumentException("Property is required for class AdvancedGameStatOffense.", nameof(powerSuccess));
+                throw new ArgumentException("Property is required for class AdvancedGameStatDefense.", nameof(powerSuccess));
 
             if (passingPlays.IsSet && passingPlays.Value == null)
-                throw new ArgumentNullException(nameof(passingPlays), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(passingPlays), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (rushingPlays.IsSet && rushingPlays.Value == null)
-                throw new ArgumentNullException(nameof(rushingPlays), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(rushingPlays), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (passingDowns.IsSet && passingDowns.Value == null)
-                throw new ArgumentNullException(nameof(passingDowns), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(passingDowns), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (standardDowns.IsSet && standardDowns.Value == null)
-                throw new ArgumentNullException(nameof(standardDowns), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(standardDowns), "Property is not nullable for class AdvancedGameStatDefense.");
 
-            if (openFieldYardsTotal.IsSet && openFieldYardsTotal.Value == null)
-                throw new ArgumentNullException(nameof(openFieldYardsTotal), "Property is not nullable for class AdvancedGameStatOffense.");
+            if (openFieldYards.IsSet && openFieldYards.Value == null)
+                throw new ArgumentNullException(nameof(openFieldYards), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (secondLevelYardsTotal.IsSet && secondLevelYardsTotal.Value == null)
-                throw new ArgumentNullException(nameof(secondLevelYardsTotal), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(secondLevelYardsTotal), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (secondLevelYards.IsSet && secondLevelYards.Value == null)
-                throw new ArgumentNullException(nameof(secondLevelYards), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(secondLevelYards), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (lineYardsTotal.IsSet && lineYardsTotal.Value == null)
-                throw new ArgumentNullException(nameof(lineYardsTotal), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(lineYardsTotal), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (lineYards.IsSet && lineYards.Value == null)
-                throw new ArgumentNullException(nameof(lineYards), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(lineYards), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (stuffRate.IsSet && stuffRate.Value == null)
-                throw new ArgumentNullException(nameof(stuffRate), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(stuffRate), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (explosiveness.IsSet && explosiveness.Value == null)
-                throw new ArgumentNullException(nameof(explosiveness), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(explosiveness), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (successRate.IsSet && successRate.Value == null)
-                throw new ArgumentNullException(nameof(successRate), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(successRate), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (totalPPA.IsSet && totalPPA.Value == null)
-                throw new ArgumentNullException(nameof(totalPPA), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(totalPPA), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (ppa.IsSet && ppa.Value == null)
-                throw new ArgumentNullException(nameof(ppa), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(ppa), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (drives.IsSet && drives.Value == null)
-                throw new ArgumentNullException(nameof(drives), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(drives), "Property is not nullable for class AdvancedGameStatDefense.");
 
             if (plays.IsSet && plays.Value == null)
-                throw new ArgumentNullException(nameof(plays), "Property is not nullable for class AdvancedGameStatOffense.");
+                throw new ArgumentNullException(nameof(plays), "Property is not nullable for class AdvancedGameStatDefense.");
 
-            return new AdvancedGameStatOffense(passingPlays.Value!, rushingPlays.Value!, passingDowns.Value!, standardDowns.Value!, openFieldYardsTotal.Value!.Value!, secondLevelYardsTotal.Value!.Value!, secondLevelYards.Value!.Value!, lineYardsTotal.Value!.Value!, lineYards.Value!.Value!, stuffRate.Value!.Value!, explosiveness.Value!.Value!, successRate.Value!.Value!, totalPPA.Value!.Value!, ppa.Value!.Value!, drives.Value!.Value!, plays.Value!.Value!, openFieldYards.Value!, powerSuccess.Value!);
+            return new AdvancedGameStatDefense(passingPlays.Value!, rushingPlays.Value!, passingDowns.Value!, standardDowns.Value!, openFieldYards.Value!.Value!, secondLevelYardsTotal.Value!.Value!, secondLevelYards.Value!.Value!, lineYardsTotal.Value!.Value!, lineYards.Value!.Value!, stuffRate.Value!.Value!, explosiveness.Value!.Value!, successRate.Value!.Value!, totalPPA.Value!.Value!, ppa.Value!.Value!, drives.Value!.Value!, plays.Value!.Value!, openFieldYardsTotal.Value!, powerSuccess.Value!);
         }
 
         /// <summary>
-        /// Serializes a <see cref="AdvancedGameStatOffense" />
+        /// Serializes a <see cref="AdvancedGameStatDefense" />
         /// </summary>
         /// <param name="writer"></param>
-        /// <param name="advancedGameStatOffense"></param>
+        /// <param name="advancedGameStatDefense"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public override void Write(Utf8JsonWriter writer, AdvancedGameStatOffense advancedGameStatOffense, JsonSerializerOptions jsonSerializerOptions)
+        public override void Write(Utf8JsonWriter writer, AdvancedGameStatDefense advancedGameStatDefense, JsonSerializerOptions jsonSerializerOptions)
         {
             writer.WriteStartObject();
 
-            WriteProperties(writer, advancedGameStatOffense, jsonSerializerOptions);
+            WriteProperties(writer, advancedGameStatDefense, jsonSerializerOptions);
             writer.WriteEndObject();
         }
 
         /// <summary>
-        /// Serializes the properties of <see cref="AdvancedGameStatOffense" />
+        /// Serializes the properties of <see cref="AdvancedGameStatDefense" />
         /// </summary>
         /// <param name="writer"></param>
-        /// <param name="advancedGameStatOffense"></param>
+        /// <param name="advancedGameStatDefense"></param>
         /// <param name="jsonSerializerOptions"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public void WriteProperties(Utf8JsonWriter writer, AdvancedGameStatOffense advancedGameStatOffense, JsonSerializerOptions jsonSerializerOptions)
+        public void WriteProperties(Utf8JsonWriter writer, AdvancedGameStatDefense advancedGameStatDefense, JsonSerializerOptions jsonSerializerOptions)
         {
-            if (advancedGameStatOffense.PassingPlays == null)
-                throw new ArgumentNullException(nameof(advancedGameStatOffense.PassingPlays), "Property is required for class AdvancedGameStatOffense.");
+            if (advancedGameStatDefense.PassingPlays == null)
+                throw new ArgumentNullException(nameof(advancedGameStatDefense.PassingPlays), "Property is required for class AdvancedGameStatDefense.");
 
-            if (advancedGameStatOffense.RushingPlays == null)
-                throw new ArgumentNullException(nameof(advancedGameStatOffense.RushingPlays), "Property is required for class AdvancedGameStatOffense.");
+            if (advancedGameStatDefense.RushingPlays == null)
+                throw new ArgumentNullException(nameof(advancedGameStatDefense.RushingPlays), "Property is required for class AdvancedGameStatDefense.");
 
-            if (advancedGameStatOffense.PassingDowns == null)
-                throw new ArgumentNullException(nameof(advancedGameStatOffense.PassingDowns), "Property is required for class AdvancedGameStatOffense.");
+            if (advancedGameStatDefense.PassingDowns == null)
+                throw new ArgumentNullException(nameof(advancedGameStatDefense.PassingDowns), "Property is required for class AdvancedGameStatDefense.");
 
-            if (advancedGameStatOffense.StandardDowns == null)
-                throw new ArgumentNullException(nameof(advancedGameStatOffense.StandardDowns), "Property is required for class AdvancedGameStatOffense.");
+            if (advancedGameStatDefense.StandardDowns == null)
+                throw new ArgumentNullException(nameof(advancedGameStatDefense.StandardDowns), "Property is required for class AdvancedGameStatDefense.");
 
             writer.WritePropertyName("passingPlays");
-            JsonSerializer.Serialize(writer, advancedGameStatOffense.PassingPlays, jsonSerializerOptions);
+            JsonSerializer.Serialize(writer, advancedGameStatDefense.PassingPlays, jsonSerializerOptions);
             writer.WritePropertyName("rushingPlays");
-            JsonSerializer.Serialize(writer, advancedGameStatOffense.RushingPlays, jsonSerializerOptions);
+            JsonSerializer.Serialize(writer, advancedGameStatDefense.RushingPlays, jsonSerializerOptions);
             writer.WritePropertyName("passingDowns");
-            JsonSerializer.Serialize(writer, advancedGameStatOffense.PassingDowns, jsonSerializerOptions);
+            JsonSerializer.Serialize(writer, advancedGameStatDefense.PassingDowns, jsonSerializerOptions);
             writer.WritePropertyName("standardDowns");
-            JsonSerializer.Serialize(writer, advancedGameStatOffense.StandardDowns, jsonSerializerOptions);
-            writer.WriteNumber("openFieldYardsTotal", advancedGameStatOffense.OpenFieldYardsTotal);
+            JsonSerializer.Serialize(writer, advancedGameStatDefense.StandardDowns, jsonSerializerOptions);
+            writer.WriteNumber("openFieldYards", advancedGameStatDefense.OpenFieldYards);
 
-            writer.WriteNumber("secondLevelYardsTotal", advancedGameStatOffense.SecondLevelYardsTotal);
+            writer.WriteNumber("secondLevelYardsTotal", advancedGameStatDefense.SecondLevelYardsTotal);
 
-            writer.WriteNumber("secondLevelYards", advancedGameStatOffense.SecondLevelYards);
+            writer.WriteNumber("secondLevelYards", advancedGameStatDefense.SecondLevelYards);
 
-            writer.WriteNumber("lineYardsTotal", advancedGameStatOffense.LineYardsTotal);
+            writer.WriteNumber("lineYardsTotal", advancedGameStatDefense.LineYardsTotal);
 
-            writer.WriteNumber("lineYards", advancedGameStatOffense.LineYards);
+            writer.WriteNumber("lineYards", advancedGameStatDefense.LineYards);
 
-            writer.WriteNumber("stuffRate", advancedGameStatOffense.StuffRate);
+            writer.WriteNumber("stuffRate", advancedGameStatDefense.StuffRate);
 
-            writer.WriteNumber("explosiveness", advancedGameStatOffense.Explosiveness);
+            writer.WriteNumber("explosiveness", advancedGameStatDefense.Explosiveness);
 
-            writer.WriteNumber("successRate", advancedGameStatOffense.SuccessRate);
+            writer.WriteNumber("successRate", advancedGameStatDefense.SuccessRate);
 
-            writer.WriteNumber("totalPPA", advancedGameStatOffense.TotalPPA);
+            writer.WriteNumber("totalPPA", advancedGameStatDefense.TotalPPA);
 
-            writer.WriteNumber("ppa", advancedGameStatOffense.Ppa);
+            writer.WriteNumber("ppa", advancedGameStatDefense.Ppa);
 
-            writer.WriteNumber("drives", advancedGameStatOffense.Drives);
+            writer.WriteNumber("drives", advancedGameStatDefense.Drives);
 
-            writer.WriteNumber("plays", advancedGameStatOffense.Plays);
+            writer.WriteNumber("plays", advancedGameStatDefense.Plays);
 
-            if (advancedGameStatOffense.OpenFieldYards != null)
-                writer.WriteNumber("openFieldYards", advancedGameStatOffense.OpenFieldYards.Value);
+            if (advancedGameStatDefense.OpenFieldYardsTotal != null)
+                writer.WriteNumber("openFieldYardsTotal", advancedGameStatDefense.OpenFieldYardsTotal.Value);
             else
-                writer.WriteNull("openFieldYards");
+                writer.WriteNull("openFieldYardsTotal");
 
-            if (advancedGameStatOffense.PowerSuccess != null)
-                writer.WriteNumber("powerSuccess", advancedGameStatOffense.PowerSuccess.Value);
+            if (advancedGameStatDefense.PowerSuccess != null)
+                writer.WriteNumber("powerSuccess", advancedGameStatDefense.PowerSuccess.Value);
             else
                 writer.WriteNull("powerSuccess");
         }

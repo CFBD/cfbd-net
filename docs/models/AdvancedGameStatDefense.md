@@ -1,4 +1,4 @@
-# CollegeFootballData.Model.AdvancedGameStatOffense
+# CollegeFootballData.Model.AdvancedGameStatDefense
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **RushingPlays** | [**AdvancedGameStatOffensePassingPlays**](AdvancedGameStatOffensePassingPlays.md) |  | 
 **PassingDowns** | [**AdvancedGameStatOffensePassingDowns**](AdvancedGameStatOffensePassingDowns.md) |  | 
 **StandardDowns** | [**AdvancedGameStatOffensePassingDowns**](AdvancedGameStatOffensePassingDowns.md) |  | 
-**OpenFieldYardsTotal** | **int** |  | 
+**OpenFieldYards** | **double** |  | 
 **SecondLevelYardsTotal** | **int** |  | 
 **SecondLevelYards** | **double** |  | 
 **LineYardsTotal** | **int** |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Ppa** | **double** |  | 
 **Drives** | **int** |  | 
 **Plays** | **int** |  | 
-**OpenFieldYards** | **double** |  | 
+**OpenFieldYardsTotal** | **int** |  | 
 **PowerSuccess** | **double** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
