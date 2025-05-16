@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **LineYardsTotal** | **int** |  | 
 **LineYards** | **double** |  | 
 **StuffRate** | **double** |  | 
-**Explosiveness** | **double** |  | 
 **SuccessRate** | **double** |  | 
 **TotalPPA** | **double** |  | 
 **Ppa** | **double** |  | 
@@ -22,6 +21,7 @@ Name | Type | Description | Notes
 **Plays** | **int** |  | 
 **OpenFieldYards** | **double** |  | 
 **PowerSuccess** | **double** |  | 
+**Explosiveness** | **double** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
