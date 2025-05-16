@@ -1,6 +1,6 @@
 # CollegeFootballData.Api.PlaysApi
 
-All URIs are relative to *https://apinext.collegefootballdata.com*
+All URIs are relative to *https://api.collegefootballdata.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://apinext.collegefootballdata.com";
+            config.BasePath = "https://api.collegefootballdata.com";
             // Configure Bearer token for authorization: apiKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -125,7 +125,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://apinext.collegefootballdata.com";
+            config.BasePath = "https://api.collegefootballdata.com";
             // Configure Bearer token for authorization: apiKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -212,7 +212,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://apinext.collegefootballdata.com";
+            config.BasePath = "https://api.collegefootballdata.com";
             // Configure Bearer token for authorization: apiKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -318,7 +318,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://apinext.collegefootballdata.com";
+            config.BasePath = "https://api.collegefootballdata.com";
             // Configure Bearer token for authorization: apiKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -405,7 +405,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://apinext.collegefootballdata.com";
+            config.BasePath = "https://api.collegefootballdata.com";
             // Configure Bearer token for authorization: apiKey
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

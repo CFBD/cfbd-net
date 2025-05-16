@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **LineYardsTotal** | **int** |  | 
 **LineYards** | **double** |  | 
 **StuffRate** | **double** |  | 
-**PowerSuccess** | **double** |  | 
-**Explosiveness** | **double** |  | 
 **SuccessRate** | **double** |  | 
 **TotalPPA** | **double** |  | 
 **Ppa** | **double** |  | 
 **Drives** | **int** |  | 
 **Plays** | **int** |  | 
+**PowerSuccess** | **double** |  | 
+**Explosiveness** | **double** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

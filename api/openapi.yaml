@@ -8,9 +8,9 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.12
+  version: 5.6.13
 servers:
-- url: https://apinext.collegefootballdata.com/
+- url: https://api.collegefootballdata.com/
 tags:
 - description: Games scores and statistics
   name: games
@@ -8247,9 +8247,11 @@ components:
           type: number
         powerSuccess:
           format: double
+          nullable: true
           type: number
         explosiveness:
           format: double
+          nullable: true
           type: number
         successRate:
           format: double
@@ -8380,9 +8382,11 @@ components:
           type: number
         powerSuccess:
           format: double
+          nullable: true
           type: number
         explosiveness:
           format: double
+          nullable: true
           type: number
         successRate:
           format: double
