@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.17
+  version: 5.6.18
 servers:
 - url: https://api.collegefootballdata.com/
 tags:
@@ -9075,27 +9075,35 @@ components:
       properties:
         passingDowns:
           format: double
+          nullable: true
           type: number
         standardDowns:
           format: double
+          nullable: true
           type: number
         thirdDown:
           format: double
+          nullable: true
           type: number
         secondDown:
           format: double
+          nullable: true
           type: number
         firstDown:
           format: double
+          nullable: true
           type: number
         rush:
           format: double
+          nullable: true
           type: number
         pass:
           format: double
+          nullable: true
           type: number
         overall:
           format: double
+          nullable: true
           type: number
       required:
       - firstDown
