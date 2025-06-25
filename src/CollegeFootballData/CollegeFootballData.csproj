@@ -6,15 +6,15 @@
     <AssemblyName>CollegeFootballData</AssemblyName>
     <PackageId>CollegeFootballData</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>CollegeFootballData.com</Authors>
-    <Company>CollegeFootballData.com</Company>
-    <AssemblyTitle>CollegeFootballData.com</AssemblyTitle>
-    <Description>Official client library for the CollegeFootballData.com API</Description>
+    <Authors>OpenAPI</Authors>
+    <Company>OpenAPI</Company>
+    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>CollegeFootballData</RootNamespace>
     <Version>5.6.20</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\CollegeFootballData.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/cfbd/cfb-net.git</RepositoryUrl>
+    <RepositoryUrl>https:////.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>CFBD;CFB;NCAAF;NCAA;football</PackageTags>
     <Nullable>enable</Nullable>
