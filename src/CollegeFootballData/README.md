@@ -1,46 +1,5 @@
 # Created with Openapi Generator
 
-<a id="cli"></a>
-## Run the following powershell command to generate the library
-
-```ps1
-$properties = @(
-    'apiName=Api',
-    'targetFramework=net8.0',
-    'validatable=true',
-    'nullableReferenceTypes=true',
-    'hideGenerationTimestamp=true',
-    'packageVersion=5.6.20',
-    'packageAuthors=OpenAPI',
-    'packageCompany=OpenAPI',
-    'packageCopyright=No Copyright',
-    'packageDescription=A library generated from a OpenAPI doc',
-    'packageName=CollegeFootballData',
-    'packageTags=CFBD;CFB;NCAAF;NCAA;football',
-    'packageTitle=OpenAPI Library'
-) -join ","
-
-$global = @(
-    'apiDocs=true',
-    'modelDocs=true',
-    'apiTests=true',
-    'modelTests=true'
-) -join ","
-
-java -jar "<path>/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar" generate `
-    -g csharp-netcore `
-    -i <your-swagger-file>.yaml `
-    -o <your-output-folder> `
-    --library generichost `
-    --additional-properties $properties `
-    --global-property $global `
-    --git-host "" `
-    --git-repo-id "" `
-    --git-user-id "" `
-    --release-note ""
-    # -t templates
-```
-
 <a id="usage"></a>
 ## Using the library in your project
 
