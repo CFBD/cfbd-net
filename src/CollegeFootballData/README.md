@@ -1,5 +1,46 @@
 # Created with Openapi Generator
 
+<a id="cli"></a>
+## Run the following powershell command to generate the library
+
+```ps1
+$properties = @(
+    'apiName=Api',
+    'targetFramework=net8.0',
+    'validatable=true',
+    'nullableReferenceTypes=true',
+    'hideGenerationTimestamp=true',
+    'packageVersion=5.6.22',
+    'packageAuthors=OpenAPI',
+    'packageCompany=OpenAPI',
+    'packageCopyright=No Copyright',
+    'packageDescription=A library generated from a OpenAPI doc',
+    'packageName=CollegeFootballData',
+    'packageTags=CFBD;CFB;NCAAF;NCAA;football',
+    'packageTitle=OpenAPI Library'
+) -join ","
+
+$global = @(
+    'apiDocs=true',
+    'modelDocs=true',
+    'apiTests=true',
+    'modelTests=true'
+) -join ","
+
+java -jar "<path>/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar" generate `
+    -g csharp-netcore `
+    -i <your-swagger-file>.yaml `
+    -o <your-output-folder> `
+    --library generichost `
+    --additional-properties $properties `
+    --global-property $global `
+    --git-host "" `
+    --git-repo-id "" `
+    --git-user-id "" `
+    --release-note ""
+    # -t templates
+```
+
 <a id="usage"></a>
 ## Using the library in your project
 
@@ -85,13 +126,13 @@ Authentication schemes defined for the API:
 
 
 ## Build
-- SDK version: 5.6.20
+- SDK version: 5.6.22
 - Generator version: 7.12.0
 - Build package: org.openapitools.codegen.languages.CSharpClientCodegen
 
 ## Api Information
 - appName: College Football Data API
-- appVersion: 5.6.20
+- appVersion: 5.6.22
 - appDescription: This is an API for query various college football datasets and analytics. API keys can be acquired from the CollegeFootballData.com website.
 
 ## [OpenApi Global properties](https://openapi-generator.tech/docs/globals)
@@ -129,11 +170,11 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {825B8766-44B8-40C1-B35E-C817432CCB3D}
+- packageGuid: {A9B35CB9-815B-4C82-BDF8-455495E61B63}
 - packageName: CollegeFootballData
 - packageTags: CFBD;CFB;NCAAF;NCAA;football
 - packageTitle: OpenAPI Library
-- packageVersion: 5.6.20
+- packageVersion: 5.6.22
 - releaseNote: 
 - returnICollection: false
 - sortParamsByRequiredFlag: 
