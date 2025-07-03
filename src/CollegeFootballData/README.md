@@ -170,7 +170,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {A9B35CB9-815B-4C82-BDF8-455495E61B63}
+- packageGuid: {BE8E2743-6C64-48FB-A439-07F4F3B665CA}
 - packageName: CollegeFootballData
 - packageTags: CFBD;CFB;NCAAF;NCAA;football
 - packageTitle: OpenAPI Library
