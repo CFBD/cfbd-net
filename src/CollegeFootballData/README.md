@@ -10,7 +10,7 @@ $properties = @(
     'validatable=true',
     'nullableReferenceTypes=true',
     'hideGenerationTimestamp=true',
-    'packageVersion=5.6.22',
+    'packageVersion=5.6.23',
     'packageAuthors=OpenAPI',
     'packageCompany=OpenAPI',
     'packageCopyright=No Copyright',
@@ -126,13 +126,13 @@ Authentication schemes defined for the API:
 
 
 ## Build
-- SDK version: 5.6.22
+- SDK version: 5.6.23
 - Generator version: 7.12.0
 - Build package: org.openapitools.codegen.languages.CSharpClientCodegen
 
 ## Api Information
 - appName: College Football Data API
-- appVersion: 5.6.22
+- appVersion: 5.6.23
 - appDescription: This is an API for query various college football datasets and analytics. API keys can be acquired from the CollegeFootballData.com website.
 
 ## [OpenApi Global properties](https://openapi-generator.tech/docs/globals)
@@ -170,11 +170,11 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {BE8E2743-6C64-48FB-A439-07F4F3B665CA}
+- packageGuid: {9C2CE053-15DA-4402-A7F9-8405F9229664}
 - packageName: CollegeFootballData
 - packageTags: CFBD;CFB;NCAAF;NCAA;football
 - packageTitle: OpenAPI Library
-- packageVersion: 5.6.22
+- packageVersion: 5.6.23
 - releaseNote: 
 - returnICollection: false
 - sortParamsByRequiredFlag: 
