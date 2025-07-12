@@ -11,6 +11,7 @@ docs/apis/ConferencesApi.md
 docs/apis/DraftApi.md
 docs/apis/DrivesApi.md
 docs/apis/GamesApi.md
+docs/apis/InfoApi.md
 docs/apis/MetricsApi.md
 docs/apis/PlayersApi.md
 docs/apis/PlaysApi.md
@@ -143,6 +144,7 @@ docs/models/TeamStatStatValue.md
 docs/models/TeamSuccessRates.md
 docs/models/TeamTalent.md
 docs/models/TransferEligibility.md
+docs/models/UserInfo.md
 docs/models/Venue.md
 docs/scripts/git_push.ps1
 docs/scripts/git_push.sh
@@ -155,6 +157,7 @@ src/CollegeFootballData.Test/Api/DependencyInjectionTests.cs
 src/CollegeFootballData.Test/Api/DraftApiTests.cs
 src/CollegeFootballData.Test/Api/DrivesApiTests.cs
 src/CollegeFootballData.Test/Api/GamesApiTests.cs
+src/CollegeFootballData.Test/Api/InfoApiTests.cs
 src/CollegeFootballData.Test/Api/MetricsApiTests.cs
 src/CollegeFootballData.Test/Api/PlayersApiTests.cs
 src/CollegeFootballData.Test/Api/PlaysApiTests.cs
@@ -288,6 +291,7 @@ src/CollegeFootballData.Test/Model/TeamSuccessRatesTests.cs
 src/CollegeFootballData.Test/Model/TeamTalentTests.cs
 src/CollegeFootballData.Test/Model/TeamTests.cs
 src/CollegeFootballData.Test/Model/TransferEligibilityTests.cs
+src/CollegeFootballData.Test/Model/UserInfoTests.cs
 src/CollegeFootballData.Test/Model/VenueTests.cs
 src/CollegeFootballData.Test/README.md
 src/CollegeFootballData/Api/AdjustedMetricsApi.cs
@@ -298,6 +302,7 @@ src/CollegeFootballData/Api/DraftApi.cs
 src/CollegeFootballData/Api/DrivesApi.cs
 src/CollegeFootballData/Api/GamesApi.cs
 src/CollegeFootballData/Api/IApi.cs
+src/CollegeFootballData/Api/InfoApi.cs
 src/CollegeFootballData/Api/MetricsApi.cs
 src/CollegeFootballData/Api/PlayersApi.cs
 src/CollegeFootballData/Api/PlaysApi.cs
@@ -453,5 +458,6 @@ src/CollegeFootballData/Model/TeamStatStatValue.cs
 src/CollegeFootballData/Model/TeamSuccessRates.cs
 src/CollegeFootballData/Model/TeamTalent.cs
 src/CollegeFootballData/Model/TransferEligibility.cs
+src/CollegeFootballData/Model/UserInfo.cs
 src/CollegeFootballData/Model/Venue.cs
 src/CollegeFootballData/README.md

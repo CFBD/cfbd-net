@@ -8,7 +8,7 @@ info:
   license:
     name: MIT
   title: College Football Data API
-  version: 5.6.24
+  version: 5.7.0
 servers:
 - url: https://api.collegefootballdata.com/
 tags:
@@ -44,6 +44,8 @@ tags:
   name: draft
 - description: Metrics adjusted for opponent strength and other factors
   name: adjustedMetrics
+- description: General information about the API and user
+  name: info
 paths:
   /wepa/team/season:
     get:
@@ -2097,6 +2099,26 @@ paths:
       - apiKey: []
       tags:
       - betting
+  /info:
+    get:
+      description: "Retrieves information about the user, including their Patreon\
+        \ level and remaining API calls."
+      operationId: GetUserInfo
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: "#/components/schemas/UserInfo"
+                nullable: true
+          description: "UserInfo object containing patron level and remaining calls,\
+            \ or null if not authenticated."
+      security:
+      - apiKey: []
+      tags:
+      - info
   /games:
     get:
       description: Retrieves historical game data
@@ -5955,6 +5977,19 @@ components:
       - seasonType
       - startDate
       - week
+      type: object
+    UserInfo:
+      additionalProperties: false
+      properties:
+        patronLevel:
+          format: double
+          type: number
+        remainingCalls:
+          format: double
+          type: number
+      required:
+      - patronLevel
+      - remainingCalls
       type: object
     Game:
       additionalProperties: false
