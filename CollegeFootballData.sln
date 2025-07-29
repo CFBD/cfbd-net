@@ -2,9 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeFootballData", "src\CollegeFootballData\CollegeFootballData.csproj", "{5DF532F3-9490-4D76-95BE-C494C8C324DE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeFootballData.Test", "src\CollegeFootballData.Test\CollegeFootballData.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeFootballData", "src\CollegeFootballData.csproj", "{5DF532F3-9490-4D76-95BE-C494C8C324DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
