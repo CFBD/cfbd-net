@@ -18,8 +18,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>CFBD;CFB;NCAAF;NCAA;football</PackageTags>
     <Nullable>enable</Nullable>
-    <PackageReadmeFile>../README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Kiota.Abstractions" Version="1.19.0" />
