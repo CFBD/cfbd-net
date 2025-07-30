@@ -18,6 +18,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>CFBD;CFB;NCAAF;NCAA;football</PackageTags>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>../README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
