@@ -45,7 +45,7 @@ namespace CollegeFootballData.Models
         public string Country { get; set; }
 #endif
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public double? Height { get; set; }
         /// <summary>The hometownInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,7 +128,7 @@ namespace CollegeFootballData.Models
                 { "city", n => { City = n.GetStringValue(); } },
                 { "committedTo", n => { CommittedTo = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetDoubleValue(); } },
                 { "hometownInfo", n => { HometownInfo = n.GetObjectValue<global::CollegeFootballData.Models.Recruit_hometownInfo>(global::CollegeFootballData.Models.Recruit_hometownInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -154,7 +154,7 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("committedTo", CommittedTo);
             writer.WriteStringValue("country", Country);
-            writer.WriteIntValue("height", Height);
+            writer.WriteDoubleValue("height", Height);
             writer.WriteObjectValue<global::CollegeFootballData.Models.Recruit_hometownInfo>("hometownInfo", HometownInfo);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

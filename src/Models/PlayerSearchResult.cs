@@ -21,7 +21,7 @@ namespace CollegeFootballData.Models
         public string FirstName { get; set; }
 #endif
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public double? Height { get; set; }
         /// <summary>The hometown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +109,7 @@ namespace CollegeFootballData.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetDoubleValue(); } },
                 { "hometown", n => { Hometown = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "jersey", n => { Jersey = n.GetIntValue(); } },
@@ -130,7 +130,7 @@ namespace CollegeFootballData.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("firstName", FirstName);
-            writer.WriteIntValue("height", Height);
+            writer.WriteDoubleValue("height", Height);
             writer.WriteStringValue("hometown", Hometown);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("jersey", Jersey);

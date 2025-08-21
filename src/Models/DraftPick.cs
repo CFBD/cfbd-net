@@ -33,7 +33,7 @@ namespace CollegeFootballData.Models
         public string CollegeTeam { get; set; }
 #endif
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public double? Height { get; set; }
         /// <summary>The hometownInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,7 +108,7 @@ namespace CollegeFootballData.Models
                 { "collegeConference", n => { CollegeConference = n.GetStringValue(); } },
                 { "collegeId", n => { CollegeId = n.GetIntValue(); } },
                 { "collegeTeam", n => { CollegeTeam = n.GetStringValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetDoubleValue(); } },
                 { "hometownInfo", n => { HometownInfo = n.GetObjectValue<global::CollegeFootballData.Models.DraftPick_hometownInfo>(global::CollegeFootballData.Models.DraftPick_hometownInfo.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nflAthleteId", n => { NflAthleteId = n.GetIntValue(); } },
@@ -136,7 +136,7 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("collegeConference", CollegeConference);
             writer.WriteIntValue("collegeId", CollegeId);
             writer.WriteStringValue("collegeTeam", CollegeTeam);
-            writer.WriteIntValue("height", Height);
+            writer.WriteDoubleValue("height", Height);
             writer.WriteObjectValue<global::CollegeFootballData.Models.DraftPick_hometownInfo>("hometownInfo", HometownInfo);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("nflAthleteId", NflAthleteId);
