@@ -62,8 +62,8 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The playTypeId property</summary>
         public int? PlayTypeId { get; set; }
-        /// <summary>The rushPash property</summary>
-        public global::CollegeFootballData.Models.LiveGamePlay_rushPash? RushPash { get; set; }
+        /// <summary>The rushPass property</summary>
+        public global::CollegeFootballData.Models.LiveGamePlay_rushPass? RushPass { get; set; }
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
         /// <summary>The team property</summary>
@@ -113,7 +113,7 @@ namespace CollegeFootballData.Models
                 { "playText", n => { PlayText = n.GetStringValue(); } },
                 { "playType", n => { PlayType = n.GetStringValue(); } },
                 { "playTypeId", n => { PlayTypeId = n.GetIntValue(); } },
-                { "rushPash", n => { RushPash = n.GetEnumValue<global::CollegeFootballData.Models.LiveGamePlay_rushPash>(); } },
+                { "rushPass", n => { RushPass = n.GetEnumValue<global::CollegeFootballData.Models.LiveGamePlay_rushPass>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "team", n => { Team = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetIntValue(); } },
@@ -142,7 +142,7 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("playText", PlayText);
             writer.WriteStringValue("playType", PlayType);
             writer.WriteIntValue("playTypeId", PlayTypeId);
-            writer.WriteEnumValue<global::CollegeFootballData.Models.LiveGamePlay_rushPash>("rushPash", RushPash);
+            writer.WriteEnumValue<global::CollegeFootballData.Models.LiveGamePlay_rushPass>("rushPass", RushPass);
             writer.WriteBoolValue("success", Success);
             writer.WriteStringValue("team", Team);
             writer.WriteIntValue("teamId", TeamId);
