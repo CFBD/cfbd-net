@@ -96,7 +96,7 @@ namespace CollegeFootballData.Roster
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter, defaults to 2023</summary>
+            /// <summary>Optional year filter, defaults to 2025</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }
