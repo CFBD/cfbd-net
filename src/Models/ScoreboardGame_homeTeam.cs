@@ -44,6 +44,8 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The points property</summary>
         public int? Points { get; set; }
+        /// <summary>The winProbability property</summary>
+        public double? WinProbability { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::CollegeFootballData.Models.ScoreboardGame_homeTeam"/> and sets the default values.
         /// </summary>
@@ -75,6 +77,7 @@ namespace CollegeFootballData.Models
                 { "lineScores", n => { LineScores = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "points", n => { Points = n.GetIntValue(); } },
+                { "winProbability", n => { WinProbability = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -90,6 +93,7 @@ namespace CollegeFootballData.Models
             writer.WriteCollectionOfPrimitiveValues<int?>("lineScores", LineScores);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("points", Points);
+            writer.WriteDoubleValue("winProbability", WinProbability);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
