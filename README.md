@@ -19,7 +19,7 @@ Install-Package CollegeFootballData
 Or via PackageReference in your `.csproj` file:
 
 ```xml
-<PackageReference Include="CollegeFootballData" Version="5.8.0" />
+<PackageReference Include="CollegeFootballData" Version="5.10.0" />
 ```
 
 ## Quick Start
