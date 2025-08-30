@@ -12,6 +12,10 @@ namespace CollegeFootballData.Models
     public partial class LiveGameTeam : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The averageStartYardLine property</summary>
+        public double? AverageStartYardLine { get; set; }
+        /// <summary>Deserve-to-win metric for this team</summary>
+        public double? DeserveToWin { get; set; }
         /// <summary>The drives property</summary>
         public int? Drives { get; set; }
         /// <summary>The epaPerPass property</summary>
@@ -92,6 +96,8 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "averageStartYardLine", n => { AverageStartYardLine = n.GetDoubleValue(); } },
+                { "deserveToWin", n => { DeserveToWin = n.GetDoubleValue(); } },
                 { "drives", n => { Drives = n.GetIntValue(); } },
                 { "epaPerPass", n => { EpaPerPass = n.GetDoubleValue(); } },
                 { "epaPerPlay", n => { EpaPerPlay = n.GetDoubleValue(); } },
@@ -126,6 +132,8 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("averageStartYardLine", AverageStartYardLine);
+            writer.WriteDoubleValue("deserveToWin", DeserveToWin);
             writer.WriteIntValue("drives", Drives);
             writer.WriteDoubleValue("epaPerPass", EpaPerPass);
             writer.WriteDoubleValue("epaPerPlay", EpaPerPlay);
