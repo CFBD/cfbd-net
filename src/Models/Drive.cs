@@ -38,6 +38,14 @@ namespace CollegeFootballData.Models
 #else
         public string DriveResult { get; set; }
 #endif
+        /// <summary>The elapsed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.Drive_elapsed? Elapsed { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.Drive_elapsed Elapsed { get; set; }
+#endif
         /// <summary>The endDefenseScore property</summary>
         public int? EndDefenseScore { get; set; }
         /// <summary>The endOffenseScore property</summary>
@@ -130,6 +138,7 @@ namespace CollegeFootballData.Models
                 { "defenseConference", n => { DefenseConference = n.GetStringValue(); } },
                 { "driveNumber", n => { DriveNumber = n.GetIntValue(); } },
                 { "driveResult", n => { DriveResult = n.GetStringValue(); } },
+                { "elapsed", n => { Elapsed = n.GetObjectValue<global::CollegeFootballData.Models.Drive_elapsed>(global::CollegeFootballData.Models.Drive_elapsed.CreateFromDiscriminatorValue); } },
                 { "endDefenseScore", n => { EndDefenseScore = n.GetIntValue(); } },
                 { "endOffenseScore", n => { EndOffenseScore = n.GetIntValue(); } },
                 { "endPeriod", n => { EndPeriod = n.GetIntValue(); } },
@@ -163,6 +172,7 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("defenseConference", DefenseConference);
             writer.WriteIntValue("driveNumber", DriveNumber);
             writer.WriteStringValue("driveResult", DriveResult);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.Drive_elapsed>("elapsed", Elapsed);
             writer.WriteIntValue("endDefenseScore", EndDefenseScore);
             writer.WriteIntValue("endOffenseScore", EndOffenseScore);
             writer.WriteIntValue("endPeriod", EndPeriod);
