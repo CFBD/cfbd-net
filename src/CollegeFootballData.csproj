@@ -13,7 +13,7 @@
     <Copyright>No Copyright</Copyright>
     <RootNamespace>CollegeFootballData</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>5.11.2</Version>
+    <Version>5.11.3</Version>
     <RepositoryUrl>https://github.com/cfbd/cfb-net.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>CFBD;CFB;NCAAF;NCAA;football</PackageTags>
