@@ -34,6 +34,8 @@ namespace CollegeFootballData.Models
 #else
         public string School { get; set; }
 #endif
+        /// <summary>The teamId property</summary>
+        public int? TeamId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +59,7 @@ namespace CollegeFootballData.Models
                 { "points", n => { Points = n.GetIntValue(); } },
                 { "rank", n => { Rank = n.GetIntValue(); } },
                 { "school", n => { School = n.GetStringValue(); } },
+                { "teamId", n => { TeamId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -71,6 +74,7 @@ namespace CollegeFootballData.Models
             writer.WriteIntValue("points", Points);
             writer.WriteIntValue("rank", Rank);
             writer.WriteStringValue("school", School);
+            writer.WriteIntValue("teamId", TeamId);
         }
     }
 }
