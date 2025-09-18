@@ -32,6 +32,8 @@ namespace CollegeFootballData.Models
 #else
         public string AwayTeam { get; set; }
 #endif
+        /// <summary>The awayTeamId property</summary>
+        public int? AwayTeamId { get; set; }
         /// <summary>The homeClassification property</summary>
         public global::CollegeFootballData.Models.DivisionClassification? HomeClassification { get; set; }
         /// <summary>The homeConference property</summary>
@@ -52,6 +54,8 @@ namespace CollegeFootballData.Models
 #else
         public string HomeTeam { get; set; }
 #endif
+        /// <summary>The homeTeamId property</summary>
+        public int? HomeTeamId { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The lines property</summary>
@@ -92,10 +96,12 @@ namespace CollegeFootballData.Models
                 { "awayConference", n => { AwayConference = n.GetStringValue(); } },
                 { "awayScore", n => { AwayScore = n.GetIntValue(); } },
                 { "awayTeam", n => { AwayTeam = n.GetStringValue(); } },
+                { "awayTeamId", n => { AwayTeamId = n.GetIntValue(); } },
                 { "homeClassification", n => { HomeClassification = n.GetEnumValue<global::CollegeFootballData.Models.DivisionClassification>(); } },
                 { "homeConference", n => { HomeConference = n.GetStringValue(); } },
                 { "homeScore", n => { HomeScore = n.GetIntValue(); } },
                 { "homeTeam", n => { HomeTeam = n.GetStringValue(); } },
+                { "homeTeamId", n => { HomeTeamId = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "lines", n => { Lines = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.GameLine>(global::CollegeFootballData.Models.GameLine.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "season", n => { Season = n.GetIntValue(); } },
@@ -115,10 +121,12 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("awayConference", AwayConference);
             writer.WriteIntValue("awayScore", AwayScore);
             writer.WriteStringValue("awayTeam", AwayTeam);
+            writer.WriteIntValue("awayTeamId", AwayTeamId);
             writer.WriteEnumValue<global::CollegeFootballData.Models.DivisionClassification>("homeClassification", HomeClassification);
             writer.WriteStringValue("homeConference", HomeConference);
             writer.WriteIntValue("homeScore", HomeScore);
             writer.WriteStringValue("homeTeam", HomeTeam);
+            writer.WriteIntValue("homeTeamId", HomeTeamId);
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.GameLine>("lines", Lines);
             writer.WriteIntValue("season", Season);
