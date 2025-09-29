@@ -22,7 +22,7 @@ namespace CollegeFootballData.Roster
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RosterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roster{?team*,year*}", pathParameters)
+        public RosterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roster{?classification*,team*,year*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace CollegeFootballData.Roster
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RosterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roster{?team*,year*}", rawUrl)
+        public RosterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roster{?classification*,team*,year*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,6 +86,20 @@ namespace CollegeFootballData.Roster
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RosterRequestBuilderGetQueryParameters 
         {
+            /// <summary>Optional filter to only include players from FBS or FCS teams</summary>
+            [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("classification")]
+            public string? Classification { get; set; }
+#nullable restore
+#else
+            [QueryParameter("classification")]
+            public string Classification { get; set; }
+#endif
+            /// <summary>Optional filter to only include players from FBS or FCS teams</summary>
+            [QueryParameter("classification")]
+            public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
             /// <summary>Optional team filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

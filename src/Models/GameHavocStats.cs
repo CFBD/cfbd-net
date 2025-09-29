@@ -9,26 +9,34 @@ namespace CollegeFootballData.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AdvancedGameStat : IParsable
+    public partial class GameHavocStats : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The conference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Conference { get; set; }
+#nullable restore
+#else
+        public string Conference { get; set; }
+#endif
         /// <summary>The defense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::CollegeFootballData.Models.AdvancedGameStat_defense? Defense { get; set; }
+        public global::CollegeFootballData.Models.GameHavocStats_defense? Defense { get; set; }
 #nullable restore
 #else
-        public global::CollegeFootballData.Models.AdvancedGameStat_defense Defense { get; set; }
+        public global::CollegeFootballData.Models.GameHavocStats_defense Defense { get; set; }
 #endif
         /// <summary>The gameId property</summary>
         public int? GameId { get; set; }
         /// <summary>The offense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::CollegeFootballData.Models.AdvancedGameStat_offense? Offense { get; set; }
+        public global::CollegeFootballData.Models.GameHavocStats_offense? Offense { get; set; }
 #nullable restore
 #else
-        public global::CollegeFootballData.Models.AdvancedGameStat_offense Offense { get; set; }
+        public global::CollegeFootballData.Models.GameHavocStats_offense Offense { get; set; }
 #endif
         /// <summary>The opponent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +45,14 @@ namespace CollegeFootballData.Models
 #nullable restore
 #else
         public string Opponent { get; set; }
+#endif
+        /// <summary>The opponentConference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OpponentConference { get; set; }
+#nullable restore
+#else
+        public string OpponentConference { get; set; }
 #endif
         /// <summary>The season property</summary>
         public int? Season { get; set; }
@@ -55,12 +71,12 @@ namespace CollegeFootballData.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.AdvancedGameStat"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.GameHavocStats"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.AdvancedGameStat CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.GameHavocStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.AdvancedGameStat();
+            return new global::CollegeFootballData.Models.GameHavocStats();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,10 +86,12 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "defense", n => { Defense = n.GetObjectValue<global::CollegeFootballData.Models.AdvancedGameStat_defense>(global::CollegeFootballData.Models.AdvancedGameStat_defense.CreateFromDiscriminatorValue); } },
+                { "conference", n => { Conference = n.GetStringValue(); } },
+                { "defense", n => { Defense = n.GetObjectValue<global::CollegeFootballData.Models.GameHavocStats_defense>(global::CollegeFootballData.Models.GameHavocStats_defense.CreateFromDiscriminatorValue); } },
                 { "gameId", n => { GameId = n.GetIntValue(); } },
-                { "offense", n => { Offense = n.GetObjectValue<global::CollegeFootballData.Models.AdvancedGameStat_offense>(global::CollegeFootballData.Models.AdvancedGameStat_offense.CreateFromDiscriminatorValue); } },
+                { "offense", n => { Offense = n.GetObjectValue<global::CollegeFootballData.Models.GameHavocStats_offense>(global::CollegeFootballData.Models.GameHavocStats_offense.CreateFromDiscriminatorValue); } },
                 { "opponent", n => { Opponent = n.GetStringValue(); } },
+                { "opponentConference", n => { OpponentConference = n.GetStringValue(); } },
                 { "season", n => { Season = n.GetIntValue(); } },
                 { "seasonType", n => { SeasonType = n.GetEnumValue<global::CollegeFootballData.Models.SeasonTypeDB>(); } },
                 { "team", n => { Team = n.GetStringValue(); } },
@@ -87,10 +105,12 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::CollegeFootballData.Models.AdvancedGameStat_defense>("defense", Defense);
+            writer.WriteStringValue("conference", Conference);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.GameHavocStats_defense>("defense", Defense);
             writer.WriteIntValue("gameId", GameId);
-            writer.WriteObjectValue<global::CollegeFootballData.Models.AdvancedGameStat_offense>("offense", Offense);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.GameHavocStats_offense>("offense", Offense);
             writer.WriteStringValue("opponent", Opponent);
+            writer.WriteStringValue("opponentConference", OpponentConference);
             writer.WriteIntValue("season", Season);
             writer.WriteEnumValue<global::CollegeFootballData.Models.SeasonTypeDB>("seasonType", SeasonType);
             writer.WriteStringValue("team", Team);
