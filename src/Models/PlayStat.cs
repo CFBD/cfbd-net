@@ -111,7 +111,7 @@ namespace CollegeFootballData.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::CollegeFootballData.Models.PlayStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::CollegeFootballData.Models.PlayStat();
         }
         /// <summary>
@@ -149,7 +149,7 @@ namespace CollegeFootballData.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("athleteId", AthleteId);
             writer.WriteStringValue("athleteName", AthleteName);
             writer.WriteObjectValue<global::CollegeFootballData.Models.PlayStat_clock>("clock", Clock);

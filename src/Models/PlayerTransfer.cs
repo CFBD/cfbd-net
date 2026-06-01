@@ -69,7 +69,7 @@ namespace CollegeFootballData.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::CollegeFootballData.Models.PlayerTransfer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::CollegeFootballData.Models.PlayerTransfer();
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace CollegeFootballData.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination", Destination);
             writer.WriteEnumValue<global::CollegeFootballData.Models.TransferEligibility>("eligibility", Eligibility);
             writer.WriteStringValue("firstName", FirstName);

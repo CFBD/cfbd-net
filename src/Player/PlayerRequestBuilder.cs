@@ -3,6 +3,7 @@
 using CollegeFootballData.Player.Portal;
 using CollegeFootballData.Player.Returning;
 using CollegeFootballData.Player.Search;
+using CollegeFootballData.Player.Season;
 using CollegeFootballData.Player.Usage;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
@@ -32,6 +33,11 @@ namespace CollegeFootballData.Player
         public global::CollegeFootballData.Player.Search.SearchRequestBuilder Search
         {
             get => new global::CollegeFootballData.Player.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The season property</summary>
+        public global::CollegeFootballData.Player.Season.SeasonRequestBuilder Season
+        {
+            get => new global::CollegeFootballData.Player.Season.SeasonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The usage property</summary>
         public global::CollegeFootballData.Player.Usage.UsageRequestBuilder Usage
