@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "A4AA05544942857AD224B11AAAFC56BF80C8E02FBD63D333617B03211EB47CE50F204EBED08919D76011F59CE734B48AB03B26BEF297E005A3F1ADE6776D617D",
+  "descriptionHash": "2A27F34AF53318FE940BDA92D3695054E4B9D0E16C08F520C2AA1D2145E51EC6FB98E6B079AD2237D71DC3EBC2105453044F8F7E8BA45F44A47B2FA4DD595653",
   "descriptionLocation": "../api-docs.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.32.2",
   "clientClassName": "ApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "CollegeFootballData",
