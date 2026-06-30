@@ -12,10 +12,48 @@ namespace CollegeFootballData.Models
     public partial class UserInfo : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The features property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.UserFeatureAccess? Features { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.UserFeatureAccess Features { get; set; }
+#endif
+        /// <summary>The monthlyLimit property</summary>
+        public double? MonthlyLimit { get; set; }
         /// <summary>The patronLevel property</summary>
         public double? PatronLevel { get; set; }
+        /// <summary>The products property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Products { get; set; }
+#nullable restore
+#else
+        public List<string> Products { get; set; }
+#endif
         /// <summary>The remainingCalls property</summary>
         public double? RemainingCalls { get; set; }
+        /// <summary>The resetAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResetAt { get; set; }
+#nullable restore
+#else
+        public string ResetAt { get; set; }
+#endif
+        /// <summary>The sharedPool property</summary>
+        public bool? SharedPool { get; set; }
+        /// <summary>The tierName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TierName { get; set; }
+#nullable restore
+#else
+        public string TierName { get; set; }
+#endif
+        /// <summary>The usedCalls property</summary>
+        public double? UsedCalls { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,8 +72,15 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "features", n => { Features = n.GetObjectValue<global::CollegeFootballData.Models.UserFeatureAccess>(global::CollegeFootballData.Models.UserFeatureAccess.CreateFromDiscriminatorValue); } },
+                { "monthlyLimit", n => { MonthlyLimit = n.GetDoubleValue(); } },
                 { "patronLevel", n => { PatronLevel = n.GetDoubleValue(); } },
+                { "products", n => { Products = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "remainingCalls", n => { RemainingCalls = n.GetDoubleValue(); } },
+                { "resetAt", n => { ResetAt = n.GetStringValue(); } },
+                { "sharedPool", n => { SharedPool = n.GetBoolValue(); } },
+                { "tierName", n => { TierName = n.GetStringValue(); } },
+                { "usedCalls", n => { UsedCalls = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -45,8 +90,15 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::CollegeFootballData.Models.UserFeatureAccess>("features", Features);
+            writer.WriteDoubleValue("monthlyLimit", MonthlyLimit);
             writer.WriteDoubleValue("patronLevel", PatronLevel);
+            writer.WriteCollectionOfPrimitiveValues<string>("products", Products);
             writer.WriteDoubleValue("remainingCalls", RemainingCalls);
+            writer.WriteStringValue("resetAt", ResetAt);
+            writer.WriteBoolValue("sharedPool", SharedPool);
+            writer.WriteStringValue("tierName", TierName);
+            writer.WriteDoubleValue("usedCalls", UsedCalls);
         }
     }
 }
