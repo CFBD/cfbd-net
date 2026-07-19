@@ -46,7 +46,7 @@ namespace CollegeFootballData.Games
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/games{?away*,classification*,conference*,home*,id*,seasonType*,team*,week*,year*}", pathParameters)
+        public GamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/games{?away*,classification*,competition*,conference*,home*,id*,round*,seasonType*,team*,week*,year*}", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace CollegeFootballData.Games
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/games{?away*,classification*,conference*,home*,id*,seasonType*,team*,week*,year*}", rawUrl)
+        public GamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/games{?away*,classification*,competition*,conference*,home*,id*,round*,seasonType*,team*,week*,year*}", rawUrl)
         {
         }
         /// <summary>
@@ -63,6 +63,7 @@ namespace CollegeFootballData.Games
         /// <returns>A List&lt;global::CollegeFootballData.Models.Game&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::CollegeFootballData.Games.Games400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::CollegeFootballData.Models.Game>?> GetAsync(Action<RequestConfiguration<global::CollegeFootballData.Games.GamesRequestBuilder.GamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,7 +74,11 @@ namespace CollegeFootballData.Games
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::CollegeFootballData.Models.Game>(requestInfo, global::CollegeFootballData.Models.Game.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::CollegeFootballData.Games.Games400Error.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::CollegeFootballData.Models.Game>(requestInfo, global::CollegeFootballData.Models.Game.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -134,6 +139,20 @@ namespace CollegeFootballData.Games
             /// <summary>Optional division classification filter</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
+            /// <summary>Optional playoff competition filter</summary>
+            [Obsolete("This property is deprecated, use CompetitionAsPlayoffCompetition instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("competition")]
+            public string? Competition { get; set; }
+#nullable restore
+#else
+            [QueryParameter("competition")]
+            public string Competition { get; set; }
+#endif
+            /// <summary>Optional playoff competition filter</summary>
+            [QueryParameter("competition")]
+            public global::CollegeFootballData.Models.PlayoffCompetition? CompetitionAsPlayoffCompetition { get; set; }
             /// <summary>Optional conference filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +176,20 @@ namespace CollegeFootballData.Games
             /// <summary>Game id filter to retrieve a single game</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
+            /// <summary>Optional playoff round filter; requires competition</summary>
+            [Obsolete("This property is deprecated, use RoundAsPlayoffRound instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("round")]
+            public string? Round { get; set; }
+#nullable restore
+#else
+            [QueryParameter("round")]
+            public string Round { get; set; }
+#endif
+            /// <summary>Optional playoff round filter; requires competition</summary>
+            [QueryParameter("round")]
+            public global::CollegeFootballData.Models.PlayoffRound? RoundAsPlayoffRound { get; set; }
             /// <summary>Optional season type filter</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

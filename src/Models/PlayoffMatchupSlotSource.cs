@@ -9,36 +9,30 @@ namespace CollegeFootballData.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Poll : IParsable
+    public partial class PlayoffMatchupSlotSource : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isFinal property</summary>
-        public bool? IsFinal { get; set; }
-        /// <summary>The poll property</summary>
+        /// <summary>The bracketSlot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PollProp { get; set; }
+        public string? BracketSlot { get; set; }
 #nullable restore
 #else
-        public string PollProp { get; set; }
+        public string BracketSlot { get; set; }
 #endif
-        /// <summary>The ranks property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::CollegeFootballData.Models.PollRank>? Ranks { get; set; }
-#nullable restore
-#else
-        public List<global::CollegeFootballData.Models.PollRank> Ranks { get; set; }
-#endif
+        /// <summary>The matchupId property</summary>
+        public int? MatchupId { get; set; }
+        /// <summary>The outcome property</summary>
+        public global::CollegeFootballData.Models.PlayoffMatchupSlotSource_outcome? Outcome { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.Poll"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.PlayoffMatchupSlotSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.Poll CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.PlayoffMatchupSlotSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.Poll();
+            return new global::CollegeFootballData.Models.PlayoffMatchupSlotSource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +42,9 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "isFinal", n => { IsFinal = n.GetBoolValue(); } },
-                { "poll", n => { PollProp = n.GetStringValue(); } },
-                { "ranks", n => { Ranks = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>(global::CollegeFootballData.Models.PollRank.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bracketSlot", n => { BracketSlot = n.GetStringValue(); } },
+                { "matchupId", n => { MatchupId = n.GetIntValue(); } },
+                { "outcome", n => { Outcome = n.GetEnumValue<global::CollegeFootballData.Models.PlayoffMatchupSlotSource_outcome>(); } },
             };
         }
         /// <summary>
@@ -60,9 +54,9 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("isFinal", IsFinal);
-            writer.WriteStringValue("poll", PollProp);
-            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>("ranks", Ranks);
+            writer.WriteStringValue("bracketSlot", BracketSlot);
+            writer.WriteIntValue("matchupId", MatchupId);
+            writer.WriteEnumValue<global::CollegeFootballData.Models.PlayoffMatchupSlotSource_outcome>("outcome", Outcome);
         }
     }
 }

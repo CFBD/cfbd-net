@@ -12,6 +12,7 @@ using CollegeFootballData.Lines;
 using CollegeFootballData.Live;
 using CollegeFootballData.Metrics;
 using CollegeFootballData.Player;
+using CollegeFootballData.Playoffs;
 using CollegeFootballData.Plays;
 using CollegeFootballData.Ppa;
 using CollegeFootballData.Rankings;
@@ -102,6 +103,11 @@ namespace CollegeFootballData
         public global::CollegeFootballData.Player.PlayerRequestBuilder Player
         {
             get => new global::CollegeFootballData.Player.PlayerRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The playoffs property</summary>
+        public global::CollegeFootballData.Playoffs.PlayoffsRequestBuilder Playoffs
+        {
+            get => new global::CollegeFootballData.Playoffs.PlayoffsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plays property</summary>
         public global::CollegeFootballData.Plays.PlaysRequestBuilder Plays

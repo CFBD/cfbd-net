@@ -12,6 +12,10 @@ namespace CollegeFootballData.Models
     public partial class PlayerSearchResult : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The activeEndYear property</summary>
+        public int? ActiveEndYear { get; set; }
+        /// <summary>The activeStartYear property</summary>
+        public int? ActiveStartYear { get; set; }
         /// <summary>The firstName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +92,14 @@ namespace CollegeFootballData.Models
 #else
         public string TeamColorSecondary { get; set; }
 #endif
+        /// <summary>The teamStints property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::CollegeFootballData.Models.PlayerSearchTeamStint>? TeamStints { get; set; }
+#nullable restore
+#else
+        public List<global::CollegeFootballData.Models.PlayerSearchTeamStint> TeamStints { get; set; }
+#endif
         /// <summary>The weight property</summary>
         public int? Weight { get; set; }
         /// <summary>
@@ -108,6 +120,8 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "activeEndYear", n => { ActiveEndYear = n.GetIntValue(); } },
+                { "activeStartYear", n => { ActiveStartYear = n.GetIntValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetDoubleValue(); } },
                 { "hometown", n => { Hometown = n.GetStringValue(); } },
@@ -119,6 +133,7 @@ namespace CollegeFootballData.Models
                 { "team", n => { Team = n.GetStringValue(); } },
                 { "teamColor", n => { TeamColor = n.GetStringValue(); } },
                 { "teamColorSecondary", n => { TeamColorSecondary = n.GetStringValue(); } },
+                { "teamStints", n => { TeamStints = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerSearchTeamStint>(global::CollegeFootballData.Models.PlayerSearchTeamStint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "weight", n => { Weight = n.GetIntValue(); } },
             };
         }
@@ -129,6 +144,8 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("activeEndYear", ActiveEndYear);
+            writer.WriteIntValue("activeStartYear", ActiveStartYear);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteDoubleValue("height", Height);
             writer.WriteStringValue("hometown", Hometown);
@@ -140,6 +157,7 @@ namespace CollegeFootballData.Models
             writer.WriteStringValue("team", Team);
             writer.WriteStringValue("teamColor", TeamColor);
             writer.WriteStringValue("teamColorSecondary", TeamColorSecondary);
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerSearchTeamStint>("teamStints", TeamStints);
             writer.WriteIntValue("weight", Weight);
         }
     }

@@ -112,6 +112,14 @@ namespace CollegeFootballData.Models
 #else
         public string Notes { get; set; }
 #endif
+        /// <summary>The playoff property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.GamePlayoff? Playoff { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.GamePlayoff Playoff { get; set; }
+#endif
         /// <summary>The season property</summary>
         public int? Season { get; set; }
         /// <summary>The seasonType property</summary>
@@ -176,6 +184,7 @@ namespace CollegeFootballData.Models
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "neutralSite", n => { NeutralSite = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
+                { "playoff", n => { Playoff = n.GetObjectValue<global::CollegeFootballData.Models.GamePlayoff>(global::CollegeFootballData.Models.GamePlayoff.CreateFromDiscriminatorValue); } },
                 { "season", n => { Season = n.GetIntValue(); } },
                 { "seasonType", n => { SeasonType = n.GetEnumValue<global::CollegeFootballData.Models.SeasonType>(); } },
                 { "startDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
@@ -218,6 +227,7 @@ namespace CollegeFootballData.Models
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("neutralSite", NeutralSite);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.GamePlayoff>("playoff", Playoff);
             writer.WriteIntValue("season", Season);
             writer.WriteEnumValue<global::CollegeFootballData.Models.SeasonType>("seasonType", SeasonType);
             writer.WriteDateTimeOffsetValue("startDate", StartDate);

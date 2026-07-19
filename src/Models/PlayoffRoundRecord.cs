@@ -9,36 +9,38 @@ namespace CollegeFootballData.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Poll : IParsable
+    public partial class PlayoffRoundRecord : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isFinal property</summary>
-        public bool? IsFinal { get; set; }
-        /// <summary>The poll property</summary>
+        /// <summary>The code property</summary>
+        public global::CollegeFootballData.Models.PlayoffRound? Code { get; set; }
+        /// <summary>The matchups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PollProp { get; set; }
+        public List<global::CollegeFootballData.Models.PlayoffMatchup>? Matchups { get; set; }
 #nullable restore
 #else
-        public string PollProp { get; set; }
+        public List<global::CollegeFootballData.Models.PlayoffMatchup> Matchups { get; set; }
 #endif
-        /// <summary>The ranks property</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::CollegeFootballData.Models.PollRank>? Ranks { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public List<global::CollegeFootballData.Models.PollRank> Ranks { get; set; }
+        public string Name { get; set; }
 #endif
+        /// <summary>The order property</summary>
+        public int? Order { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.Poll"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.PlayoffRoundRecord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.Poll CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.PlayoffRoundRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.Poll();
+            return new global::CollegeFootballData.Models.PlayoffRoundRecord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +50,10 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "isFinal", n => { IsFinal = n.GetBoolValue(); } },
-                { "poll", n => { PollProp = n.GetStringValue(); } },
-                { "ranks", n => { Ranks = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>(global::CollegeFootballData.Models.PollRank.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "code", n => { Code = n.GetEnumValue<global::CollegeFootballData.Models.PlayoffRound>(); } },
+                { "matchups", n => { Matchups = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayoffMatchup>(global::CollegeFootballData.Models.PlayoffMatchup.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "order", n => { Order = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -60,9 +63,10 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("isFinal", IsFinal);
-            writer.WriteStringValue("poll", PollProp);
-            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>("ranks", Ranks);
+            writer.WriteEnumValue<global::CollegeFootballData.Models.PlayoffRound>("code", Code);
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayoffMatchup>("matchups", Matchups);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("order", Order);
         }
     }
 }

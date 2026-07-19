@@ -9,36 +9,30 @@ namespace CollegeFootballData.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Poll : IParsable
+    public partial class PlayerSearchTeamStint : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isFinal property</summary>
-        public bool? IsFinal { get; set; }
-        /// <summary>The poll property</summary>
+        /// <summary>The endYear property</summary>
+        public int? EndYear { get; set; }
+        /// <summary>The startYear property</summary>
+        public int? StartYear { get; set; }
+        /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PollProp { get; set; }
+        public string? Team { get; set; }
 #nullable restore
 #else
-        public string PollProp { get; set; }
-#endif
-        /// <summary>The ranks property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::CollegeFootballData.Models.PollRank>? Ranks { get; set; }
-#nullable restore
-#else
-        public List<global::CollegeFootballData.Models.PollRank> Ranks { get; set; }
+        public string Team { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.Poll"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.PlayerSearchTeamStint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.Poll CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.PlayerSearchTeamStint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.Poll();
+            return new global::CollegeFootballData.Models.PlayerSearchTeamStint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +42,9 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "isFinal", n => { IsFinal = n.GetBoolValue(); } },
-                { "poll", n => { PollProp = n.GetStringValue(); } },
-                { "ranks", n => { Ranks = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>(global::CollegeFootballData.Models.PollRank.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "endYear", n => { EndYear = n.GetIntValue(); } },
+                { "startYear", n => { StartYear = n.GetIntValue(); } },
+                { "team", n => { Team = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,9 +54,9 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("isFinal", IsFinal);
-            writer.WriteStringValue("poll", PollProp);
-            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PollRank>("ranks", Ranks);
+            writer.WriteIntValue("endYear", EndYear);
+            writer.WriteIntValue("startYear", StartYear);
+            writer.WriteStringValue("team", Team);
         }
     }
 }

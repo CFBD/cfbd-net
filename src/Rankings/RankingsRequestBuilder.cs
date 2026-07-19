@@ -22,7 +22,7 @@ namespace CollegeFootballData.Rankings
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RankingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/rankings?year={year}{&seasonType*,week*}", pathParameters)
+        public RankingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/rankings?year={year}{&final*,latest*,poll*,seasonType*,week*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace CollegeFootballData.Rankings
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RankingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/rankings?year={year}{&seasonType*,week*}", rawUrl)
+        public RankingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/rankings?year={year}{&final*,latest*,poll*,seasonType*,week*}", rawUrl)
         {
         }
         /// <summary>
@@ -39,6 +39,7 @@ namespace CollegeFootballData.Rankings
         /// <returns>A List&lt;global::CollegeFootballData.Models.PollWeek&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::CollegeFootballData.Rankings.Rankings400Error">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::CollegeFootballData.Models.PollWeek>?> GetAsync(Action<RequestConfiguration<global::CollegeFootballData.Rankings.RankingsRequestBuilder.RankingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,11 @@ namespace CollegeFootballData.Rankings
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::CollegeFootballData.Models.PollWeek>(requestInfo, global::CollegeFootballData.Models.PollWeek.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::CollegeFootballData.Rankings.Rankings400Error.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::CollegeFootballData.Models.PollWeek>(requestInfo, global::CollegeFootballData.Models.PollWeek.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -86,6 +91,26 @@ namespace CollegeFootballData.Rankings
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RankingsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Return the marked final CFP snapshot</summary>
+            [QueryParameter("final")]
+            public bool? Final { get; set; }
+            /// <summary>Return the latest CFP snapshot, preferring the marked final</summary>
+            [QueryParameter("latest")]
+            public bool? Latest { get; set; }
+            /// <summary>Optional poll filter</summary>
+            [Obsolete("This property is deprecated, use PollAsRankingPoll instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("poll")]
+            public string? Poll { get; set; }
+#nullable restore
+#else
+            [QueryParameter("poll")]
+            public string Poll { get; set; }
+#endif
+            /// <summary>Optional poll filter</summary>
+            [QueryParameter("poll")]
+            public global::CollegeFootballData.Models.RankingPoll? PollAsRankingPoll { get; set; }
             /// <summary>Optional season type filter</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
