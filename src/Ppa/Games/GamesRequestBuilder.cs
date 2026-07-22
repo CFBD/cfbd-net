@@ -22,7 +22,7 @@ namespace CollegeFootballData.Ppa.Games
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ppa/games?year={year}{&conference*,excludeGarbageTime*,seasonType*,team*,week*}", pathParameters)
+        public GamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ppa/games?year={year}{&classification*,conference*,excludeGarbageTime*,seasonType*,team*,week*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace CollegeFootballData.Ppa.Games
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ppa/games?year={year}{&conference*,excludeGarbageTime*,seasonType*,team*,week*}", rawUrl)
+        public GamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ppa/games?year={year}{&classification*,conference*,excludeGarbageTime*,seasonType*,team*,week*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,6 +86,20 @@ namespace CollegeFootballData.Ppa.Games
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("classification")]
+            public string? Classification { get; set; }
+#nullable restore
+#else
+            [QueryParameter("classification")]
+            public string Classification { get; set; }
+#endif
+            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            [QueryParameter("classification")]
+            public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
             /// <summary>Optional conference abbreviation filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

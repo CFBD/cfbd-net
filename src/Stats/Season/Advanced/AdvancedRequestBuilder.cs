@@ -22,7 +22,7 @@ namespace CollegeFootballData.Stats.Season.Advanced
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdvancedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/season/advanced{?endWeek*,excludeGarbageTime*,startWeek*,team*,year*}", pathParameters)
+        public AdvancedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/season/advanced{?classification*,endWeek*,excludeGarbageTime*,startWeek*,team*,year*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace CollegeFootballData.Stats.Season.Advanced
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdvancedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/season/advanced{?endWeek*,excludeGarbageTime*,startWeek*,team*,year*}", rawUrl)
+        public AdvancedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/season/advanced{?classification*,endWeek*,excludeGarbageTime*,startWeek*,team*,year*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,6 +86,20 @@ namespace CollegeFootballData.Stats.Season.Advanced
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedRequestBuilderGetQueryParameters 
         {
+            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("classification")]
+            public string? Classification { get; set; }
+#nullable restore
+#else
+            [QueryParameter("classification")]
+            public string Classification { get; set; }
+#endif
+            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            [QueryParameter("classification")]
+            public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
             /// <summary>Optional end week range filter</summary>
             [QueryParameter("endWeek")]
             public int? EndWeek { get; set; }
