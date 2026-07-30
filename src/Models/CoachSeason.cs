@@ -12,6 +12,14 @@ namespace CollegeFootballData.Models
     public partial class CoachSeason : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The conference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Conference { get; set; }
+#nullable restore
+#else
+        public string Conference { get; set; }
+#endif
         /// <summary>The games property</summary>
         public int? Games { get; set; }
         /// <summary>The losses property</summary>
@@ -36,8 +44,12 @@ namespace CollegeFootballData.Models
         public double? SpOverall { get; set; }
         /// <summary>The srs property</summary>
         public double? Srs { get; set; }
+        /// <summary>The teamId property</summary>
+        public int? TeamId { get; set; }
         /// <summary>The ties property</summary>
         public int? Ties { get; set; }
+        /// <summary>The winPercentage property</summary>
+        public double? WinPercentage { get; set; }
         /// <summary>The wins property</summary>
         public int? Wins { get; set; }
         /// <summary>The year property</summary>
@@ -60,6 +72,7 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "conference", n => { Conference = n.GetStringValue(); } },
                 { "games", n => { Games = n.GetIntValue(); } },
                 { "losses", n => { Losses = n.GetIntValue(); } },
                 { "postseasonRank", n => { PostseasonRank = n.GetIntValue(); } },
@@ -69,7 +82,9 @@ namespace CollegeFootballData.Models
                 { "spOffense", n => { SpOffense = n.GetDoubleValue(); } },
                 { "spOverall", n => { SpOverall = n.GetDoubleValue(); } },
                 { "srs", n => { Srs = n.GetDoubleValue(); } },
+                { "teamId", n => { TeamId = n.GetIntValue(); } },
                 { "ties", n => { Ties = n.GetIntValue(); } },
+                { "winPercentage", n => { WinPercentage = n.GetDoubleValue(); } },
                 { "wins", n => { Wins = n.GetIntValue(); } },
                 { "year", n => { Year = n.GetIntValue(); } },
             };
@@ -81,6 +96,7 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("conference", Conference);
             writer.WriteIntValue("games", Games);
             writer.WriteIntValue("losses", Losses);
             writer.WriteIntValue("postseasonRank", PostseasonRank);
@@ -90,7 +106,9 @@ namespace CollegeFootballData.Models
             writer.WriteDoubleValue("spOffense", SpOffense);
             writer.WriteDoubleValue("spOverall", SpOverall);
             writer.WriteDoubleValue("srs", Srs);
+            writer.WriteIntValue("teamId", TeamId);
             writer.WriteIntValue("ties", Ties);
+            writer.WriteDoubleValue("winPercentage", WinPercentage);
             writer.WriteIntValue("wins", Wins);
             writer.WriteIntValue("year", Year);
         }

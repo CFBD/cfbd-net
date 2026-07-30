@@ -9,47 +9,36 @@ namespace CollegeFootballData.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Coach : IParsable
+    public partial class CoachSeasonTeamReference : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The firstName property</summary>
+        /// <summary>The conference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? Conference { get; set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string Conference { get; set; }
 #endif
-        /// <summary>The hireDate property</summary>
-        [Obsolete("")]
-        public DateTimeOffset? HireDate { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
-        /// <summary>The lastName property</summary>
+        /// <summary>The school property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? School { get; set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
-#endif
-        /// <summary>The seasons property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::CollegeFootballData.Models.CoachSeason>? Seasons { get; set; }
-#nullable restore
-#else
-        public List<global::CollegeFootballData.Models.CoachSeason> Seasons { get; set; }
+        public string School { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.Coach"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.CoachSeasonTeamReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.Coach CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.CoachSeasonTeamReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.Coach();
+            return new global::CollegeFootballData.Models.CoachSeasonTeamReference();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,11 +48,9 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "firstName", n => { FirstName = n.GetStringValue(); } },
-                { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
+                { "conference", n => { Conference = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "lastName", n => { LastName = n.GetStringValue(); } },
-                { "seasons", n => { Seasons = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.CoachSeason>(global::CollegeFootballData.Models.CoachSeason.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "school", n => { School = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,11 +60,9 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("firstName", FirstName);
-            writer.WriteDateTimeOffsetValue("hireDate", HireDate);
+            writer.WriteStringValue("conference", Conference);
             writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("lastName", LastName);
-            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.CoachSeason>("seasons", Seasons);
+            writer.WriteStringValue("school", School);
         }
     }
 }
