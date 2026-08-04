@@ -34,7 +34,7 @@ namespace CollegeFootballData.Playoffs.Cfp.Participants
         {
         }
         /// <summary>
-        /// Retrieves College Football Playoff participants for a season
+        /// Returns College Football Playoff participants for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayoffParticipant&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace CollegeFootballData.Playoffs.Cfp.Participants
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves College Football Playoff participants for a season
+        /// Returns College Football Playoff participants for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,12 +88,12 @@ namespace CollegeFootballData.Playoffs.Cfp.Participants
             return new global::CollegeFootballData.Playoffs.Cfp.Participants.ParticipantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves College Football Playoff participants for a season
+        /// Returns College Football Playoff participants for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ParticipantsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

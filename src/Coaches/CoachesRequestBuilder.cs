@@ -52,7 +52,7 @@ namespace CollegeFootballData.Coaches
         {
         }
         /// <summary>
-        /// Retrieves historical head coach information and records
+        /// Returns historical head coach records.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Coach&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace CollegeFootballData.Coaches
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical head coach information and records
+        /// Returns historical head coach records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,12 +99,12 @@ namespace CollegeFootballData.Coaches
             return new global::CollegeFootballData.Coaches.CoachesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical head coach information and records
+        /// Returns historical head coach records.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CoachesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional first name filter</summary>
+            /// <summary>Coach first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("firstName")]
@@ -114,7 +114,7 @@ namespace CollegeFootballData.Coaches
             [QueryParameter("firstName")]
             public string FirstName { get; set; }
 #endif
-            /// <summary>Optional last name filter</summary>
+            /// <summary>Coach last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("lastName")]
@@ -124,13 +124,13 @@ namespace CollegeFootballData.Coaches
             [QueryParameter("lastName")]
             public string LastName { get; set; }
 #endif
-            /// <summary>Optional end year range filter</summary>
+            /// <summary>Latest season year to include.</summary>
             [QueryParameter("maxYear")]
             public int? MaxYear { get; set; }
-            /// <summary>Optional start year range filter</summary>
+            /// <summary>Earliest season year to include.</summary>
             [QueryParameter("minYear")]
             public int? MinYear { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -140,7 +140,7 @@ namespace CollegeFootballData.Coaches
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

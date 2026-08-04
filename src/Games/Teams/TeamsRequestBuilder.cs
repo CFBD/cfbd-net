@@ -34,7 +34,7 @@ namespace CollegeFootballData.Games.Teams
         {
         }
         /// <summary>
-        /// Retrieves team box score statistics
+        /// Returns team box score statistics by game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.GameTeamStats&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Games.Teams
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves team box score statistics
+        /// Returns team box score statistics by game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Games.Teams
             return new global::CollegeFootballData.Games.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves team box score statistics
+        /// Returns team box score statistics by game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Games.Teams
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional conference filter, required if week and team not specified</summary>
+            /// <summary>Conference name or abbreviation. One of `week`, `team`,or `conference` is required when filtering by year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -110,10 +110,10 @@ namespace CollegeFootballData.Games.Teams
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional id filter to retrieve a single game</summary>
+            /// <summary>Game ID. When specified, returns statistics for that game.</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,10 +124,10 @@ namespace CollegeFootballData.Games.Teams
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter, required if week and conference not specified</summary>
+            /// <summary>Team name. One of `week`, `team`, or `conference` is requiredwhen filtering by year.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -137,10 +137,10 @@ namespace CollegeFootballData.Games.Teams
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter, required if team and conference not specified</summary>
+            /// <summary>Week number. One of `week`, `team`, or `conference` is requiredwhen filtering by year.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Required year filter (along with one of week, team, or conference), unless id is specified</summary>
+            /// <summary>Season year. Required unless `id` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

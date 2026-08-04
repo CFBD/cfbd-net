@@ -34,7 +34,7 @@ namespace CollegeFootballData.Talent
         {
         }
         /// <summary>
-        /// Retrieve 247 Team Talent Composite for a given year
+        /// Returns 247Sports Team Talent Composite ratings for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamTalent&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Talent
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieve 247 Team Talent Composite for a given year
+        /// Returns 247Sports Team Talent Composite ratings for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Talent
             return new global::CollegeFootballData.Talent.TalentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve 247 Team Talent Composite for a given year
+        /// Returns 247Sports Team Talent Composite ratings for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TalentRequestBuilderGetQueryParameters 
         {
-            /// <summary>Year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

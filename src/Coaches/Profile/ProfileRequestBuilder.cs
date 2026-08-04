@@ -34,7 +34,7 @@ namespace CollegeFootballData.Coaches.Profile
         {
         }
         /// <summary>
-        /// Retrieves canonical coach identity and complete career totals
+        /// Returns a coach profile with canonical identity and career totals.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.CoachProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace CollegeFootballData.Coaches.Profile
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.CoachProfile>(requestInfo, global::CollegeFootballData.Models.CoachProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves canonical coach identity and complete career totals
+        /// Returns a coach profile with canonical identity and career totals.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace CollegeFootballData.Coaches.Profile
             return new global::CollegeFootballData.Coaches.Profile.ProfileRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves canonical coach identity and complete career totals
+        /// Returns a coach profile with canonical identity and career totals.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProfileRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required coach ID</summary>
+            /// <summary>Coach ID.</summary>
             [QueryParameter("coachId")]
             public int? CoachId { get; set; }
         }

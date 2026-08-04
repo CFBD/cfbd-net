@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ratings.Elo
         {
         }
         /// <summary>
-        /// Retrieves historical Elo ratings
+        /// Returns historical Elo ratings.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamElo&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ratings.Elo
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical Elo ratings
+        /// Returns historical Elo ratings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Ratings.Elo
             return new global::CollegeFootballData.Ratings.Elo.EloRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical Elo ratings
+        /// Returns historical Elo ratings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EloRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Ratings.Elo
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,10 +107,10 @@ namespace CollegeFootballData.Ratings.Elo
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -120,10 +120,10 @@ namespace CollegeFootballData.Ratings.Elo
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter, defaults to last available week in the season</summary>
+            /// <summary>Week number. Defaults to the latest available week in theseason.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

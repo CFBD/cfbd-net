@@ -52,7 +52,7 @@ namespace CollegeFootballData.Teams
         {
         }
         /// <summary>
-        /// Retrieves team information
+        /// Returns team information and conference affiliations.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace CollegeFootballData.Teams
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves team information
+        /// Returns team information and conference affiliations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,12 +99,12 @@ namespace CollegeFootballData.Teams
             return new global::CollegeFootballData.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves team information
+        /// Returns team information and conference affiliations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -114,7 +114,7 @@ namespace CollegeFootballData.Teams
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional year filter to get historical conference affiliations</summary>
+            /// <summary>Season year for historical conference affiliations.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

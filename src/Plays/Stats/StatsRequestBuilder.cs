@@ -40,7 +40,7 @@ namespace CollegeFootballData.Plays.Stats
         {
         }
         /// <summary>
-        /// Retrieve player-play associations (limit 2000)
+        /// Returns player and play-stat associations, limited to 2,000 records.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayStat&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace CollegeFootballData.Plays.Stats
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieve player-play associations (limit 2000)
+        /// Returns player and play-stat associations, limited to 2,000 records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,15 +87,15 @@ namespace CollegeFootballData.Plays.Stats
             return new global::CollegeFootballData.Plays.Stats.StatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve player-play associations (limit 2000)
+        /// Returns player and play-stat associations, limited to 2,000 records.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional athleteId filter</summary>
+            /// <summary>Athlete ID.</summary>
             [QueryParameter("athleteId")]
             public int? AthleteId { get; set; }
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -105,10 +105,10 @@ namespace CollegeFootballData.Plays.Stats
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional gameId filter</summary>
+            /// <summary>Game ID.</summary>
             [QueryParameter("gameId")]
             public int? GameId { get; set; }
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,13 +119,13 @@ namespace CollegeFootballData.Plays.Stats
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional statTypeId filter</summary>
+            /// <summary>Play stat type ID.</summary>
             [QueryParameter("statTypeId")]
             public int? StatTypeId { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -135,10 +135,10 @@ namespace CollegeFootballData.Plays.Stats
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

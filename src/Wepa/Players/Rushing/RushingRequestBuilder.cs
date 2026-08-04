@@ -34,7 +34,7 @@ namespace CollegeFootballData.Wepa.Players.Rushing
         {
         }
         /// <summary>
-        /// Retrieve opponent-adjusted player rushing statistics
+        /// Returns opponent-adjusted player rushing metrics.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerWeightedEPA&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Wepa.Players.Rushing
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieve opponent-adjusted player rushing statistics
+        /// Returns opponent-adjusted player rushing metrics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Wepa.Players.Rushing
             return new global::CollegeFootballData.Wepa.Players.Rushing.RushingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve opponent-adjusted player rushing statistics
+        /// Returns opponent-adjusted player rushing metrics.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RushingRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Wepa.Players.Rushing
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional position abbreviation filter</summary>
+            /// <summary>Player position abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -106,7 +106,7 @@ namespace CollegeFootballData.Wepa.Players.Rushing
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -116,7 +116,7 @@ namespace CollegeFootballData.Wepa.Players.Rushing
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

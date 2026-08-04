@@ -34,7 +34,7 @@ namespace CollegeFootballData.Rankings
         {
         }
         /// <summary>
-        /// Retrieves historical poll data
+        /// Returns historical poll rankings.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PollWeek&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace CollegeFootballData.Rankings
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical poll data
+        /// Returns historical poll rankings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,18 +86,18 @@ namespace CollegeFootballData.Rankings
             return new global::CollegeFootballData.Rankings.RankingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical poll data
+        /// Returns historical poll rankings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RankingsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return the marked final CFP snapshot</summary>
+            /// <summary>Returns the CFP snapshot marked as final when `true`. Requires`poll=cfp` and cannot be combined with `latest`.</summary>
             [QueryParameter("final")]
             public bool? Final { get; set; }
-            /// <summary>Return the latest CFP snapshot, preferring the marked final</summary>
+            /// <summary>Returns the latest CFP snapshot when `true`, preferring thesnapshot marked as final. Requires `poll=cfp` and cannot be combined with`final`.</summary>
             [QueryParameter("latest")]
             public bool? Latest { get; set; }
-            /// <summary>Optional poll filter</summary>
+            /// <summary>Poll name.</summary>
             [Obsolete("This property is deprecated, use PollAsRankingPoll instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,10 +108,10 @@ namespace CollegeFootballData.Rankings
             [QueryParameter("poll")]
             public string Poll { get; set; }
 #endif
-            /// <summary>Optional poll filter</summary>
+            /// <summary>Poll name.</summary>
             [QueryParameter("poll")]
             public global::CollegeFootballData.Models.RankingPoll? PollAsRankingPoll { get; set; }
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,13 +122,13 @@ namespace CollegeFootballData.Rankings
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional week filter</summary>
+            /// <summary>Poll week.</summary>
             [QueryParameter("week")]
             public double? Week { get; set; }
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

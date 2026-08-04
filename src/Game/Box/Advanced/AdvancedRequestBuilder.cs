@@ -34,7 +34,7 @@ namespace CollegeFootballData.Game.Box.Advanced
         {
         }
         /// <summary>
-        /// Retrieves an advanced box score for a game
+        /// Returns an advanced box score for a game.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.AdvancedBoxScore"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Game.Box.Advanced
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.AdvancedBoxScore>(requestInfo, global::CollegeFootballData.Models.AdvancedBoxScore.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves an advanced box score for a game
+        /// Returns an advanced box score for a game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,12 +80,12 @@ namespace CollegeFootballData.Game.Box.Advanced
             return new global::CollegeFootballData.Game.Box.Advanced.AdvancedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves an advanced box score for a game
+        /// Returns an advanced box score for a game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required game id filter</summary>
+            /// <summary>Game ID.</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
         }

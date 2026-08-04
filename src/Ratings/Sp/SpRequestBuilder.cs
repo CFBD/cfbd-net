@@ -40,7 +40,7 @@ namespace CollegeFootballData.Ratings.Sp
         {
         }
         /// <summary>
-        /// Retrieves SP+ ratings for a given year or school
+        /// Returns SP+ ratings by team and season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamSP&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace CollegeFootballData.Ratings.Sp
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves SP+ ratings for a given year or school
+        /// Returns SP+ ratings by team and season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace CollegeFootballData.Ratings.Sp
             return new global::CollegeFootballData.Ratings.Sp.SpRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves SP+ ratings for a given year or school
+        /// Returns SP+ ratings by team and season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SpRequestBuilderGetQueryParameters 
         {
-            /// <summary>Team filter, required if year not specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -102,7 +102,7 @@ namespace CollegeFootballData.Ratings.Sp
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Year filter, required if team not specified</summary>
+            /// <summary>Season year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Player.Returning
         {
         }
         /// <summary>
-        /// Retrieves returning production data. Either a year or team filter must be specified.
+        /// Returns returning production metrics by team and season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.ReturningProduction&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Player.Returning
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves returning production data. Either a year or team filter must be specified.
+        /// Returns returning production metrics by team and season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Player.Returning
             return new global::CollegeFootballData.Player.Returning.ReturningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves returning production data. Either a year or team filter must be specified.
+        /// Returns returning production metrics by team and season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReturningRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Player.Returning
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Team filter, required if year not specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -106,7 +106,7 @@ namespace CollegeFootballData.Player.Returning
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Year filter, required if team not specified</summary>
+            /// <summary>Season year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

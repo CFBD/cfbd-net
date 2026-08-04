@@ -34,7 +34,7 @@ namespace CollegeFootballData.Teams.Fbs
         {
         }
         /// <summary>
-        /// Retrieves information on teams playing in the highest division of CFB
+        /// Returns Football Bowl Subdivision (FBS) teams for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Teams.Fbs
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves information on teams playing in the highest division of CFB
+        /// Returns Football Bowl Subdivision (FBS) teams for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Teams.Fbs
             return new global::CollegeFootballData.Teams.Fbs.FbsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves information on teams playing in the highest division of CFB
+        /// Returns Football Bowl Subdivision (FBS) teams for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FbsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Year or season</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Coaches.Seasons
         {
         }
         /// <summary>
-        /// Retrieves detailed coach-season records with attributed results andwhole-team season context
+        /// Returns coach-season records with attributed results and team context.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.DetailedCoachSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace CollegeFootballData.Coaches.Seasons
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves detailed coach-season records with attributed results andwhole-team season context
+        /// Returns coach-season records with attributed results and team context.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,21 +86,21 @@ namespace CollegeFootballData.Coaches.Seasons
             return new global::CollegeFootballData.Coaches.Seasons.SeasonsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves detailed coach-season records with attributed results andwhole-team season context
+        /// Returns coach-season records with attributed results and team context.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional coach ID</summary>
+            /// <summary>Coach ID.</summary>
             [QueryParameter("coachId")]
             public int? CoachId { get; set; }
-            /// <summary>Optional end year range filter</summary>
+            /// <summary>Latest season year to include.</summary>
             [QueryParameter("maxYear")]
             public int? MaxYear { get; set; }
-            /// <summary>Optional start year range filter</summary>
+            /// <summary>Earliest season year to include.</summary>
             [QueryParameter("minYear")]
             public int? MinYear { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -110,7 +110,7 @@ namespace CollegeFootballData.Coaches.Seasons
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional exact season year</summary>
+            /// <summary>Exact season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

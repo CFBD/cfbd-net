@@ -34,7 +34,7 @@ namespace CollegeFootballData.Metrics.Wp.Pregame
         {
         }
         /// <summary>
-        /// Queries pregame win probabilities
+        /// Returns pregame win probabilities.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PregameWinProbability&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Metrics.Wp.Pregame
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Queries pregame win probabilities
+        /// Returns pregame win probabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Metrics.Wp.Pregame
             return new global::CollegeFootballData.Metrics.Wp.Pregame.PregameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Queries pregame win probabilities
+        /// Returns pregame win probabilities.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PregameRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Metrics.Wp.Pregame
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -110,10 +110,10 @@ namespace CollegeFootballData.Metrics.Wp.Pregame
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

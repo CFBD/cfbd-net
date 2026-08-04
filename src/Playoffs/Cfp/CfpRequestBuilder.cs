@@ -46,7 +46,7 @@ namespace CollegeFootballData.Playoffs.Cfp
         {
         }
         /// <summary>
-        /// Retrieves the complete College Football Playoff bracket for a season
+        /// Returns the complete College Football Playoff bracket for a season.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.CfpPlayoff"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace CollegeFootballData.Playoffs.Cfp
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.CfpPlayoff>(requestInfo, global::CollegeFootballData.Models.CfpPlayoff.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the complete College Football Playoff bracket for a season
+        /// Returns the complete College Football Playoff bracket for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,12 +99,12 @@ namespace CollegeFootballData.Playoffs.Cfp
             return new global::CollegeFootballData.Playoffs.Cfp.CfpRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the complete College Football Playoff bracket for a season
+        /// Returns the complete College Football Playoff bracket for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CfpRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

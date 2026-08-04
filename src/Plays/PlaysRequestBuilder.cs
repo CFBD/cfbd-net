@@ -46,7 +46,7 @@ namespace CollegeFootballData.Plays
         {
         }
         /// <summary>
-        /// Retrieves historical play data
+        /// Returns historical play-by-play data.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Play&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace CollegeFootballData.Plays
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical play data
+        /// Returns historical play-by-play data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,12 +93,12 @@ namespace CollegeFootballData.Plays
             return new global::CollegeFootballData.Plays.PlaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical play data
+        /// Returns historical play-by-play data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaysRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification of either team.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,10 +109,10 @@ namespace CollegeFootballData.Plays
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification of either team.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference of either team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -122,7 +122,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional defensive team filter</summary>
+            /// <summary>Defensive team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("defense")]
@@ -132,7 +132,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("defense")]
             public string Defense { get; set; }
 #endif
-            /// <summary>Optional defensive conference filter</summary>
+            /// <summary>Defensive team conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("defenseConference")]
@@ -142,7 +142,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("defenseConference")]
             public string DefenseConference { get; set; }
 #endif
-            /// <summary>Optional offensive team filter</summary>
+            /// <summary>Offensive team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("offense")]
@@ -152,7 +152,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("offense")]
             public string Offense { get; set; }
 #endif
-            /// <summary>Optional offensive conference filter</summary>
+            /// <summary>Offensive team conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("offenseConference")]
@@ -162,7 +162,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("offenseConference")]
             public string OffenseConference { get; set; }
 #endif
-            /// <summary>Optoinal play type abbreviation filter</summary>
+            /// <summary>Play type abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("playType")]
@@ -172,7 +172,7 @@ namespace CollegeFootballData.Plays
             [QueryParameter("playType")]
             public string PlayType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,10 +183,10 @@ namespace CollegeFootballData.Plays
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name on either side of the play.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -196,10 +196,10 @@ namespace CollegeFootballData.Plays
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Required week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ppa.Predicted
         {
         }
         /// <summary>
-        /// Query Predicted Points values by down and distance
+        /// Returns predicted points values by down and distance.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PredictedPointsValue&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ppa.Predicted
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Query Predicted Points values by down and distance
+        /// Returns predicted points values by down and distance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,15 +81,15 @@ namespace CollegeFootballData.Ppa.Predicted
             return new global::CollegeFootballData.Ppa.Predicted.PredictedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Query Predicted Points values by down and distance
+        /// Returns predicted points values by down and distance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PredictedRequestBuilderGetQueryParameters 
         {
-            /// <summary>Distance value</summary>
+            /// <summary>Distance to gain, in yards.</summary>
             [QueryParameter("distance")]
             public int? Distance { get; set; }
-            /// <summary>Down value</summary>
+            /// <summary>Down number.</summary>
             [QueryParameter("down")]
             public int? Down { get; set; }
         }

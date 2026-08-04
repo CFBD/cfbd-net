@@ -34,7 +34,7 @@ namespace CollegeFootballData.Player.Portal
         {
         }
         /// <summary>
-        /// Retrieves transfer portal data for a given year
+        /// Returns transfer portal entries for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerTransfer&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Player.Portal
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves transfer portal data for a given year
+        /// Returns transfer portal entries for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Player.Portal
             return new global::CollegeFootballData.Player.Portal.PortalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves transfer portal data for a given year
+        /// Returns transfer portal entries for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PortalRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

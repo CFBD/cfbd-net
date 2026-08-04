@@ -34,7 +34,7 @@ namespace CollegeFootballData.Coaches.Tenures
         {
         }
         /// <summary>
-        /// Retrieves continuous head-coaching stints and attributed records
+        /// Returns continuous head-coaching tenures and their attributed records.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.CoachTenure&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace CollegeFootballData.Coaches.Tenures
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves continuous head-coaching stints and attributed records
+        /// Returns continuous head-coaching tenures and their attributed records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,18 +86,18 @@ namespace CollegeFootballData.Coaches.Tenures
             return new global::CollegeFootballData.Coaches.Tenures.TenuresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves continuous head-coaching stints and attributed records
+        /// Returns continuous head-coaching tenures and their attributed records.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TenuresRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional active-tenure filter</summary>
+            /// <summary>Filters by active status when specified.</summary>
             [QueryParameter("active")]
             public bool? Active { get; set; }
-            /// <summary>Optional coach ID</summary>
+            /// <summary>Coach ID.</summary>
             [QueryParameter("coachId")]
             public int? CoachId { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -107,7 +107,7 @@ namespace CollegeFootballData.Coaches.Tenures
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional season year contained by the tenure</summary>
+            /// <summary>Season year contained within the tenure.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

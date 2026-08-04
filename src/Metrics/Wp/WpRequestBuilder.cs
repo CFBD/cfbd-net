@@ -40,7 +40,7 @@ namespace CollegeFootballData.Metrics.Wp
         {
         }
         /// <summary>
-        /// Query play win probabilities by game
+        /// Returns play-by-play win probabilities for a game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayWinProbability&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace CollegeFootballData.Metrics.Wp
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Query play win probabilities by game
+        /// Returns play-by-play win probabilities for a game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace CollegeFootballData.Metrics.Wp
             return new global::CollegeFootballData.Metrics.Wp.WpRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Query play win probabilities by game
+        /// Returns play-by-play win probabilities for a game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WpRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required game ID filter</summary>
+            /// <summary>Game ID.</summary>
             [QueryParameter("gameId")]
             public int? GameId { get; set; }
         }

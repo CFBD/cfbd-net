@@ -40,7 +40,7 @@ namespace CollegeFootballData.Info
         {
         }
         /// <summary>
-        /// Retrieves information about the user, including their Patreon level and remaining API calls.
+        /// Returns the authenticated user&apos;s Patreon level and remaining API calls.Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.UserInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace CollegeFootballData.Info
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.UserInfo>(requestInfo, global::CollegeFootballData.Models.UserInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves information about the user, including their Patreon level and remaining API calls.
+        /// Returns the authenticated user&apos;s Patreon level and remaining API calls.Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

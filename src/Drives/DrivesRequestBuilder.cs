@@ -34,7 +34,7 @@ namespace CollegeFootballData.Drives
         {
         }
         /// <summary>
-        /// Retrieves historical drive data
+        /// Returns historical drive data.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Drive&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Drives
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical drive data
+        /// Returns historical drive data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Drives
             return new global::CollegeFootballData.Drives.DrivesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical drive data
+        /// Returns historical drive data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DrivesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification of either team.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Drives
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification of either team.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference of either team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -110,7 +110,7 @@ namespace CollegeFootballData.Drives
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional defensive team filter</summary>
+            /// <summary>Defensive team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("defense")]
@@ -120,7 +120,7 @@ namespace CollegeFootballData.Drives
             [QueryParameter("defense")]
             public string Defense { get; set; }
 #endif
-            /// <summary>Optional defensive team conference filter</summary>
+            /// <summary>Defensive team conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("defenseConference")]
@@ -130,7 +130,7 @@ namespace CollegeFootballData.Drives
             [QueryParameter("defenseConference")]
             public string DefenseConference { get; set; }
 #endif
-            /// <summary>Optional offensive team filter</summary>
+            /// <summary>Offensive team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("offense")]
@@ -140,7 +140,7 @@ namespace CollegeFootballData.Drives
             [QueryParameter("offense")]
             public string Offense { get; set; }
 #endif
-            /// <summary>Optional offensive team conference filter</summary>
+            /// <summary>Offensive team conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("offenseConference")]
@@ -150,7 +150,7 @@ namespace CollegeFootballData.Drives
             [QueryParameter("offenseConference")]
             public string OffenseConference { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,10 +161,10 @@ namespace CollegeFootballData.Drives
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name on either side of the drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -174,10 +174,10 @@ namespace CollegeFootballData.Drives
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

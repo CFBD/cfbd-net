@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ppa.Teams
         {
         }
         /// <summary>
-        /// Retrieves historical team PPA metrics by season
+        /// Returns team Predicted Points Added (PPA) metrics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamSeasonPredictedPointsAdded&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ppa.Teams
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical team PPA metrics by season
+        /// Returns team Predicted Points Added (PPA) metrics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Ppa.Teams
             return new global::CollegeFootballData.Ppa.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical team PPA metrics by season
+        /// Returns team Predicted Points Added (PPA) metrics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Ppa.Teams
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -110,10 +110,10 @@ namespace CollegeFootballData.Ppa.Teams
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Exclude garbage time plays</summary>
+            /// <summary>Excludes garbage-time plays when `true`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Team filter, required if year not specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -123,7 +123,7 @@ namespace CollegeFootballData.Ppa.Teams
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Year filter, required if team not specified</summary>
+            /// <summary>Season year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

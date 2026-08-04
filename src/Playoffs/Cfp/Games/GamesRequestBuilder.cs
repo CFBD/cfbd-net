@@ -34,7 +34,7 @@ namespace CollegeFootballData.Playoffs.Cfp.Games
         {
         }
         /// <summary>
-        /// Retrieves College Football Playoff matchups for a season
+        /// Returns College Football Playoff matchups for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayoffMatchup&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace CollegeFootballData.Playoffs.Cfp.Games
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves College Football Playoff matchups for a season
+        /// Returns College Football Playoff matchups for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,12 +88,12 @@ namespace CollegeFootballData.Playoffs.Cfp.Games
             return new global::CollegeFootballData.Playoffs.Cfp.Games.GamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves College Football Playoff matchups for a season
+        /// Returns College Football Playoff matchups for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional playoff round filter</summary>
+            /// <summary>Playoff round.</summary>
             [Obsolete("This property is deprecated, use RoundAsPlayoffRound instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,10 +104,10 @@ namespace CollegeFootballData.Playoffs.Cfp.Games
             [QueryParameter("round")]
             public string Round { get; set; }
 #endif
-            /// <summary>Optional playoff round filter</summary>
+            /// <summary>Playoff round.</summary>
             [QueryParameter("round")]
             public global::CollegeFootballData.Models.PlayoffRound? RoundAsPlayoffRound { get; set; }
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Roster
         {
         }
         /// <summary>
-        /// Retrieves historical roster data
+        /// Returns historical roster data.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.RosterPlayer&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Roster
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical roster data
+        /// Returns historical roster data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Roster
             return new global::CollegeFootballData.Roster.RosterRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical roster data
+        /// Returns historical roster data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RosterRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional filter to only include players from FBS or FCS teams</summary>
+            /// <summary>Division classification: `fbs` or `fcs`.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Roster
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional filter to only include players from FBS or FCS teams</summary>
+            /// <summary>Division classification: `fbs` or `fcs`.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -110,7 +110,7 @@ namespace CollegeFootballData.Roster
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter, defaults to 2025</summary>
+            /// <summary>Season year. Defaults to 2025.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

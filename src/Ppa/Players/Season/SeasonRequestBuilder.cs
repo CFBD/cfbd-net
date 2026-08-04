@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ppa.Players.Season
         {
         }
         /// <summary>
-        /// Queries player PPA statistics by season
+        /// Returns player Predicted Points Added (PPA) metrics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerSeasonPredictedPointsAdded&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ppa.Players.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Queries player PPA statistics by season
+        /// Returns player Predicted Points Added (PPA) metrics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Ppa.Players.Season
             return new global::CollegeFootballData.Ppa.Players.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Queries player PPA statistics by season
+        /// Returns player Predicted Points Added (PPA) metrics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,10 +96,10 @@ namespace CollegeFootballData.Ppa.Players.Season
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional flag to exclude garbage time plays</summary>
+            /// <summary>Excludes garbage-time plays when `true`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Player ID filter, required if year not specified</summary>
+            /// <summary>Player ID. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("playerId")]
@@ -109,7 +109,7 @@ namespace CollegeFootballData.Ppa.Players.Season
             [QueryParameter("playerId")]
             public string PlayerId { get; set; }
 #endif
-            /// <summary>Optional position abbreviation filter</summary>
+            /// <summary>Player position abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -119,7 +119,7 @@ namespace CollegeFootballData.Ppa.Players.Season
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -129,10 +129,10 @@ namespace CollegeFootballData.Ppa.Players.Season
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Threshold value for minimum number of plays</summary>
+            /// <summary>Minimum number of plays.</summary>
             [QueryParameter("threshold")]
             public double? Threshold { get; set; }
-            /// <summary>Year filter, required if playerId not specified</summary>
+            /// <summary>Season year. Required unless `playerId` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

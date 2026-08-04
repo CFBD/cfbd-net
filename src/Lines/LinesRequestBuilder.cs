@@ -34,7 +34,7 @@ namespace CollegeFootballData.Lines
         {
         }
         /// <summary>
-        /// Retrieves historical betting data
+        /// Returns historical betting lines and results.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.BettingGame&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Lines
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical betting data
+        /// Returns historical betting lines and results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Lines
             return new global::CollegeFootballData.Lines.LinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical betting data
+        /// Returns historical betting lines and results.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LinesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional away team filter</summary>
+            /// <summary>Away team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("away")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Lines
             [QueryParameter("away")]
             public string Away { get; set; }
 #endif
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference of either team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -106,10 +106,10 @@ namespace CollegeFootballData.Lines
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional gameId filter</summary>
+            /// <summary>Game ID.</summary>
             [QueryParameter("gameId")]
             public int? GameId { get; set; }
-            /// <summary>Optional home team filter</summary>
+            /// <summary>Home team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("home")]
@@ -119,7 +119,7 @@ namespace CollegeFootballData.Lines
             [QueryParameter("home")]
             public string Home { get; set; }
 #endif
-            /// <summary>Optional provider name filter</summary>
+            /// <summary>Betting line provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("provider")]
@@ -129,7 +129,7 @@ namespace CollegeFootballData.Lines
             [QueryParameter("provider")]
             public string Provider { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,10 +140,10 @@ namespace CollegeFootballData.Lines
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name on either side of the game.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -153,10 +153,10 @@ namespace CollegeFootballData.Lines
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Year filter, required if game id not specified</summary>
+            /// <summary>Season year. Required unless `gameId` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

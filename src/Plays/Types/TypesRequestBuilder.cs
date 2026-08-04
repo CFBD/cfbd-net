@@ -34,7 +34,7 @@ namespace CollegeFootballData.Plays.Types
         {
         }
         /// <summary>
-        /// Retrieves available play types
+        /// Returns the available play types.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayType&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Plays.Types
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves available play types
+        /// Returns the available play types.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

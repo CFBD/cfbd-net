@@ -58,7 +58,7 @@ namespace CollegeFootballData.Games
         {
         }
         /// <summary>
-        /// Retrieves historical game data
+        /// Returns historical game data.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Game&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace CollegeFootballData.Games
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves historical game data
+        /// Returns historical game data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,12 +110,12 @@ namespace CollegeFootballData.Games
             return new global::CollegeFootballData.Games.GamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical game data
+        /// Returns historical game data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional away team filter</summary>
+            /// <summary>Away team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("away")]
@@ -125,7 +125,7 @@ namespace CollegeFootballData.Games
             [QueryParameter("away")]
             public string Away { get; set; }
 #endif
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,10 +136,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter</summary>
+            /// <summary>Division classification.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional playoff competition filter</summary>
+            /// <summary>Playoff competition.</summary>
             [Obsolete("This property is deprecated, use CompetitionAsPlayoffCompetition instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,10 +150,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("competition")]
             public string Competition { get; set; }
 #endif
-            /// <summary>Optional playoff competition filter</summary>
+            /// <summary>Playoff competition.</summary>
             [QueryParameter("competition")]
             public global::CollegeFootballData.Models.PlayoffCompetition? CompetitionAsPlayoffCompetition { get; set; }
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference of either team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -163,7 +163,7 @@ namespace CollegeFootballData.Games
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional home team filter</summary>
+            /// <summary>Home team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("home")]
@@ -173,10 +173,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("home")]
             public string Home { get; set; }
 #endif
-            /// <summary>Game id filter to retrieve a single game</summary>
+            /// <summary>Game ID. When specified, returns data for that game.</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
-            /// <summary>Optional playoff round filter; requires competition</summary>
+            /// <summary>Playoff round. Requires `competition`.</summary>
             [Obsolete("This property is deprecated, use RoundAsPlayoffRound instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,10 +187,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("round")]
             public string Round { get; set; }
 #endif
-            /// <summary>Optional playoff round filter; requires competition</summary>
+            /// <summary>Playoff round. Requires `competition`.</summary>
             [QueryParameter("round")]
             public global::CollegeFootballData.Models.PlayoffRound? RoundAsPlayoffRound { get; set; }
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,10 +201,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name on either side of the game.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -214,10 +214,10 @@ namespace CollegeFootballData.Games
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Required year filter (except when id is specified)</summary>
+            /// <summary>Season year. Required unless `id` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

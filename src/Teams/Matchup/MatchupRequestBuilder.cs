@@ -34,7 +34,7 @@ namespace CollegeFootballData.Teams.Matchup
         {
         }
         /// <summary>
-        /// Retrieves historical matchup details for two given teams
+        /// Returns historical matchup results between two teams.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.Matchup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Teams.Matchup
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.Matchup>(requestInfo, global::CollegeFootballData.Models.Matchup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves historical matchup details for two given teams
+        /// Returns historical matchup results between two teams.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,18 +80,18 @@ namespace CollegeFootballData.Teams.Matchup
             return new global::CollegeFootballData.Teams.Matchup.MatchupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves historical matchup details for two given teams
+        /// Returns historical matchup results between two teams.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MatchupRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional ending year</summary>
+            /// <summary>Latest season year to include.</summary>
             [QueryParameter("maxYear")]
             public int? MaxYear { get; set; }
-            /// <summary>Optional starting year</summary>
+            /// <summary>Earliest season year to include.</summary>
             [QueryParameter("minYear")]
             public int? MinYear { get; set; }
-            /// <summary>First team to compare</summary>
+            /// <summary>First team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team1")]
@@ -101,7 +101,7 @@ namespace CollegeFootballData.Teams.Matchup
             [QueryParameter("team1")]
             public string Team1 { get; set; }
 #endif
-            /// <summary>Second team to compare</summary>
+            /// <summary>Second team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team2")]

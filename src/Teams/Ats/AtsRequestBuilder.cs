@@ -34,7 +34,7 @@ namespace CollegeFootballData.Teams.Ats
         {
         }
         /// <summary>
-        /// Retrieves against-the-spread (ATS) summary by team
+        /// Returns against-the-spread (ATS) records by team.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamATS&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Teams.Ats
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves against-the-spread (ATS) summary by team
+        /// Returns against-the-spread (ATS) records by team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Teams.Ats
             return new global::CollegeFootballData.Teams.Ats.AtsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves against-the-spread (ATS) summary by team
+        /// Returns against-the-spread (ATS) records by team.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AtsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Teams.Ats
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -106,7 +106,7 @@ namespace CollegeFootballData.Teams.Ats
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

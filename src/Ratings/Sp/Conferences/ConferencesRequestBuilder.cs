@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ratings.Sp.Conferences
         {
         }
         /// <summary>
-        /// Retrieves aggregated historical conference SP+ data
+        /// Returns conference-level SP+ ratings by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.ConferenceSP&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ratings.Sp.Conferences
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves aggregated historical conference SP+ data
+        /// Returns conference-level SP+ ratings by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Ratings.Sp.Conferences
             return new global::CollegeFootballData.Ratings.Sp.Conferences.ConferencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves aggregated historical conference SP+ data
+        /// Returns conference-level SP+ ratings by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConferencesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Ratings.Sp.Conferences
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -110,7 +110,7 @@ namespace CollegeFootballData.Ratings.Sp.Conferences
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

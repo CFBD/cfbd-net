@@ -40,7 +40,7 @@ namespace CollegeFootballData.Stats.Player.Success
         {
         }
         /// <summary>
-        /// Retrieves player passing and rushing success rates by season
+        /// Returns player passing and rushing success rates by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerSeasonSuccessRate&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace CollegeFootballData.Stats.Player.Success
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves player passing and rushing success rates by season
+        /// Returns player passing and rushing success rates by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,12 +87,12 @@ namespace CollegeFootballData.Stats.Player.Success
             return new global::CollegeFootballData.Stats.Player.Success.SuccessRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves player passing and rushing success rates by season
+        /// Returns player passing and rushing success rates by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SuccessRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -102,16 +102,16 @@ namespace CollegeFootballData.Stats.Player.Success
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional ending week range</summary>
+            /// <summary>Latest week to include.</summary>
             [QueryParameter("endWeek")]
             public int? EndWeek { get; set; }
-            /// <summary>Optional flag to exclude garbage time plays</summary>
+            /// <summary>Excludes garbage-time plays when `true`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Player ID filter, required if year not specified</summary>
+            /// <summary>Player ID. Required unless `year` is specified.</summary>
             [QueryParameter("playerId")]
             public int? PlayerId { get; set; }
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,13 +122,13 @@ namespace CollegeFootballData.Stats.Player.Success
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Optional starting week range</summary>
+            /// <summary>Earliest week to include.</summary>
             [QueryParameter("startWeek")]
             public int? StartWeek { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -138,10 +138,10 @@ namespace CollegeFootballData.Stats.Player.Success
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional minimum credited passing plus rushing plays</summary>
+            /// <summary>Minimum credited passing and rushing plays.</summary>
             [QueryParameter("threshold")]
             public int? Threshold { get; set; }
-            /// <summary>Year filter, required if playerId not specified</summary>
+            /// <summary>Season year. Required unless `playerId` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

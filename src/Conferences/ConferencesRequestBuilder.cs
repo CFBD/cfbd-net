@@ -34,7 +34,7 @@ namespace CollegeFootballData.Conferences
         {
         }
         /// <summary>
-        /// Retrieves list of conferences
+        /// Returns the available conferences.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Conference&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Conferences
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves list of conferences
+        /// Returns the available conferences.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

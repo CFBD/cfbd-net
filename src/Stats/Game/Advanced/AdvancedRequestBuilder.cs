@@ -34,7 +34,7 @@ namespace CollegeFootballData.Stats.Game.Advanced
         {
         }
         /// <summary>
-        /// Retrieves advanced statistics aggregated by game
+        /// Returns advanced team statistics aggregated by game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.AdvancedGameStat&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Stats.Game.Advanced
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves advanced statistics aggregated by game
+        /// Returns advanced team statistics aggregated by game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,15 +81,15 @@ namespace CollegeFootballData.Stats.Game.Advanced
             return new global::CollegeFootballData.Stats.Game.Advanced.AdvancedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves advanced statistics aggregated by game
+        /// Returns advanced team statistics aggregated by game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedRequestBuilderGetQueryParameters 
         {
-            /// <summary>Garbage time exclusion filter, defaults to false</summary>
+            /// <summary>Excludes garbage-time plays when `true`. Defaultsto `false`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Optional opponent filter</summary>
+            /// <summary>Opponent team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("opponent")]
@@ -99,7 +99,7 @@ namespace CollegeFootballData.Stats.Game.Advanced
             [QueryParameter("opponent")]
             public string Opponent { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,10 +110,10 @@ namespace CollegeFootballData.Stats.Game.Advanced
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Team filter, required if year not specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -123,10 +123,10 @@ namespace CollegeFootballData.Stats.Game.Advanced
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional week filter</summary>
+            /// <summary>Week number.</summary>
             [QueryParameter("week")]
             public double? Week { get; set; }
-            /// <summary>Year filter, required if team not specified</summary>
+            /// <summary>Season year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

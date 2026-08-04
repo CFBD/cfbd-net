@@ -34,7 +34,7 @@ namespace CollegeFootballData.Calendar
         {
         }
         /// <summary>
-        /// Retrieves calendar information
+        /// Returns the week-by-week season calendar.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.CalendarWeek&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Calendar
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves calendar information
+        /// Returns the week-by-week season calendar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Calendar
             return new global::CollegeFootballData.Calendar.CalendarRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves calendar information
+        /// Returns the week-by-week season calendar.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CalendarRequestBuilderGetQueryParameters 
         {
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

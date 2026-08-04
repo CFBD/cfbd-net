@@ -34,7 +34,7 @@ namespace CollegeFootballData.Stats.Season.Advanced
         {
         }
         /// <summary>
-        /// Retrieves advanced season statistics for teams
+        /// Returns advanced team statistics aggregated by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.AdvancedSeasonStat&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Stats.Season.Advanced
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves advanced season statistics for teams
+        /// Returns advanced team statistics aggregated by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Stats.Season.Advanced
             return new global::CollegeFootballData.Stats.Season.Advanced.AdvancedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves advanced season statistics for teams
+        /// Returns advanced team statistics aggregated by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsDivisionClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,19 +97,19 @@ namespace CollegeFootballData.Stats.Season.Advanced
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional division classification filter, defaults to fbs</summary>
+            /// <summary>Division classification. Defaults to `fbs`.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.DivisionClassification? ClassificationAsDivisionClassification { get; set; }
-            /// <summary>Optional end week range filter</summary>
+            /// <summary>Latest week to include.</summary>
             [QueryParameter("endWeek")]
             public int? EndWeek { get; set; }
-            /// <summary>Garbage time exclusion filter, defaults to false</summary>
+            /// <summary>Excludes garbage-time plays when `true`. Defaultsto `false`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Optional start week range filter</summary>
+            /// <summary>Earliest week to include.</summary>
             [QueryParameter("startWeek")]
             public int? StartWeek { get; set; }
-            /// <summary>Team filter, required if year not specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -119,7 +119,7 @@ namespace CollegeFootballData.Stats.Season.Advanced
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Year filter, required if team not specified</summary>
+            /// <summary>Season year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

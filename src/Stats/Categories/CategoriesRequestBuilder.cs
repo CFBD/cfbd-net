@@ -33,7 +33,7 @@ namespace CollegeFootballData.Stats.Categories
         {
         }
         /// <summary>
-        /// Gets team statistical categories
+        /// Returns the available team statistical categories.
         /// </summary>
         /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Stats.Categories
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Gets team statistical categories
+        /// Returns the available team statistical categories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

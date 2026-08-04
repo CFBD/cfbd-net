@@ -34,7 +34,7 @@ namespace CollegeFootballData.Recruiting.Groups
         {
         }
         /// <summary>
-        /// Retrieves aggregated recruiting statistics by team and position grouping
+        /// Returns recruiting ratings aggregated by team and position group.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.AggregatedTeamRecruiting&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Recruiting.Groups
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves aggregated recruiting statistics by team and position grouping
+        /// Returns recruiting ratings aggregated by team and position group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Recruiting.Groups
             return new global::CollegeFootballData.Recruiting.Groups.GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves aggregated recruiting statistics by team and position grouping
+        /// Returns recruiting ratings aggregated by team and position group.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference filter</summary>
+            /// <summary>Conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,10 +96,10 @@ namespace CollegeFootballData.Recruiting.Groups
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional end year range, defaults to current year</summary>
+            /// <summary>Latest recruiting class year. Defaults to the current year.</summary>
             [QueryParameter("endYear")]
             public int? EndYear { get; set; }
-            /// <summary>Optional recruit type filter, defaults to HighSchool</summary>
+            /// <summary>Recruit classification. Defaults to `HighSchool`.</summary>
             [Obsolete("This property is deprecated, use RecruitTypeAsRecruitClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,13 +110,13 @@ namespace CollegeFootballData.Recruiting.Groups
             [QueryParameter("recruitType")]
             public string RecruitType { get; set; }
 #endif
-            /// <summary>Optional recruit type filter, defaults to HighSchool</summary>
+            /// <summary>Recruit classification. Defaults to `HighSchool`.</summary>
             [QueryParameter("recruitType")]
             public global::CollegeFootballData.Models.RecruitClassification? RecruitTypeAsRecruitClassification { get; set; }
-            /// <summary>Optional start year range, defaults to 2000</summary>
+            /// <summary>Earliest recruiting class year. Defaults to 2000.</summary>
             [QueryParameter("startYear")]
             public int? StartYear { get; set; }
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]

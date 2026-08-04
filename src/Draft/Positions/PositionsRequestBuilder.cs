@@ -34,7 +34,7 @@ namespace CollegeFootballData.Draft.Positions
         {
         }
         /// <summary>
-        /// Retrieves list of player position categories for the NFL Draft
+        /// Returns the player position categories used in NFL Draft data.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.DraftPosition&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Draft.Positions
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves list of player position categories for the NFL Draft
+        /// Returns the player position categories used in NFL Draft data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Info.Usage
         {
         }
         /// <summary>
-        /// Retrieves bounded API usage for the authenticated user&apos;s shared CFB/CBB call pool.
+        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.UserUsage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Info.Usage
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.UserUsage>(requestInfo, global::CollegeFootballData.Models.UserUsage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves bounded API usage for the authenticated user&apos;s shared CFB/CBB call pool.
+        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,12 +80,12 @@ namespace CollegeFootballData.Info.Usage
             return new global::CollegeFootballData.Info.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves bounded API usage for the authenticated user&apos;s shared CFB/CBB call pool.
+        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional API filter: all, cfb, or cbb</summary>
+            /// <summary>API to include: `all`, `cfb`, or `cbb`.</summary>
             [Obsolete("This property is deprecated, use ApiAsUserUsageApi instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,13 +96,13 @@ namespace CollegeFootballData.Info.Usage
             [QueryParameter("api")]
             public string Api { get; set; }
 #endif
-            /// <summary>Optional API filter: all, cfb, or cbb</summary>
+            /// <summary>API to include: `all`, `cfb`, or `cbb`.</summary>
             [QueryParameter("api")]
             public global::CollegeFootballData.Models.UserUsageApi? ApiAsUserUsageApi { get; set; }
-            /// <summary>Number of trailing days to include, defaults to 7 and is capped at 31</summary>
+            /// <summary>Trailing days to include. Defaults to 7; maximum 31.</summary>
             [QueryParameter("days")]
             public int? Days { get; set; }
-            /// <summary>Number of endpoint and recent request rows to return, defaults to 10 and is capped at 50</summary>
+            /// <summary>Maximum endpoint and request rows to return. Defaults to 10;maximum 50.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

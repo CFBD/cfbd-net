@@ -34,7 +34,7 @@ namespace CollegeFootballData.Recruiting.Players
         {
         }
         /// <summary>
-        /// Retrieves player recruiting rankings
+        /// Returns player recruiting rankings.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.Recruit&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Recruiting.Players
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves player recruiting rankings
+        /// Returns player recruiting rankings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Recruiting.Players
             return new global::CollegeFootballData.Recruiting.Players.PlayersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves player recruiting rankings
+        /// Returns player recruiting rankings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlayersRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional recruit type classification filter, defaults to HighSchool</summary>
+            /// <summary>Recruit classification. Defaults to `HighSchool`.</summary>
             [Obsolete("This property is deprecated, use ClassificationAsRecruitClassification instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +97,10 @@ namespace CollegeFootballData.Recruiting.Players
             [QueryParameter("classification")]
             public string Classification { get; set; }
 #endif
-            /// <summary>Optional recruit type classification filter, defaults to HighSchool</summary>
+            /// <summary>Recruit classification. Defaults to `HighSchool`.</summary>
             [QueryParameter("classification")]
             public global::CollegeFootballData.Models.RecruitClassification? ClassificationAsRecruitClassification { get; set; }
-            /// <summary>Optional position categorization filter</summary>
+            /// <summary>Position category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -110,7 +110,7 @@ namespace CollegeFootballData.Recruiting.Players
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional state/province filter</summary>
+            /// <summary>State or province abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("state")]
@@ -120,7 +120,7 @@ namespace CollegeFootballData.Recruiting.Players
             [QueryParameter("state")]
             public string State { get; set; }
 #endif
-            /// <summary>Team filter, required when no team specified</summary>
+            /// <summary>Team name. Required unless `year` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -130,7 +130,7 @@ namespace CollegeFootballData.Recruiting.Players
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Year filter, required when no team specified</summary>
+            /// <summary>Recruiting class year. Required unless `team` is specified.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

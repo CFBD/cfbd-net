@@ -34,7 +34,7 @@ namespace CollegeFootballData.Draft.Picks
         {
         }
         /// <summary>
-        /// Retrieve historical NFL draft data
+        /// Returns historical NFL Draft picks.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.DraftPick&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Draft.Picks
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieve historical NFL draft data
+        /// Returns historical NFL Draft picks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Draft.Picks
             return new global::CollegeFootballData.Draft.Picks.PicksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve historical NFL draft data
+        /// Returns historical NFL Draft picks.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PicksRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional college conference filter</summary>
+            /// <summary>College conference name or abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Draft.Picks
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional position classification filter</summary>
+            /// <summary>Position category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -106,7 +106,7 @@ namespace CollegeFootballData.Draft.Picks
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional college team filter</summary>
+            /// <summary>College team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("school")]
@@ -116,7 +116,7 @@ namespace CollegeFootballData.Draft.Picks
             [QueryParameter("school")]
             public string School { get; set; }
 #endif
-            /// <summary>Optional NFL team filter</summary>
+            /// <summary>NFL team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -126,7 +126,7 @@ namespace CollegeFootballData.Draft.Picks
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter</summary>
+            /// <summary>Draft year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

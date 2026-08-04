@@ -34,7 +34,7 @@ namespace CollegeFootballData.Player.Search
         {
         }
         /// <summary>
-        /// Search for players (lists top 100 results)
+        /// Returns up to 100 players whose names match the search term.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerSearchResult&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Player.Search
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Search for players (lists top 100 results)
+        /// Returns up to 100 players whose names match the search term.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Player.Search
             return new global::CollegeFootballData.Player.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Search for players (lists top 100 results)
+        /// Returns up to 100 players whose names match the search term.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional position abbreviation filter</summary>
+            /// <summary>Player position abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -96,7 +96,7 @@ namespace CollegeFootballData.Player.Search
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Search term for matching player name</summary>
+            /// <summary>Full or partial player name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("searchTerm")]
@@ -106,7 +106,7 @@ namespace CollegeFootballData.Player.Search
             [QueryParameter("searchTerm")]
             public string SearchTerm { get; set; }
 #endif
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -116,7 +116,7 @@ namespace CollegeFootballData.Player.Search
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Optional year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

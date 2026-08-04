@@ -34,7 +34,7 @@ namespace CollegeFootballData.Player.Usage
         {
         }
         /// <summary>
-        /// Retrieves player usage data for a given season
+        /// Returns player usage metrics for a season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerUsage&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Player.Usage
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieves player usage data for a given season
+        /// Returns player usage metrics for a season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,12 +81,12 @@ namespace CollegeFootballData.Player.Usage
             return new global::CollegeFootballData.Player.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves player usage data for a given season
+        /// Returns player usage metrics for a season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional conference abbreviation filter</summary>
+            /// <summary>Conference abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("conference")]
@@ -96,13 +96,13 @@ namespace CollegeFootballData.Player.Usage
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
-            /// <summary>Optional exclude garbage time flag, defaults to false</summary>
+            /// <summary>Excludes garbage-time plays when `true`. Defaultsto `false`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Optional player id filter</summary>
+            /// <summary>Player ID.</summary>
             [QueryParameter("playerId")]
             public int? PlayerId { get; set; }
-            /// <summary>Optional position abbreivation filter</summary>
+            /// <summary>Player position abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -112,7 +112,7 @@ namespace CollegeFootballData.Player.Usage
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional team filter</summary>
+            /// <summary>Team name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -122,7 +122,7 @@ namespace CollegeFootballData.Player.Usage
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }

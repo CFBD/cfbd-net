@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ppa.Players.Games
         {
         }
         /// <summary>
-        /// Queries player PPA statistics by game
+        /// Returns player Predicted Points Added (PPA) metrics by game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerGamePredictedPointsAdded&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ppa.Players.Games
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Queries player PPA statistics by game
+        /// Returns player Predicted Points Added (PPA) metrics by game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,15 +81,15 @@ namespace CollegeFootballData.Ppa.Players.Games
             return new global::CollegeFootballData.Ppa.Players.Games.GamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Queries player PPA statistics by game
+        /// Returns player Predicted Points Added (PPA) metrics by game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optional flag to exclude garbage time plays</summary>
+            /// <summary>Excludes garbage-time plays when `true`.</summary>
             [QueryParameter("excludeGarbageTime")]
             public bool? ExcludeGarbageTime { get; set; }
-            /// <summary>Optional player ID filter</summary>
+            /// <summary>Player ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("playerId")]
@@ -99,7 +99,7 @@ namespace CollegeFootballData.Ppa.Players.Games
             [QueryParameter("playerId")]
             public string PlayerId { get; set; }
 #endif
-            /// <summary>Optional player position abbreviation filter</summary>
+            /// <summary>Player position abbreviation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("position")]
@@ -109,7 +109,7 @@ namespace CollegeFootballData.Ppa.Players.Games
             [QueryParameter("position")]
             public string Position { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,10 +120,10 @@ namespace CollegeFootballData.Ppa.Players.Games
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
 #endif
-            /// <summary>Optional season type filter</summary>
+            /// <summary>Season type.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Models.SeasonType? SeasonTypeAsSeasonType { get; set; }
-            /// <summary>Team filter, required if week not specified</summary>
+            /// <summary>Team name. Required unless `week` is specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("team")]
@@ -133,13 +133,13 @@ namespace CollegeFootballData.Ppa.Players.Games
             [QueryParameter("team")]
             public string Team { get; set; }
 #endif
-            /// <summary>Threshold value for minimum number of plays</summary>
+            /// <summary>Minimum number of plays.</summary>
             [QueryParameter("threshold")]
             public double? Threshold { get; set; }
-            /// <summary>Week filter, required if team not specified</summary>
+            /// <summary>Week number. Required unless `team` is specified.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            /// <summary>Required year filter</summary>
+            /// <summary>Season year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }
