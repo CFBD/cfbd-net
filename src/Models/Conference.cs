@@ -21,9 +21,11 @@ namespace CollegeFootballData.Models
         public string Abbreviation { get; set; }
 #endif
         /// <summary>The classification property</summary>
-        public global::CollegeFootballData.Models.DivisionClassification? Classification { get; set; }
+        public global::CollegeFootballData.Models.ConferenceClassification? Classification { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
+        /// <summary>The memberCount property</summary>
+        public int? MemberCount { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +61,9 @@ namespace CollegeFootballData.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "abbreviation", n => { Abbreviation = n.GetStringValue(); } },
-                { "classification", n => { Classification = n.GetEnumValue<global::CollegeFootballData.Models.DivisionClassification>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<global::CollegeFootballData.Models.ConferenceClassification>(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
+                { "memberCount", n => { MemberCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "shortName", n => { ShortName = n.GetStringValue(); } },
             };
@@ -73,8 +76,9 @@ namespace CollegeFootballData.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("abbreviation", Abbreviation);
-            writer.WriteEnumValue<global::CollegeFootballData.Models.DivisionClassification>("classification", Classification);
+            writer.WriteEnumValue<global::CollegeFootballData.Models.ConferenceClassification>("classification", Classification);
             writer.WriteIntValue("id", Id);
+            writer.WriteIntValue("memberCount", MemberCount);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("shortName", ShortName);
         }
