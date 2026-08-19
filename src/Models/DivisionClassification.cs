@@ -20,6 +20,10 @@ namespace CollegeFootballData.Models
         #pragma warning disable CS1591
         Ii,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ii/iii")]
+        #pragma warning disable CS1591
+        IiIii,
+        #pragma warning restore CS1591
         [EnumMember(Value = "iii")]
         #pragma warning disable CS1591
         Iii,
