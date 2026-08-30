@@ -11,6 +11,7 @@ using CollegeFootballData.Info;
 using CollegeFootballData.Lines;
 using CollegeFootballData.Live;
 using CollegeFootballData.Metrics;
+using CollegeFootballData.Passing;
 using CollegeFootballData.Player;
 using CollegeFootballData.Playoffs;
 using CollegeFootballData.Plays;
@@ -98,6 +99,11 @@ namespace CollegeFootballData
         public global::CollegeFootballData.Metrics.MetricsRequestBuilder Metrics
         {
             get => new global::CollegeFootballData.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The passing property</summary>
+        public global::CollegeFootballData.Passing.PassingRequestBuilder Passing
+        {
+            get => new global::CollegeFootballData.Passing.PassingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The player property</summary>
         public global::CollegeFootballData.Player.PlayerRequestBuilder Player
