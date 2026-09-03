@@ -21,6 +21,7 @@ using CollegeFootballData.Ratings;
 using CollegeFootballData.Records;
 using CollegeFootballData.Recruiting;
 using CollegeFootballData.Roster;
+using CollegeFootballData.Rushing;
 using CollegeFootballData.Scoreboard;
 using CollegeFootballData.Stats;
 using CollegeFootballData.Talent;
@@ -149,6 +150,11 @@ namespace CollegeFootballData
         public global::CollegeFootballData.Roster.RosterRequestBuilder Roster
         {
             get => new global::CollegeFootballData.Roster.RosterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rushing property</summary>
+        public global::CollegeFootballData.Rushing.RushingRequestBuilder Rushing
+        {
+            get => new global::CollegeFootballData.Rushing.RushingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scoreboard property</summary>
         public global::CollegeFootballData.Scoreboard.ScoreboardRequestBuilder Scoreboard
