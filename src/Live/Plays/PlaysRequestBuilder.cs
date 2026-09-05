@@ -34,7 +34,7 @@ namespace CollegeFootballData.Live.Plays
         {
         }
         /// <summary>
-        /// Returns live play-by-play data and advanced metrics for a game.
+        /// Returns live play-by-play data and advanced metrics for a game.Results may be cached for up to five seconds after calculation.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.LiveGame"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Live.Plays
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.LiveGame>(requestInfo, global::CollegeFootballData.Models.LiveGame.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns live play-by-play data and advanced metrics for a game.
+        /// Returns live play-by-play data and advanced metrics for a game.Results may be cached for up to five seconds after calculation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace CollegeFootballData.Live.Plays
             return new global::CollegeFootballData.Live.Plays.PlaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns live play-by-play data and advanced metrics for a game.
+        /// Returns live play-by-play data and advanced metrics for a game.Results may be cached for up to five seconds after calculation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaysRequestBuilderGetQueryParameters 
