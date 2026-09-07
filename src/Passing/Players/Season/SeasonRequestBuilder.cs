@@ -34,7 +34,7 @@ namespace CollegeFootballData.Passing.Players.Season
         {
         }
         /// <summary>
-        /// Returns passer production by season.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerPassingSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Passing.Players.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns passer production by season.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Passing.Players.Season
             return new global::CollegeFootballData.Passing.Players.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns passer production by season.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 

@@ -8,13 +8,15 @@ using System;
 namespace CollegeFootballData.Models
 {
     /// <summary>
-    /// Defense reports opponent production allowed without inverting PPA signs.
+    /// Production for analysis-eligible attempts in one location bucket.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PassingProduction : IParsable
+    public partial class PassingLocationProduction : IParsable
     {
         /// <summary>Number of attempts with non-null air yards, including zero-yard values.</summary>
         public int? AirYardsAttemptsAvailable { get; set; }
+        /// <summary>Total air yards / attempts with air yards available; null if unavailable.Equivalent to averageDepthOfTarget. Yardage averages use one decimal.</summary>
+        public double? AirYardsPerAttempt { get; set; }
         /// <summary>The attempts property</summary>
         public int? Attempts { get; set; }
         /// <summary>The averageDepthOfTarget property</summary>
@@ -31,18 +33,6 @@ namespace CollegeFootballData.Models
         public int? Incompletions { get; set; }
         /// <summary>The interceptions property</summary>
         public int? Interceptions { get; set; }
-        /// <summary>Eligible attempts with both recognized source depth and direction.</summary>
-        public int? LocationAvailableAttempts { get; set; }
-        /// <summary>Attempts eligible for advanced metrics and location analysis. Existingoverall production includes ineligible attempts; location buckets do not.</summary>
-        public int? LocationEligibleAttempts { get; set; }
-        /// <summary>The locations property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::CollegeFootballData.Models.PassingLocations? Locations { get; set; }
-#nullable restore
-#else
-        public global::CollegeFootballData.Models.PassingLocations Locations { get; set; }
-#endif
         /// <summary>Average available PPA on eligible attempts; zero if unavailable.</summary>
         public double? Ppa { get; set; }
         /// <summary>Eligible attempts with non-null PPA, including zero and negative values.</summary>
@@ -67,15 +57,17 @@ namespace CollegeFootballData.Models
         public int? TotalYardsAttemptsAvailable { get; set; }
         /// <summary>Number of completed attempts with valid total yards and air yards tocalculate yards after catch, including zero-yard values.</summary>
         public int? YardsAfterCatchAttemptsAvailable { get; set; }
+        /// <summary>Total yards / attempts with total yards available; null if unavailable.</summary>
+        public double? YardsPerAttempt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::CollegeFootballData.Models.PassingProduction"/></returns>
+        /// <returns>A <see cref="global::CollegeFootballData.Models.PassingLocationProduction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::CollegeFootballData.Models.PassingProduction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::CollegeFootballData.Models.PassingLocationProduction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::CollegeFootballData.Models.PassingProduction();
+            return new global::CollegeFootballData.Models.PassingLocationProduction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +78,7 @@ namespace CollegeFootballData.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "airYardsAttemptsAvailable", n => { AirYardsAttemptsAvailable = n.GetIntValue(); } },
+                { "airYardsPerAttempt", n => { AirYardsPerAttempt = n.GetDoubleValue(); } },
                 { "attempts", n => { Attempts = n.GetIntValue(); } },
                 { "averageDepthOfTarget", n => { AverageDepthOfTarget = n.GetDoubleValue(); } },
                 { "averageYardsAfterCatch", n => { AverageYardsAfterCatch = n.GetDoubleValue(); } },
@@ -94,9 +87,6 @@ namespace CollegeFootballData.Models
                 { "explosiveness", n => { Explosiveness = n.GetDoubleValue(); } },
                 { "incompletions", n => { Incompletions = n.GetIntValue(); } },
                 { "interceptions", n => { Interceptions = n.GetIntValue(); } },
-                { "locationAvailableAttempts", n => { LocationAvailableAttempts = n.GetIntValue(); } },
-                { "locationEligibleAttempts", n => { LocationEligibleAttempts = n.GetIntValue(); } },
-                { "locations", n => { Locations = n.GetObjectValue<global::CollegeFootballData.Models.PassingLocations>(global::CollegeFootballData.Models.PassingLocations.CreateFromDiscriminatorValue); } },
                 { "ppa", n => { Ppa = n.GetDoubleValue(); } },
                 { "ppaAttemptsAvailable", n => { PpaAttemptsAvailable = n.GetIntValue(); } },
                 { "successAttemptsAvailable", n => { SuccessAttemptsAvailable = n.GetIntValue(); } },
@@ -109,6 +99,7 @@ namespace CollegeFootballData.Models
                 { "totalYardsAfterCatch", n => { TotalYardsAfterCatch = n.GetIntValue(); } },
                 { "totalYardsAttemptsAvailable", n => { TotalYardsAttemptsAvailable = n.GetIntValue(); } },
                 { "yardsAfterCatchAttemptsAvailable", n => { YardsAfterCatchAttemptsAvailable = n.GetIntValue(); } },
+                { "yardsPerAttempt", n => { YardsPerAttempt = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -119,6 +110,7 @@ namespace CollegeFootballData.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("airYardsAttemptsAvailable", AirYardsAttemptsAvailable);
+            writer.WriteDoubleValue("airYardsPerAttempt", AirYardsPerAttempt);
             writer.WriteIntValue("attempts", Attempts);
             writer.WriteDoubleValue("averageDepthOfTarget", AverageDepthOfTarget);
             writer.WriteDoubleValue("averageYardsAfterCatch", AverageYardsAfterCatch);
@@ -127,9 +119,6 @@ namespace CollegeFootballData.Models
             writer.WriteDoubleValue("explosiveness", Explosiveness);
             writer.WriteIntValue("incompletions", Incompletions);
             writer.WriteIntValue("interceptions", Interceptions);
-            writer.WriteIntValue("locationAvailableAttempts", LocationAvailableAttempts);
-            writer.WriteIntValue("locationEligibleAttempts", LocationEligibleAttempts);
-            writer.WriteObjectValue<global::CollegeFootballData.Models.PassingLocations>("locations", Locations);
             writer.WriteDoubleValue("ppa", Ppa);
             writer.WriteIntValue("ppaAttemptsAvailable", PpaAttemptsAvailable);
             writer.WriteIntValue("successAttemptsAvailable", SuccessAttemptsAvailable);
@@ -142,6 +131,7 @@ namespace CollegeFootballData.Models
             writer.WriteIntValue("totalYardsAfterCatch", TotalYardsAfterCatch);
             writer.WriteIntValue("totalYardsAttemptsAvailable", TotalYardsAttemptsAvailable);
             writer.WriteIntValue("yardsAfterCatchAttemptsAvailable", YardsAfterCatchAttemptsAvailable);
+            writer.WriteDoubleValue("yardsPerAttempt", YardsPerAttempt);
         }
     }
 }

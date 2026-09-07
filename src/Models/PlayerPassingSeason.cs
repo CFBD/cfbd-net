@@ -32,10 +32,24 @@ namespace CollegeFootballData.Models
 #else
         public string Conference { get; set; }
 #endif
+        /// <summary>Average available PPA on successful eligible attempts; zero if unavailable.</summary>
+        public double? Explosiveness { get; set; }
         /// <summary>The incompletions property</summary>
         public int? Incompletions { get; set; }
         /// <summary>The interceptions property</summary>
         public int? Interceptions { get; set; }
+        /// <summary>Eligible attempts with both recognized source depth and direction.</summary>
+        public int? LocationAvailableAttempts { get; set; }
+        /// <summary>Attempts eligible for advanced metrics and location analysis. Existingoverall production includes ineligible attempts; location buckets do not.</summary>
+        public int? LocationEligibleAttempts { get; set; }
+        /// <summary>The locations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.PassingLocations? Locations { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.PassingLocations Locations { get; set; }
+#endif
         /// <summary>The player property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,8 +66,20 @@ namespace CollegeFootballData.Models
 #else
         public string PlayerId { get; set; }
 #endif
+        /// <summary>Average available PPA on eligible attempts; zero if unavailable.</summary>
+        public double? Ppa { get; set; }
+        /// <summary>Eligible attempts with non-null PPA, including zero and negative values.</summary>
+        public int? PpaAttemptsAvailable { get; set; }
         /// <summary>The season property</summary>
         public int? Season { get; set; }
+        /// <summary>Eligible attempts with non-null success. Missing success remains in thesuccess-rate denominator but does not count as successful.</summary>
+        public int? SuccessAttemptsAvailable { get; set; }
+        /// <summary>Eligible attempts with stored success equal to true.</summary>
+        public int? SuccessfulAttempts { get; set; }
+        /// <summary>Successful eligible attempts with non-null PPA; explosiveness denominator.</summary>
+        public int? SuccessfulPpaAttemptsAvailable { get; set; }
+        /// <summary>Successful eligible attempts / all eligible attempts; zero if empty.</summary>
+        public double? SuccessRate { get; set; }
         /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +90,8 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The totalAirYards property</summary>
         public int? TotalAirYards { get; set; }
+        /// <summary>Sum of available PPA on eligible attempts; zero if unavailable.</summary>
+        public double? TotalPpa { get; set; }
         /// <summary>The totalYards property</summary>
         public int? TotalYards { get; set; }
         /// <summary>The totalYardsAfterCatch property</summary>
@@ -97,13 +125,24 @@ namespace CollegeFootballData.Models
                 { "completionRate", n => { CompletionRate = n.GetDoubleValue(); } },
                 { "completions", n => { Completions = n.GetIntValue(); } },
                 { "conference", n => { Conference = n.GetStringValue(); } },
+                { "explosiveness", n => { Explosiveness = n.GetDoubleValue(); } },
                 { "incompletions", n => { Incompletions = n.GetIntValue(); } },
                 { "interceptions", n => { Interceptions = n.GetIntValue(); } },
+                { "locationAvailableAttempts", n => { LocationAvailableAttempts = n.GetIntValue(); } },
+                { "locationEligibleAttempts", n => { LocationEligibleAttempts = n.GetIntValue(); } },
+                { "locations", n => { Locations = n.GetObjectValue<global::CollegeFootballData.Models.PassingLocations>(global::CollegeFootballData.Models.PassingLocations.CreateFromDiscriminatorValue); } },
                 { "player", n => { Player = n.GetStringValue(); } },
                 { "playerId", n => { PlayerId = n.GetStringValue(); } },
+                { "ppa", n => { Ppa = n.GetDoubleValue(); } },
+                { "ppaAttemptsAvailable", n => { PpaAttemptsAvailable = n.GetIntValue(); } },
                 { "season", n => { Season = n.GetIntValue(); } },
+                { "successAttemptsAvailable", n => { SuccessAttemptsAvailable = n.GetIntValue(); } },
+                { "successRate", n => { SuccessRate = n.GetDoubleValue(); } },
+                { "successfulAttempts", n => { SuccessfulAttempts = n.GetIntValue(); } },
+                { "successfulPpaAttemptsAvailable", n => { SuccessfulPpaAttemptsAvailable = n.GetIntValue(); } },
                 { "team", n => { Team = n.GetStringValue(); } },
                 { "totalAirYards", n => { TotalAirYards = n.GetIntValue(); } },
+                { "totalPpa", n => { TotalPpa = n.GetDoubleValue(); } },
                 { "totalYards", n => { TotalYards = n.GetIntValue(); } },
                 { "totalYardsAfterCatch", n => { TotalYardsAfterCatch = n.GetIntValue(); } },
                 { "totalYardsAttemptsAvailable", n => { TotalYardsAttemptsAvailable = n.GetIntValue(); } },
@@ -124,13 +163,24 @@ namespace CollegeFootballData.Models
             writer.WriteDoubleValue("completionRate", CompletionRate);
             writer.WriteIntValue("completions", Completions);
             writer.WriteStringValue("conference", Conference);
+            writer.WriteDoubleValue("explosiveness", Explosiveness);
             writer.WriteIntValue("incompletions", Incompletions);
             writer.WriteIntValue("interceptions", Interceptions);
+            writer.WriteIntValue("locationAvailableAttempts", LocationAvailableAttempts);
+            writer.WriteIntValue("locationEligibleAttempts", LocationEligibleAttempts);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.PassingLocations>("locations", Locations);
             writer.WriteStringValue("player", Player);
             writer.WriteStringValue("playerId", PlayerId);
+            writer.WriteDoubleValue("ppa", Ppa);
+            writer.WriteIntValue("ppaAttemptsAvailable", PpaAttemptsAvailable);
             writer.WriteIntValue("season", Season);
+            writer.WriteIntValue("successAttemptsAvailable", SuccessAttemptsAvailable);
+            writer.WriteIntValue("successfulAttempts", SuccessfulAttempts);
+            writer.WriteIntValue("successfulPpaAttemptsAvailable", SuccessfulPpaAttemptsAvailable);
+            writer.WriteDoubleValue("successRate", SuccessRate);
             writer.WriteStringValue("team", Team);
             writer.WriteIntValue("totalAirYards", TotalAirYards);
+            writer.WriteDoubleValue("totalPpa", TotalPpa);
             writer.WriteIntValue("totalYards", TotalYards);
             writer.WriteIntValue("totalYardsAfterCatch", TotalYardsAfterCatch);
             writer.WriteIntValue("totalYardsAttemptsAvailable", TotalYardsAttemptsAvailable);

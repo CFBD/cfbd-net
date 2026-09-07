@@ -60,6 +60,8 @@ namespace CollegeFootballData.Models
         public bool? IsSpike { get; set; }
         /// <summary>The isThrowaway property</summary>
         public bool? IsThrowaway { get; set; }
+        /// <summary>Excludes spikes, intentional grounding, and invalid parses. Throwaways,partial parses, and attempts with missing location or air yards qualify.</summary>
+        public bool? LocationAnalysisEligible { get; set; }
         /// <summary>The offense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +124,8 @@ namespace CollegeFootballData.Models
 #else
         public string PlayText { get; set; }
 #endif
+        /// <summary>Stored offensive PPA, including zero and negative values.</summary>
+        public double? Ppa { get; set; }
         /// <summary>The season property</summary>
         public int? Season { get; set; }
         /// <summary>The seasonType property</summary>
@@ -130,6 +134,8 @@ namespace CollegeFootballData.Models
         public int? StartYardline { get; set; }
         /// <summary>The startYardsToGoal property</summary>
         public int? StartYardsToGoal { get; set; }
+        /// <summary>Stored success classification; null means unavailable.</summary>
+        public bool? Success { get; set; }
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,6 +190,7 @@ namespace CollegeFootballData.Models
                 { "isIntentionalGrounding", n => { IsIntentionalGrounding = n.GetBoolValue(); } },
                 { "isSpike", n => { IsSpike = n.GetBoolValue(); } },
                 { "isThrowaway", n => { IsThrowaway = n.GetBoolValue(); } },
+                { "locationAnalysisEligible", n => { LocationAnalysisEligible = n.GetBoolValue(); } },
                 { "offense", n => { Offense = n.GetStringValue(); } },
                 { "offenseConference", n => { OffenseConference = n.GetStringValue(); } },
                 { "offenseId", n => { OffenseId = n.GetIntValue(); } },
@@ -197,10 +204,12 @@ namespace CollegeFootballData.Models
                 { "period", n => { Period = n.GetIntValue(); } },
                 { "playId", n => { PlayId = n.GetStringValue(); } },
                 { "playText", n => { PlayText = n.GetStringValue(); } },
+                { "ppa", n => { Ppa = n.GetDoubleValue(); } },
                 { "season", n => { Season = n.GetIntValue(); } },
                 { "seasonType", n => { SeasonType = n.GetEnumValue<global::CollegeFootballData.Models.SeasonType>(); } },
                 { "startYardline", n => { StartYardline = n.GetIntValue(); } },
                 { "startYardsToGoal", n => { StartYardsToGoal = n.GetIntValue(); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
                 { "targetId", n => { TargetId = n.GetStringValue(); } },
                 { "targetYardsToGoal", n => { TargetYardsToGoal = n.GetIntValue(); } },
@@ -228,6 +237,7 @@ namespace CollegeFootballData.Models
             writer.WriteBoolValue("isIntentionalGrounding", IsIntentionalGrounding);
             writer.WriteBoolValue("isSpike", IsSpike);
             writer.WriteBoolValue("isThrowaway", IsThrowaway);
+            writer.WriteBoolValue("locationAnalysisEligible", LocationAnalysisEligible);
             writer.WriteStringValue("offense", Offense);
             writer.WriteStringValue("offenseConference", OffenseConference);
             writer.WriteIntValue("offenseId", OffenseId);
@@ -241,10 +251,12 @@ namespace CollegeFootballData.Models
             writer.WriteIntValue("period", Period);
             writer.WriteStringValue("playId", PlayId);
             writer.WriteStringValue("playText", PlayText);
+            writer.WriteDoubleValue("ppa", Ppa);
             writer.WriteIntValue("season", Season);
             writer.WriteEnumValue<global::CollegeFootballData.Models.SeasonType>("seasonType", SeasonType);
             writer.WriteIntValue("startYardline", StartYardline);
             writer.WriteIntValue("startYardsToGoal", StartYardsToGoal);
+            writer.WriteBoolValue("success", Success);
             writer.WriteStringValue("target", Target);
             writer.WriteStringValue("targetId", TargetId);
             writer.WriteIntValue("targetYardsToGoal", TargetYardsToGoal);

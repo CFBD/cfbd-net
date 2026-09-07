@@ -20,7 +20,7 @@ namespace CollegeFootballData.Models
 #else
         public string Conference { get; set; }
 #endif
-        /// <summary>The defense property</summary>
+        /// <summary>Defense reports opponent production allowed without inverting PPA signs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::CollegeFootballData.Models.PassingProduction? Defense { get; set; }
@@ -28,7 +28,7 @@ namespace CollegeFootballData.Models
 #else
         public global::CollegeFootballData.Models.PassingProduction Defense { get; set; }
 #endif
-        /// <summary>The offense property</summary>
+        /// <summary>Defense reports opponent production allowed without inverting PPA signs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::CollegeFootballData.Models.PassingProduction? Offense { get; set; }

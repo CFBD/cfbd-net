@@ -34,7 +34,7 @@ namespace CollegeFootballData.Passing.Players.Games
         {
         }
         /// <summary>
-        /// Returns passer production by game.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerPassingGame&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Passing.Players.Games
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns passer production by game.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Passing.Players.Games
             return new global::CollegeFootballData.Passing.Players.Games.GamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns passer production by game.
+        /// Returns passer production, advanced metrics, and pass-location breakdowns by game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 

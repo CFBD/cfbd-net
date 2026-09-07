@@ -34,7 +34,7 @@ namespace CollegeFootballData.Passing.Plays
         {
         }
         /// <summary>
-        /// Returns enriched pass attempts.
+        /// Returns enriched pass attempts with stored PPA, success, and location-analysis eligibility.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PassingPlay&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Passing.Plays
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns enriched pass attempts.
+        /// Returns enriched pass attempts with stored PPA, success, and location-analysis eligibility.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Passing.Plays
             return new global::CollegeFootballData.Passing.Plays.PlaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns enriched pass attempts.
+        /// Returns enriched pass attempts with stored PPA, success, and location-analysis eligibility.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaysRequestBuilderGetQueryParameters 
