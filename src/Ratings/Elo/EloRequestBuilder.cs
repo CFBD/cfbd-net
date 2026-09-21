@@ -22,7 +22,7 @@ namespace CollegeFootballData.Ratings.Elo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EloRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ratings/elo{?conference*,seasonType*,team*,week*,year*}", pathParameters)
+        public EloRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ratings/elo{?conference*,preseason*,seasonType*,team*,week*,year*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace CollegeFootballData.Ratings.Elo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EloRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ratings/elo{?conference*,seasonType*,team*,week*,year*}", rawUrl)
+        public EloRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ratings/elo{?conference*,preseason*,seasonType*,team*,week*,year*}", rawUrl)
         {
         }
         /// <summary>
@@ -96,6 +96,9 @@ namespace CollegeFootballData.Ratings.Elo
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
+            /// <summary>Return initial ratings from each team&apos;s opening regular-seasongame. Missing opening ratings are omitted. Cannot be combined with week;seasonType must be regular or both when specified. Defaults to false.</summary>
+            [QueryParameter("preseason")]
+            public bool? Preseason { get; set; }
             /// <summary>Season type.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsSeasonType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

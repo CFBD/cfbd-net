@@ -14,6 +14,14 @@ namespace CollegeFootballData.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Enriched passing by athlete ID, including location coverage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::CollegeFootballData.Models.PlayerPassingGame>? Passing { get; set; }
+#nullable restore
+#else
+        public List<global::CollegeFootballData.Models.PlayerPassingGame> Passing { get; set; }
+#endif
         /// <summary>The ppa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace CollegeFootballData.Models
 #nullable restore
 #else
         public List<global::CollegeFootballData.Models.PlayerPPA> Ppa { get; set; }
+#endif
+        /// <summary>Enriched rushing by athlete ID, including direction coverage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::CollegeFootballData.Models.PlayerRushingGame>? Rushing { get; set; }
+#nullable restore
+#else
+        public List<global::CollegeFootballData.Models.PlayerRushingGame> Rushing { get; set; }
 #endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +71,9 @@ namespace CollegeFootballData.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "passing", n => { Passing = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerPassingGame>(global::CollegeFootballData.Models.PlayerPassingGame.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ppa", n => { Ppa = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerPPA>(global::CollegeFootballData.Models.PlayerPPA.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rushing", n => { Rushing = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerRushingGame>(global::CollegeFootballData.Models.PlayerRushingGame.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage", n => { Usage = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerGameUsage>(global::CollegeFootballData.Models.PlayerGameUsage.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -66,7 +84,9 @@ namespace CollegeFootballData.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerPassingGame>("passing", Passing);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerPPA>("ppa", Ppa);
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerRushingGame>("rushing", Rushing);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.PlayerGameUsage>("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }

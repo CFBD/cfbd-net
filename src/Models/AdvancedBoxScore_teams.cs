@@ -46,6 +46,14 @@ namespace CollegeFootballData.Models
 #else
         public List<global::CollegeFootballData.Models.TeamHavoc> Havoc { get; set; }
 #endif
+        /// <summary>Enriched offense/defense passing; empty when no qualifying rows exist.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::CollegeFootballData.Models.TeamPassingGame>? Passing { get; set; }
+#nullable restore
+#else
+        public List<global::CollegeFootballData.Models.TeamPassingGame> Passing { get; set; }
+#endif
         /// <summary>The ppa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +69,14 @@ namespace CollegeFootballData.Models
 #nullable restore
 #else
         public List<global::CollegeFootballData.Models.TeamRushingStats> Rushing { get; set; }
+#endif
+        /// <summary>Enriched rushing, separate from the legacy rushing section.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::CollegeFootballData.Models.TeamRushingGame>? RushingAdvanced { get; set; }
+#nullable restore
+#else
+        public List<global::CollegeFootballData.Models.TeamRushingGame> RushingAdvanced { get; set; }
 #endif
         /// <summary>The scoringOpportunities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,8 +123,10 @@ namespace CollegeFootballData.Models
                 { "explosiveness", n => { Explosiveness = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamExplosiveness>(global::CollegeFootballData.Models.TeamExplosiveness.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fieldPosition", n => { FieldPosition = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamFieldPosition>(global::CollegeFootballData.Models.TeamFieldPosition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "havoc", n => { Havoc = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamHavoc>(global::CollegeFootballData.Models.TeamHavoc.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "passing", n => { Passing = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamPassingGame>(global::CollegeFootballData.Models.TeamPassingGame.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ppa", n => { Ppa = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamPPA>(global::CollegeFootballData.Models.TeamPPA.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rushing", n => { Rushing = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamRushingStats>(global::CollegeFootballData.Models.TeamRushingStats.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rushingAdvanced", n => { RushingAdvanced = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamRushingGame>(global::CollegeFootballData.Models.TeamRushingGame.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scoringOpportunities", n => { ScoringOpportunities = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamScoringOpportunities>(global::CollegeFootballData.Models.TeamScoringOpportunities.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "successRates", n => { SuccessRates = n.GetCollectionOfObjectValues<global::CollegeFootballData.Models.TeamSuccessRates>(global::CollegeFootballData.Models.TeamSuccessRates.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -124,8 +142,10 @@ namespace CollegeFootballData.Models
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamExplosiveness>("explosiveness", Explosiveness);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamFieldPosition>("fieldPosition", FieldPosition);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamHavoc>("havoc", Havoc);
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamPassingGame>("passing", Passing);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamPPA>("ppa", Ppa);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamRushingStats>("rushing", Rushing);
+            writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamRushingGame>("rushingAdvanced", RushingAdvanced);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamScoringOpportunities>("scoringOpportunities", ScoringOpportunities);
             writer.WriteCollectionOfObjectValues<global::CollegeFootballData.Models.TeamSuccessRates>("successRates", SuccessRates);
             writer.WriteAdditionalData(AdditionalData);
