@@ -4,6 +4,7 @@ using CollegeFootballData.Models;
 using CollegeFootballData.Teams.Ats;
 using CollegeFootballData.Teams.Fbs;
 using CollegeFootballData.Teams.Matchup;
+using CollegeFootballData.Teams.Season;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -34,6 +35,11 @@ namespace CollegeFootballData.Teams
         public global::CollegeFootballData.Teams.Matchup.MatchupRequestBuilder Matchup
         {
             get => new global::CollegeFootballData.Teams.Matchup.MatchupRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The season property</summary>
+        public global::CollegeFootballData.Teams.Season.SeasonRequestBuilder Season
+        {
+            get => new global::CollegeFootballData.Teams.Season.SeasonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::CollegeFootballData.Teams.TeamsRequestBuilder"/> and sets the default values.
