@@ -34,7 +34,7 @@ namespace CollegeFootballData.Coaches.Tenures
         {
         }
         /// <summary>
-        /// Returns continuous head-coaching tenures and their attributed records.
+        /// Returns continuous head-coaching tenures and their attributed records.Requires coachId or team; year and active only filter the results.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.CoachTenure&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace CollegeFootballData.Coaches.Tenures
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns continuous head-coaching tenures and their attributed records.
+        /// Returns continuous head-coaching tenures and their attributed records.Requires coachId or team; year and active only filter the results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace CollegeFootballData.Coaches.Tenures
             return new global::CollegeFootballData.Coaches.Tenures.TenuresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns continuous head-coaching tenures and their attributed records.
+        /// Returns continuous head-coaching tenures and their attributed records.Requires coachId or team; year and active only filter the results.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TenuresRequestBuilderGetQueryParameters 
