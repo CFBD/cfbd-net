@@ -40,7 +40,7 @@ namespace CollegeFootballData.Games.Item.Preview
         {
         }
         /// <summary>
-        /// Returns pregame team comparisons and key players. Started games return metadata only.Team statistics may use the previous season; players and context stay in the game season.
+        /// Returns pregame team comparisons and key players. Analysis remains available until the game is completed.Team statistics may use the previous season; players and context stay in the game season.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.GamePreview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace CollegeFootballData.Games.Item.Preview
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.GamePreview>(requestInfo, global::CollegeFootballData.Models.GamePreview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns pregame team comparisons and key players. Started games return metadata only.Team statistics may use the previous season; players and context stay in the game season.
+        /// Returns pregame team comparisons and key players. Analysis remains available until the game is completed.Team statistics may use the previous season; players and context stay in the game season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
