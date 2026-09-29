@@ -62,6 +62,8 @@ namespace CollegeFootballData.Models
         public int? Plays { get; set; }
         /// <summary>The pointsPerOpportunity property</summary>
         public double? PointsPerOpportunity { get; set; }
+        /// <summary>The powerRushAttempts property</summary>
+        public double? PowerRushAttempts { get; set; }
         /// <summary>The powerSuccess property</summary>
         public double? PowerSuccess { get; set; }
         /// <summary>The ppa property</summary>
@@ -131,6 +133,7 @@ namespace CollegeFootballData.Models
                 { "passingPlays", n => { PassingPlays = n.GetObjectValue<global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_passingPlays>(global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_passingPlays.CreateFromDiscriminatorValue); } },
                 { "plays", n => { Plays = n.GetIntValue(); } },
                 { "pointsPerOpportunity", n => { PointsPerOpportunity = n.GetDoubleValue(); } },
+                { "powerRushAttempts", n => { PowerRushAttempts = n.GetDoubleValue(); } },
                 { "powerSuccess", n => { PowerSuccess = n.GetDoubleValue(); } },
                 { "ppa", n => { Ppa = n.GetDoubleValue(); } },
                 { "rushingPlays", n => { RushingPlays = n.GetObjectValue<global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_rushingPlays>(global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_rushingPlays.CreateFromDiscriminatorValue); } },
@@ -162,6 +165,7 @@ namespace CollegeFootballData.Models
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_passingPlays>("passingPlays", PassingPlays);
             writer.WriteIntValue("plays", Plays);
             writer.WriteDoubleValue("pointsPerOpportunity", PointsPerOpportunity);
+            writer.WriteDoubleValue("powerRushAttempts", PowerRushAttempts);
             writer.WriteDoubleValue("powerSuccess", PowerSuccess);
             writer.WriteDoubleValue("ppa", Ppa);
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamSeasonAdvancedStats_defense_rushingPlays>("rushingPlays", RushingPlays);

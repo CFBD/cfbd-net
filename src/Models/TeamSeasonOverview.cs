@@ -62,6 +62,14 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The season property</summary>
         public int? Season { get; set; }
+        /// <summary>The statRankings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.TeamSeasonStatRankings? StatRankings { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.TeamSeasonStatRankings StatRankings { get; set; }
+#endif
         /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +105,7 @@ namespace CollegeFootballData.Models
                 { "record", n => { Record = n.GetObjectValue<global::CollegeFootballData.Models.TeamSeasonOverview_record>(global::CollegeFootballData.Models.TeamSeasonOverview_record.CreateFromDiscriminatorValue); } },
                 { "rushing", n => { Rushing = n.GetObjectValue<global::CollegeFootballData.Models.TeamRushingSeason>(global::CollegeFootballData.Models.TeamRushingSeason.CreateFromDiscriminatorValue); } },
                 { "season", n => { Season = n.GetIntValue(); } },
+                { "statRankings", n => { StatRankings = n.GetObjectValue<global::CollegeFootballData.Models.TeamSeasonStatRankings>(global::CollegeFootballData.Models.TeamSeasonStatRankings.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetStringValue(); } },
                 { "teamId", n => { TeamId = n.GetIntValue(); } },
             };
@@ -115,6 +124,7 @@ namespace CollegeFootballData.Models
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamSeasonOverview_record>("record", Record);
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamRushingSeason>("rushing", Rushing);
             writer.WriteIntValue("season", Season);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.TeamSeasonStatRankings>("statRankings", StatRankings);
             writer.WriteStringValue("team", Team);
             writer.WriteIntValue("teamId", TeamId);
         }

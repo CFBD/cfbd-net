@@ -40,6 +40,14 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The season property</summary>
         public int? Season { get; set; }
+        /// <summary>The statRankings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::CollegeFootballData.Models.TeamSeasonStatRankings? StatRankings { get; set; }
+#nullable restore
+#else
+        public global::CollegeFootballData.Models.TeamSeasonStatRankings StatRankings { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +71,7 @@ namespace CollegeFootballData.Models
                 { "passing", n => { Passing = n.GetObjectValue<global::CollegeFootballData.Models.TeamPassingSeason>(global::CollegeFootballData.Models.TeamPassingSeason.CreateFromDiscriminatorValue); } },
                 { "rushing", n => { Rushing = n.GetObjectValue<global::CollegeFootballData.Models.TeamRushingSeason>(global::CollegeFootballData.Models.TeamRushingSeason.CreateFromDiscriminatorValue); } },
                 { "season", n => { Season = n.GetIntValue(); } },
+                { "statRankings", n => { StatRankings = n.GetObjectValue<global::CollegeFootballData.Models.TeamSeasonStatRankings>(global::CollegeFootballData.Models.TeamSeasonStatRankings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,6 +86,7 @@ namespace CollegeFootballData.Models
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamPassingSeason>("passing", Passing);
             writer.WriteObjectValue<global::CollegeFootballData.Models.TeamRushingSeason>("rushing", Rushing);
             writer.WriteIntValue("season", Season);
+            writer.WriteObjectValue<global::CollegeFootballData.Models.TeamSeasonStatRankings>("statRankings", StatRankings);
         }
     }
 }
