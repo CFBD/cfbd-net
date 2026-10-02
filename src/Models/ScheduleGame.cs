@@ -84,6 +84,8 @@ namespace CollegeFootballData.Models
 #else
         public global::CollegeFootballData.Models.PreviewVenue Venue { get; set; }
 #endif
+        /// <summary>The watchabilityScore property</summary>
+        public double? WatchabilityScore { get; set; }
         /// <summary>The week property</summary>
         public int? Week { get; set; }
         /// <summary>
@@ -119,6 +121,7 @@ namespace CollegeFootballData.Models
                 { "status", n => { Status = n.GetEnumValue<global::CollegeFootballData.Models.GameStatus>(); } },
                 { "statusCheckedAt", n => { StatusCheckedAt = n.GetDateTimeOffsetValue(); } },
                 { "venue", n => { Venue = n.GetObjectValue<global::CollegeFootballData.Models.PreviewVenue>(global::CollegeFootballData.Models.PreviewVenue.CreateFromDiscriminatorValue); } },
+                { "watchabilityScore", n => { WatchabilityScore = n.GetDoubleValue(); } },
                 { "week", n => { Week = n.GetIntValue(); } },
             };
         }
@@ -144,6 +147,7 @@ namespace CollegeFootballData.Models
             writer.WriteEnumValue<global::CollegeFootballData.Models.GameStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("statusCheckedAt", StatusCheckedAt);
             writer.WriteObjectValue<global::CollegeFootballData.Models.PreviewVenue>("venue", Venue);
+            writer.WriteDoubleValue("watchabilityScore", WatchabilityScore);
             writer.WriteIntValue("week", Week);
         }
         /// <summary>
