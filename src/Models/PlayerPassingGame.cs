@@ -32,6 +32,16 @@ namespace CollegeFootballData.Models
 #else
         public string Conference { get; set; }
 #endif
+        /// <summary>Completion percentage over expected, in percentage points; null if unavailable.</summary>
+        public double? Cpoe { get; set; }
+        /// <summary>Attempts with a completion probability; denominator for CPOE metrics.</summary>
+        public int? CpoeAttemptsAvailable { get; set; }
+        /// <summary>Completions among attempts with a completion probability.</summary>
+        public int? CpoeCompletions { get; set; }
+        /// <summary>Expected completions / cpoeAttemptsAvailable; null if unavailable.</summary>
+        public double? ExpectedCompletionRate { get; set; }
+        /// <summary>Sum of completion probabilities; null if unavailable.</summary>
+        public double? ExpectedCompletions { get; set; }
         /// <summary>Average available PPA on successful eligible attempts; zero if unavailable.</summary>
         public double? Explosiveness { get; set; }
         /// <summary>The gameId property</summary>
@@ -139,6 +149,11 @@ namespace CollegeFootballData.Models
                 { "completionRate", n => { CompletionRate = n.GetDoubleValue(); } },
                 { "completions", n => { Completions = n.GetIntValue(); } },
                 { "conference", n => { Conference = n.GetStringValue(); } },
+                { "cpoe", n => { Cpoe = n.GetDoubleValue(); } },
+                { "cpoeAttemptsAvailable", n => { CpoeAttemptsAvailable = n.GetIntValue(); } },
+                { "cpoeCompletions", n => { CpoeCompletions = n.GetIntValue(); } },
+                { "expectedCompletionRate", n => { ExpectedCompletionRate = n.GetDoubleValue(); } },
+                { "expectedCompletions", n => { ExpectedCompletions = n.GetDoubleValue(); } },
                 { "explosiveness", n => { Explosiveness = n.GetDoubleValue(); } },
                 { "gameId", n => { GameId = n.GetIntValue(); } },
                 { "incompletions", n => { Incompletions = n.GetIntValue(); } },
@@ -181,6 +196,11 @@ namespace CollegeFootballData.Models
             writer.WriteDoubleValue("completionRate", CompletionRate);
             writer.WriteIntValue("completions", Completions);
             writer.WriteStringValue("conference", Conference);
+            writer.WriteDoubleValue("cpoe", Cpoe);
+            writer.WriteIntValue("cpoeAttemptsAvailable", CpoeAttemptsAvailable);
+            writer.WriteIntValue("cpoeCompletions", CpoeCompletions);
+            writer.WriteDoubleValue("expectedCompletionRate", ExpectedCompletionRate);
+            writer.WriteDoubleValue("expectedCompletions", ExpectedCompletions);
             writer.WriteDoubleValue("explosiveness", Explosiveness);
             writer.WriteIntValue("gameId", GameId);
             writer.WriteIntValue("incompletions", Incompletions);

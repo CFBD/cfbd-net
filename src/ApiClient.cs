@@ -16,6 +16,7 @@ using CollegeFootballData.Player;
 using CollegeFootballData.Playoffs;
 using CollegeFootballData.Plays;
 using CollegeFootballData.Ppa;
+using CollegeFootballData.Punting;
 using CollegeFootballData.Rankings;
 using CollegeFootballData.Ratings;
 using CollegeFootballData.Records;
@@ -125,6 +126,11 @@ namespace CollegeFootballData
         public global::CollegeFootballData.Ppa.PpaRequestBuilder Ppa
         {
             get => new global::CollegeFootballData.Ppa.PpaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The punting property</summary>
+        public global::CollegeFootballData.Punting.PuntingRequestBuilder Punting
+        {
+            get => new global::CollegeFootballData.Punting.PuntingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rankings property</summary>
         public global::CollegeFootballData.Rankings.RankingsRequestBuilder Rankings

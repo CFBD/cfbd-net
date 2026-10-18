@@ -22,6 +22,10 @@ namespace CollegeFootballData.Models
 #else
         public global::CollegeFootballData.Models.PassingPlayClock Clock { get; set; }
 #endif
+        /// <summary>Estimated chance of a completion, from 0 to 1; null if unavailable.</summary>
+        public double? CompletionProbability { get; set; }
+        /// <summary>Completion over expected, in percentage points; null if unavailable.</summary>
+        public double? Cpoe { get; set; }
         /// <summary>The defense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -180,6 +184,8 @@ namespace CollegeFootballData.Models
             {
                 { "airYards", n => { AirYards = n.GetIntValue(); } },
                 { "clock", n => { Clock = n.GetObjectValue<global::CollegeFootballData.Models.PassingPlayClock>(global::CollegeFootballData.Models.PassingPlayClock.CreateFromDiscriminatorValue); } },
+                { "completionProbability", n => { CompletionProbability = n.GetDoubleValue(); } },
+                { "cpoe", n => { Cpoe = n.GetDoubleValue(); } },
                 { "defense", n => { Defense = n.GetStringValue(); } },
                 { "defenseConference", n => { DefenseConference = n.GetStringValue(); } },
                 { "defenseId", n => { DefenseId = n.GetIntValue(); } },
@@ -227,6 +233,8 @@ namespace CollegeFootballData.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("airYards", AirYards);
             writer.WriteObjectValue<global::CollegeFootballData.Models.PassingPlayClock>("clock", Clock);
+            writer.WriteDoubleValue("completionProbability", CompletionProbability);
+            writer.WriteDoubleValue("cpoe", Cpoe);
             writer.WriteStringValue("defense", Defense);
             writer.WriteStringValue("defenseConference", DefenseConference);
             writer.WriteIntValue("defenseId", DefenseId);

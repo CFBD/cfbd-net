@@ -8,7 +8,7 @@ using System;
 namespace CollegeFootballData.Models
 {
     /// <summary>
-    /// Defense reports opponent production allowed without inverting PPA signs.
+    /// Defense reports opponent production allowed without inverting PPA or CPOE signs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PassingProduction : IParsable
@@ -25,6 +25,16 @@ namespace CollegeFootballData.Models
         public double? CompletionRate { get; set; }
         /// <summary>The completions property</summary>
         public int? Completions { get; set; }
+        /// <summary>Completion percentage over expected, in percentage points; null if unavailable.</summary>
+        public double? Cpoe { get; set; }
+        /// <summary>Attempts with a completion probability; denominator for CPOE metrics.</summary>
+        public int? CpoeAttemptsAvailable { get; set; }
+        /// <summary>Completions among attempts with a completion probability.</summary>
+        public int? CpoeCompletions { get; set; }
+        /// <summary>Expected completions / cpoeAttemptsAvailable; null if unavailable.</summary>
+        public double? ExpectedCompletionRate { get; set; }
+        /// <summary>Sum of completion probabilities; null if unavailable.</summary>
+        public double? ExpectedCompletions { get; set; }
         /// <summary>Average available PPA on successful eligible attempts; zero if unavailable.</summary>
         public double? Explosiveness { get; set; }
         /// <summary>The incompletions property</summary>
@@ -91,6 +101,11 @@ namespace CollegeFootballData.Models
                 { "averageYardsAfterCatch", n => { AverageYardsAfterCatch = n.GetDoubleValue(); } },
                 { "completionRate", n => { CompletionRate = n.GetDoubleValue(); } },
                 { "completions", n => { Completions = n.GetIntValue(); } },
+                { "cpoe", n => { Cpoe = n.GetDoubleValue(); } },
+                { "cpoeAttemptsAvailable", n => { CpoeAttemptsAvailable = n.GetIntValue(); } },
+                { "cpoeCompletions", n => { CpoeCompletions = n.GetIntValue(); } },
+                { "expectedCompletionRate", n => { ExpectedCompletionRate = n.GetDoubleValue(); } },
+                { "expectedCompletions", n => { ExpectedCompletions = n.GetDoubleValue(); } },
                 { "explosiveness", n => { Explosiveness = n.GetDoubleValue(); } },
                 { "incompletions", n => { Incompletions = n.GetIntValue(); } },
                 { "interceptions", n => { Interceptions = n.GetIntValue(); } },
@@ -124,6 +139,11 @@ namespace CollegeFootballData.Models
             writer.WriteDoubleValue("averageYardsAfterCatch", AverageYardsAfterCatch);
             writer.WriteDoubleValue("completionRate", CompletionRate);
             writer.WriteIntValue("completions", Completions);
+            writer.WriteDoubleValue("cpoe", Cpoe);
+            writer.WriteIntValue("cpoeAttemptsAvailable", CpoeAttemptsAvailable);
+            writer.WriteIntValue("cpoeCompletions", CpoeCompletions);
+            writer.WriteDoubleValue("expectedCompletionRate", ExpectedCompletionRate);
+            writer.WriteDoubleValue("expectedCompletions", ExpectedCompletions);
             writer.WriteDoubleValue("explosiveness", Explosiveness);
             writer.WriteIntValue("incompletions", Incompletions);
             writer.WriteIntValue("interceptions", Interceptions);
