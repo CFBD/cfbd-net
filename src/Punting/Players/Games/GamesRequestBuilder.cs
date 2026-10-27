@@ -34,7 +34,7 @@ namespace CollegeFootballData.Punting.Players.Games
         {
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production bygame.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by game.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerPuntingGame&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Punting.Players.Games
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production bygame.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by game.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Punting.Players.Games
             return new global::CollegeFootballData.Punting.Players.Games.GamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production bygame.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by game.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GamesRequestBuilderGetQueryParameters 

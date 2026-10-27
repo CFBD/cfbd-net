@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace CollegeFootballData.Models
 {
+    /// <summary>
+    /// Individually attributed rushing, including attributed sacks. Team-only andunattributed attempts are excluded, so player totals may not sum to teamtotals.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PlayerRushingGame : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The attempts property</summary>
         public int? Attempts { get; set; }

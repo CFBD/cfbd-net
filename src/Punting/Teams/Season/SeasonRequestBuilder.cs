@@ -34,7 +34,7 @@ namespace CollegeFootballData.Punting.Teams.Season
         {
         }
         /// <summary>
-        /// Returns team punting and punt return production by season.Punting describes the team&apos;s punts. Returning describes opponent punts andthe team&apos;s returns.
+        /// Returns team punting and punt return statistics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamPuntingSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Punting.Teams.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns team punting and punt return production by season.Punting describes the team&apos;s punts. Returning describes opponent punts andthe team&apos;s returns.
+        /// Returns team punting and punt return statistics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Punting.Teams.Season
             return new global::CollegeFootballData.Punting.Teams.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns team punting and punt return production by season.Punting describes the team&apos;s punts. Returning describes opponent punts andthe team&apos;s returns.
+        /// Returns team punting and punt return statistics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 

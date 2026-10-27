@@ -34,7 +34,7 @@ namespace CollegeFootballData.Game.Box.Advanced
         {
         }
         /// <summary>
-        /// Returns an advanced box score for a game. Games without play-by-playdata, including games not yet played, return 404.
+        /// Returns an advanced box score for a game.Returns 404 for games without play-by-play data.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.AdvancedBoxScore"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace CollegeFootballData.Game.Box.Advanced
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.AdvancedBoxScore>(requestInfo, global::CollegeFootballData.Models.AdvancedBoxScore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an advanced box score for a game. Games without play-by-playdata, including games not yet played, return 404.
+        /// Returns an advanced box score for a game.Returns 404 for games without play-by-play data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace CollegeFootballData.Game.Box.Advanced
             return new global::CollegeFootballData.Game.Box.Advanced.AdvancedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns an advanced box score for a game. Games without play-by-playdata, including games not yet played, return 404.
+        /// Returns an advanced box score for a game.Returns 404 for games without play-by-play data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdvancedRequestBuilderGetQueryParameters 

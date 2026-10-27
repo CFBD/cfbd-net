@@ -12,7 +12,7 @@ namespace CollegeFootballData.Models
     public partial class PreviewAdjustedTeamMetrics : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isPreviousSeason property</summary>
+        /// <summary>True when team metrics come from the previous season. Player metrics alwaysuse the game season.</summary>
         public bool? IsPreviousSeason { get; set; }
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

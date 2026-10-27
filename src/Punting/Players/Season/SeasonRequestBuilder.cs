@@ -34,7 +34,7 @@ namespace CollegeFootballData.Punting.Players.Season
         {
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production byseason.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerPuntingSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Punting.Players.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production byseason.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Punting.Players.Season
             return new global::CollegeFootballData.Punting.Players.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns individually attributed punting and punt return production byseason.Player totals do not include team-only or unattributed punts and returns,and therefore are not expected to sum to team totals.
+        /// Returns player punting and punt return statistics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Player.Season.Overview
         {
         }
         /// <summary>
-        /// Returns a player season overview with box score, usage, and PredictedPoints Added (PPA) data.
+        /// Returns a player season overview with box score, usage, and PPA data.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.PlayerSeasonOverview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Player.Season.Overview
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.PlayerSeasonOverview>(requestInfo, global::CollegeFootballData.Models.PlayerSeasonOverview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a player season overview with box score, usage, and PredictedPoints Added (PPA) data.
+        /// Returns a player season overview with box score, usage, and PPA data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace CollegeFootballData.Player.Season.Overview
             return new global::CollegeFootballData.Player.Season.Overview.OverviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a player season overview with box score, usage, and PredictedPoints Added (PPA) data.
+        /// Returns a player season overview with box score, usage, and PPA data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverviewRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Rushing.Plays
         {
         }
         /// <summary>
-        /// Returns enriched rushing attempts.Team results include sacks, kneels, team-only attempts, and unresolvedattribution. Direction eligibility identifies the ordinary-rush analysispopulation; eligible attempts can still have an unknown direction.
+        /// Returns enriched rushing attempts with direction and attribution.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.RushingPlay&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Rushing.Plays
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns enriched rushing attempts.Team results include sacks, kneels, team-only attempts, and unresolvedattribution. Direction eligibility identifies the ordinary-rush analysispopulation; eligible attempts can still have an unknown direction.
+        /// Returns enriched rushing attempts with direction and attribution.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Rushing.Plays
             return new global::CollegeFootballData.Rushing.Plays.PlaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns enriched rushing attempts.Team results include sacks, kneels, team-only attempts, and unresolvedattribution. Direction eligibility identifies the ordinary-rush analysispopulation; eligible attempts can still have an unknown direction.
+        /// Returns enriched rushing attempts with direction and attribution.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaysRequestBuilderGetQueryParameters 

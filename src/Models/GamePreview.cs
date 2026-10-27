@@ -12,7 +12,7 @@ namespace CollegeFootballData.Models
     public partial class GamePreview : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The analysis property</summary>
+        /// <summary>Null once the game is completed or when kickoff is unknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::CollegeFootballData.Models.FreePreviewAnalysis? Analysis { get; set; }

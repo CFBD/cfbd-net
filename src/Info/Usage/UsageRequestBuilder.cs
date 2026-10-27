@@ -34,7 +34,7 @@ namespace CollegeFootballData.Info.Usage
         {
         }
         /// <summary>
-        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
+        /// Returns recent usage of the authenticated user&apos;s shared CFB and CBB quota.Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.UserUsage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace CollegeFootballData.Info.Usage
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.UserUsage>(requestInfo, global::CollegeFootballData.Models.UserUsage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
+        /// Returns recent usage of the authenticated user&apos;s shared CFB and CBB quota.Returns `null` when the request is not authenticated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace CollegeFootballData.Info.Usage
             return new global::CollegeFootballData.Info.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns recent usage for the authenticated user&apos;s shared CFB and CBB callpool. Returns `null` when the request is not authenticated.
+        /// Returns recent usage of the authenticated user&apos;s shared CFB and CBB quota.Returns `null` when the request is not authenticated.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 

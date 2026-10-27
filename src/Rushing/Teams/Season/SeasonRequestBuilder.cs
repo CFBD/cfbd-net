@@ -34,7 +34,7 @@ namespace CollegeFootballData.Rushing.Teams.Season
         {
         }
         /// <summary>
-        /// Returns team rushing production by season.Team totals include sacks, kneels, team-only attempts, and unresolvedattribution. Defense contains rushing production allowed.
+        /// Returns team rushing statistics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamRushingSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Rushing.Teams.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns team rushing production by season.Team totals include sacks, kneels, team-only attempts, and unresolvedattribution. Defense contains rushing production allowed.
+        /// Returns team rushing statistics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Rushing.Teams.Season
             return new global::CollegeFootballData.Rushing.Teams.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns team rushing production by season.Team totals include sacks, kneels, team-only attempts, and unresolvedattribution. Defense contains rushing production allowed.
+        /// Returns team rushing statistics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 

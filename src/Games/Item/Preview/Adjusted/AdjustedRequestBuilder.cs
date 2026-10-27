@@ -34,7 +34,7 @@ namespace CollegeFootballData.Games.Item.Preview.Adjusted
         {
         }
         /// <summary>
-        /// Returns stored adjusted team and player metrics until game completion. Requires Patreon Tier 1.Team metrics may use the previous season; players remain current-season.
+        /// Returns adjusted pregame team and player metrics for a game.Requires Patreon Tier 1.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.AdjustedGamePreview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace CollegeFootballData.Games.Item.Preview.Adjusted
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.AdjustedGamePreview>(requestInfo, global::CollegeFootballData.Models.AdjustedGamePreview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns stored adjusted team and player metrics until game completion. Requires Patreon Tier 1.Team metrics may use the previous season; players remain current-season.
+        /// Returns adjusted pregame team and player metrics for a game.Requires Patreon Tier 1.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace CollegeFootballData.Ratings.Core
         {
         }
         /// <summary>
-        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.At least one of `year` or `team` is required.
+        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.TeamCoreRating&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Ratings.Core
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.At least one of `year` or `team` is required.
+        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Ratings.Core
             return new global::CollegeFootballData.Ratings.Core.CoreRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.At least one of `year` or `team` is required.
+        /// Returns Context &amp; Opponent-Relative Efficiency (CORE) ratings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CoreRequestBuilderGetQueryParameters 

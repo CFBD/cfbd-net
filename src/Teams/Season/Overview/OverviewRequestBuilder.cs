@@ -34,7 +34,7 @@ namespace CollegeFootballData.Teams.Season.Overview
         {
         }
         /// <summary>
-        /// Returns a stored full-season team overview, including postseason and garbage time.
+        /// Returns a full-season team overview, including postseason and garbage time.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.TeamSeasonOverview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace CollegeFootballData.Teams.Season.Overview
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.TeamSeasonOverview>(requestInfo, global::CollegeFootballData.Models.TeamSeasonOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a stored full-season team overview, including postseason and garbage time.
+        /// Returns a full-season team overview, including postseason and garbage time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace CollegeFootballData.Teams.Season.Overview
             return new global::CollegeFootballData.Teams.Season.Overview.OverviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a stored full-season team overview, including postseason and garbage time.
+        /// Returns a full-season team overview, including postseason and garbage time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverviewRequestBuilderGetQueryParameters 

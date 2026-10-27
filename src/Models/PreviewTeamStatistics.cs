@@ -20,7 +20,7 @@ namespace CollegeFootballData.Models
 #else
         public global::CollegeFootballData.Models.TeamSeasonAdvancedStats Advanced { get; set; }
 #endif
-        /// <summary>The isPreviousSeason property</summary>
+        /// <summary>True when team statistics come from the previous season. Players and gamecontext always use the game season.</summary>
         public bool? IsPreviousSeason { get; set; }
         /// <summary>The passing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

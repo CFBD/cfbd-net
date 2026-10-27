@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace CollegeFootballData.Models
 {
+    /// <summary>
+    /// Includes sacks, kneels, team-only attempts, and unattributed attempts.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class TeamRushingProduction : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The attempts property</summary>
         public int? Attempts { get; set; }

@@ -40,7 +40,7 @@ namespace CollegeFootballData.Models
 #endif
         /// <summary>The defenseId property</summary>
         public int? DefenseId { get; set; }
-        /// <summary>The directionAnalysisEligible property</summary>
+        /// <summary>Whether the attempt is an ordinary rush included in direction analysis.Eligible attempts can still have an unknown direction.</summary>
         public bool? DirectionAnalysisEligible { get; set; }
         /// <summary>The distance property</summary>
         public int? Distance { get; set; }

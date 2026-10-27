@@ -34,7 +34,7 @@ namespace CollegeFootballData.Games.Schedule
         {
         }
         /// <summary>
-        /// Returns the active or next calendar slate, including completed games.Explicit windows require year, seasonType, and week together.
+        /// Returns games for the current, next, or requested week.
         /// </summary>
         /// <returns>A <see cref="global::CollegeFootballData.Models.GameSchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace CollegeFootballData.Games.Schedule
             return await RequestAdapter.SendAsync<global::CollegeFootballData.Models.GameSchedule>(requestInfo, global::CollegeFootballData.Models.GameSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the active or next calendar slate, including completed games.Explicit windows require year, seasonType, and week together.
+        /// Returns games for the current, next, or requested week.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace CollegeFootballData.Games.Schedule
             return new global::CollegeFootballData.Games.Schedule.ScheduleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the active or next calendar slate, including completed games.Explicit windows require year, seasonType, and week together.
+        /// Returns games for the current, next, or requested week.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduleRequestBuilderGetQueryParameters 
@@ -120,32 +120,26 @@ namespace CollegeFootballData.Games.Schedule
             [QueryParameter("conference")]
             public string Conference { get; set; }
 #endif
+            /// <summary>Season type. Requires `year` and `week`.</summary>
             [Obsolete("This property is deprecated, use SeasonTypeAsGetSeasonTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("seasonType")]
             public string? SeasonType { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("seasonType")]
             public string SeasonType { get; set; }
-            #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
+            /// <summary>Season type. Requires `year` and `week`.</summary>
             [QueryParameter("seasonType")]
             public global::CollegeFootballData.Games.Schedule.GetSeasonTypeQueryParameterType? SeasonTypeAsGetSeasonTypeQueryParameterType { get; set; }
-            #pragma warning restore CS1591
-            #pragma warning disable CS1591
+            /// <summary>Week number. Requires `year` and `seasonType`.</summary>
             [QueryParameter("week")]
             public int? Week { get; set; }
-            #pragma warning restore CS1591
-            #pragma warning disable CS1591
+            /// <summary>Season year. Requires `seasonType` and `week`.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
-            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

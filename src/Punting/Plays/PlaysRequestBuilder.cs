@@ -34,7 +34,7 @@ namespace CollegeFootballData.Punting.Plays
         {
         }
         /// <summary>
-        /// Returns enriched punt plays with gross, return, and net yardage, fieldposition, and punt outcomes.
+        /// Returns enriched punt plays with yardage, field position, and outcomes.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PuntingPlay&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Punting.Plays
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns enriched punt plays with gross, return, and net yardage, fieldposition, and punt outcomes.
+        /// Returns enriched punt plays with yardage, field position, and outcomes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Punting.Plays
             return new global::CollegeFootballData.Punting.Plays.PlaysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns enriched punt plays with gross, return, and net yardage, fieldposition, and punt outcomes.
+        /// Returns enriched punt plays with yardage, field position, and outcomes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlaysRequestBuilderGetQueryParameters 

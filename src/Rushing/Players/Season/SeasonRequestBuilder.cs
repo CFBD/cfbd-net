@@ -34,7 +34,7 @@ namespace CollegeFootballData.Rushing.Players.Season
         {
         }
         /// <summary>
-        /// Returns individually attributed rusher production by season.Player totals include only guarded rusher attribution, includingindividually attributed sacks. They do not include team-only or unresolvedattempts and therefore are not expected to sum to team totals.
+        /// Returns player rushing statistics by season.
         /// </summary>
         /// <returns>A List&lt;global::CollegeFootballData.Models.PlayerRushingSeason&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace CollegeFootballData.Rushing.Players.Season
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Returns individually attributed rusher production by season.Player totals include only guarded rusher attribution, includingindividually attributed sacks. They do not include team-only or unresolvedattempts and therefore are not expected to sum to team totals.
+        /// Returns player rushing statistics by season.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace CollegeFootballData.Rushing.Players.Season
             return new global::CollegeFootballData.Rushing.Players.Season.SeasonRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns individually attributed rusher production by season.Player totals include only guarded rusher attribution, includingindividually attributed sacks. They do not include team-only or unresolvedattempts and therefore are not expected to sum to team totals.
+        /// Returns player rushing statistics by season.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeasonRequestBuilderGetQueryParameters 
